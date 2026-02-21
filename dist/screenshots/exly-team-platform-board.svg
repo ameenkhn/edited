@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" fill="none">
+  <rect width="1400" height="620" fill="#EFF1F6"/>
+  <rect x="28" y="54" width="1344" height="424" rx="34" fill="#F8FAFF" stroke="#D0D8EC" stroke-width="2"/>
+
+  <rect x="60" y="86" width="670" height="322" rx="32" fill="#EDF1FB" stroke="#C8D1E6" stroke-width="2"/>
+  <rect x="120" y="134" width="550" height="286" rx="26" fill="#F5F7FD" stroke="#B8C3D8" stroke-width="2"/>
+
+  <line x1="156" y1="182" x2="638" y2="182" stroke="#BEC7D8" stroke-width="2"/>
+  <line x1="156" y1="370" x2="638" y2="370" stroke="#BEC7D8" stroke-width="2"/>
+  <path d="M160 312C251 278 380 268 622 306" stroke="#6B7283" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="196" y="213" width="122" height="104" rx="12" fill="#F6F8FF" stroke="#202A3B" stroke-width="4"/>
+  <rect x="208" y="227" width="98" height="32" rx="8" fill="#E9EEFF" stroke="#5C67F3" stroke-width="3"/>
+  <text x="216" y="249" fill="#5C67F3" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="800">Growth Plan</text>
+  <text x="209" y="279" fill="#263047" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="600">Market map</text>
+  <text x="209" y="297" fill="#263047" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="600">Offer stack</text>
+  <text x="209" y="315" fill="#263047" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="600">Growth loops</text>
+
+  <circle cx="364" cy="246" r="16" stroke="#202A3B" stroke-width="4"/>
+  <line x1="364" y1="262" x2="364" y2="320" stroke="#202A3B" stroke-width="4"/>
+  <line x1="340" y1="283" x2="388" y2="283" stroke="#202A3B" stroke-width="4"/>
+  <line x1="364" y1="320" x2="347" y2="348" stroke="#202A3B" stroke-width="4"/>
+  <line x1="364" y1="320" x2="381" y2="348" stroke="#202A3B" stroke-width="4"/>
+  <line x1="330" y1="256" x2="385" y2="233" stroke="#5C67F3" stroke-width="4"/>
+  <circle cx="386" cy="233" r="5" fill="#5C67F3"/>
+
+  <rect x="520" y="216" width="170" height="82" rx="12" fill="#F6F8FF" stroke="#202A3B" stroke-width="4"/>
+  <path d="M535 275C556 246 594 239 622 254C636 261 651 272 676 266" stroke="#5C67F3" stroke-width="4" stroke-linecap="round"/>
+
+  <ellipse cx="484" cy="344" rx="36" ry="18" fill="#D5D9E3"/>
+  <ellipse cx="578" cy="346" rx="36" ry="18" fill="#D5D9E3"/>
+  <ellipse cx="616" cy="344" rx="36" ry="18" fill="#D5D9E3"/>
+
+  <circle cx="484" cy="316" r="18" fill="#F6F8FF" stroke="#202A3B" stroke-width="4"/>
+  <rect x="461" y="334" width="46" height="32" fill="#E5E9F2" stroke="#202A3B" stroke-width="4"/>
+
+  <circle cx="578" cy="323" r="18" fill="#F6F8FF" stroke="#202A3B" stroke-width="4"/>
+  <rect x="553" y="338" width="52" height="32" rx="3" fill="#E5E9F2" stroke="#202A3B" stroke-width="4"/>
+
+  <rect x="593" y="318" width="58" height="42" rx="8" fill="#EEF1F9" stroke="#202A3B" stroke-width="3"/>
+  <rect x="548" y="318" width="58" height="42" rx="8" fill="#EEF1F9" stroke="#202A3B" stroke-width="3"/>
+  <rect x="503" y="318" width="58" height="42" rx="8" fill="#EEF1F9" stroke="#202A3B" stroke-width="3"/>
+
+  <rect x="766" y="168" width="202" height="56" rx="24" fill="#E8ECFF"/>
+  <text x="788" y="206" fill="#636DE9" font-family="Manrope, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="0.1em">EXLY TEAM</text>
+
+  <text x="766" y="278" fill="#172034" font-family="Manrope, Arial, sans-serif" font-size="54" font-weight="800">Brand + Performance + Platform</text>
+  <text x="766" y="334" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">We run ads, optimize funnels, and operate</text>
+  <text x="766" y="372" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">your stack under one fixed-fee</text>
+  <text x="766" y="410" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">partnership.</text>
+
+  <circle cx="1320" cy="120" r="130" fill="#D9DDF1"/>
+  <rect x="28" y="348" width="92" height="130" rx="24" fill="#D7E8F7"/>
+
+  <rect x="28" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
+  <path d="M58 535H80V524L58 529V535Z" fill="#5C67F3"/>
+  <path d="M58 529L82 523" stroke="#5C67F3" stroke-width="4" stroke-linecap="round"/>
+  <text x="102" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">ADS ENGINE</text>
+
+  <rect x="484" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
+  <circle cx="524" cy="535" r="14" stroke="#4F57EA" stroke-width="4"/>
+  <circle cx="524" cy="535" r="7" stroke="#4F57EA" stroke-width="4"/>
+  <text x="554" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">FUNNEL FOCUS</text>
+
+  <rect x="940" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
+  <path d="M980 520L994 515L1008 520V534C1008 543 1002 551 994 555C986 551 980 543 980 534V520Z" stroke="#5962E8" stroke-width="4"/>
+  <path d="M988 534L993 539L1001 529" stroke="#5962E8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1012" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">NO % CUTS</text>
+</svg>

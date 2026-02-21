@@ -1,0 +1,1541 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 240 18% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 18% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 18% 9%;
+
+    --primary: 333 88% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 228 36% 90%;
+    --secondary-foreground: 240 18% 9%;
+
+    --muted: 223 20% 90%;
+    --muted-foreground: 240 10% 42%;
+
+    --accent: 333 88% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 84%;
+    --input: 220 14% 84%;
+    --ring: 333 88% 62%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 18% 9%;
+    --sidebar-primary: 333 88% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 36% 90%;
+    --sidebar-accent-foreground: 240 18% 9%;
+    --sidebar-border: 220 14% 84%;
+    --sidebar-ring: 333 88% 62%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.exly-page {
+  background-color: #ebebee;
+  background-image: radial-gradient(circle, #c9ced8 1.4px, transparent 1.4px);
+  background-size: 44px 44px;
+  background-position: -8px -8px;
+  color: #161626;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  overflow-x: clip;
+}
+
+.exly-shell {
+  width: min(1280px, calc(100% - 3.2rem));
+  margin: 0 auto;
+}
+
+.exly-nav-wrap {
+  position: sticky;
+  top: 0.7rem;
+  z-index: 50;
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #d6d8df;
+  border-radius: 999px;
+  background: rgba(243, 244, 248, 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.exly-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.exly-nav-chip {
+  border: 1px solid #cfd1d8;
+  background: #f5f6f8;
+  color: #2f3242;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.54rem 0.86rem;
+  cursor: pointer;
+}
+
+.exly-nav-chip-active {
+  background: #11151f;
+  color: #fff;
+  border-color: #11151f;
+}
+
+.exly-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+  font-size: 0.83rem;
+}
+
+.exly-nav-links a {
+  color: #2d3142;
+  text-decoration: none;
+}
+
+.exly-signup-link {
+  padding: 0.5rem 0.86rem;
+  border: 1px solid #c8cbd4;
+  border-radius: 999px;
+  background: #f6f6f9;
+  font-weight: 700;
+}
+
+.exly-hero-top {
+  padding-top: 3.1rem;
+  text-align: center;
+}
+
+.exly-hero-top h1 {
+  margin: 0;
+  font-size: clamp(2.45rem, 5.8vw, 5.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 13ch;
+  margin-inline: auto;
+}
+
+.exly-hero-top p {
+  margin: 1.1rem auto 0;
+  max-width: 65ch;
+  color: #4f5364;
+  line-height: 1.68;
+  font-size: 1.02rem;
+}
+
+.exly-cta-btn {
+  margin-top: 1.35rem;
+  border: 0;
+  border-radius: 999px;
+  background: #11151f;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.76rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.exly-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 28px -20px rgba(21, 25, 37, 0.55);
+}
+
+.exly-stage {
+  margin-top: 2.4rem;
+  min-height: 900px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.65rem;
+}
+
+.exly-stage-tag {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+  z-index: 15;
+  margin: 0;
+  border: 1px solid #cad0dc;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 0.44rem 0.82rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #353b4f;
+}
+
+.exly-float-card,
+.exly-logo-badge,
+.exly-stage-pill,
+.exly-stage-corner,
+.exly-phone-corner-accent {
+  position: absolute;
+  z-index: 2;
+  animation: exly-float 5.7s ease-in-out infinite;
+}
+
+.exly-float-card {
+  width: 262px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -30px rgba(20, 23, 35, 0.48);
+  background: #fff;
+  border: 1px solid #dbe0ea;
+}
+
+.exly-float-card-left-top {
+  left: 8.8rem;
+  top: 3rem;
+  animation-delay: -0.9s;
+}
+
+.exly-float-card-left-bottom {
+  left: 3.2rem;
+  bottom: 9.8rem;
+  animation-delay: -1.9s;
+}
+
+.exly-float-card-right-top {
+  right: 8.8rem;
+  top: 5.8rem;
+  animation-delay: -0.4s;
+}
+
+.exly-float-card-right-bottom {
+  right: 8rem;
+  bottom: 9.1rem;
+  animation-delay: -1.4s;
+}
+
+.exly-float-card-mini {
+  width: 232px;
+  z-index: 3;
+  animation: exly-float-sway 7.2s ease-in-out infinite;
+}
+
+.exly-float-card-left-mid {
+  left: 2.8rem;
+  top: 24.6rem;
+  animation-delay: -2.4s;
+}
+
+.exly-float-card-right-mid {
+  right: 2.9rem;
+  top: 25.2rem;
+  animation-delay: -1.1s;
+}
+
+.exly-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 0.82rem;
+  min-height: 3.2rem;
+  border-radius: 1rem;
+  border: 1px solid #d1d5df;
+  box-shadow: 0 15px 30px -25px rgba(22, 25, 37, 0.5);
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #20263a;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.exly-logo-xlash {
+  width: auto;
+  left: 15.6rem;
+  top: 1rem;
+  background: #f4d8a6;
+  border-color: #e6c88f;
+}
+
+.exly-logo-dyson {
+  width: auto;
+  left: 1.8rem;
+  bottom: 2.8rem;
+  animation-delay: -1.2s;
+  background: #efb9e5;
+  border-color: #e09bd1;
+}
+
+.exly-logo-asos {
+  width: auto;
+  right: 19rem;
+  top: 14rem;
+  animation-delay: -0.8s;
+  background: #cfd4fb;
+  border-color: #b8bff0;
+}
+
+.exly-logo-adidas {
+  width: auto;
+  left: 19rem;
+  bottom: 21.3rem;
+  animation-delay: -2s;
+  background: #f3c3eb;
+  border-color: #e7a7dc;
+}
+
+.exly-logo-lyko {
+  width: auto;
+  right: 12.9rem;
+  bottom: 11.8rem;
+  animation-delay: -1.5s;
+  background: #c3e2f6;
+  border-color: #add2e9;
+}
+
+.exly-logo-nike {
+  width: auto;
+  right: 1.8rem;
+  bottom: 8.7rem;
+  animation-delay: -0.55s;
+  background: #f4d8a6;
+  border-color: #e6c88f;
+}
+
+.exly-stage-pill {
+  border-radius: 999px;
+  background: #bfdbef;
+}
+
+.exly-stage-pill-l {
+  left: 6.6rem;
+  top: 18.8rem;
+  width: 136px;
+  height: 30px;
+}
+
+.exly-stage-pill-r {
+  right: 10.3rem;
+  bottom: 16.1rem;
+  width: 164px;
+  height: 34px;
+  background: #b7e2fa;
+}
+
+.exly-stage-corner {
+  right: 9.8rem;
+  bottom: 13.2rem;
+  width: 86px;
+  height: 86px;
+  border-top-left-radius: 30px;
+  border: 10px solid #bdeec5;
+  border-right: 0;
+  border-bottom: 0;
+  background: transparent;
+  animation-delay: -0.3s;
+}
+
+.exly-phone-corner-accent {
+  left: 12.6rem;
+  top: 2.5rem;
+  width: 104px;
+  height: 104px;
+  border-top-left-radius: 34px;
+  border: 12px solid #efb5df;
+  border-right: 0;
+  border-bottom: 0;
+  background: transparent;
+  z-index: 1;
+  animation-delay: -0.65s;
+}
+
+.exly-stage-orb,
+.exly-stage-glow {
+  position: absolute;
+  pointer-events: none;
+}
+
+.exly-stage-orb {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  z-index: 4;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #bcc8ea 42%, #8d97cc 100%);
+  box-shadow: 0 0 0 8px rgba(122, 137, 201, 0.12);
+  animation: exly-orb-pulse 4.2s ease-in-out infinite;
+}
+
+.exly-stage-orb-l {
+  left: 36%;
+  top: 37%;
+  animation-delay: -0.6s;
+}
+
+.exly-stage-orb-r {
+  right: 34%;
+  top: 55%;
+  animation-delay: -2.1s;
+}
+
+.exly-stage-glow {
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  filter: blur(45px);
+  opacity: 0.45;
+  animation: exly-glow-shift 6.8s ease-in-out infinite;
+}
+
+.exly-stage-glow-l {
+  left: 17%;
+  top: 23%;
+  background: radial-gradient(circle, rgba(164, 207, 247, 0.7) 0%, rgba(164, 207, 247, 0) 72%);
+}
+
+.exly-stage-glow-r {
+  right: 14%;
+  bottom: 21%;
+  background: radial-gradient(circle, rgba(185, 238, 197, 0.72) 0%, rgba(185, 238, 197, 0) 72%);
+  animation-delay: -2.2s;
+}
+
+.exly-phone-wrap {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: min(700px, 94%);
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  animation: exly-phone-bob 5.8s ease-in-out infinite;
+  isolation: isolate;
+}
+
+.exly-phone-device {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  filter: drop-shadow(0 30px 40px rgba(10, 11, 18, 0.2));
+}
+
+.exly-phone-screen {
+  position: absolute;
+  /* Calibrated to the handset's transparent display cutout. */
+  left: 11.05%;
+  right: 43.35%;
+  top: 1.15%;
+  bottom: 25.1%;
+  border-radius: 2.55rem;
+  background: #4330aa;
+  z-index: 2;
+  clip-path: inset(0 round 2.55rem);
+  transform: translateZ(0);
+  will-change: transform;
+  overflow: hidden;
+  contain: paint;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.exly-phone-screen::after {
+  content: none;
+}
+
+.exly-phone-logo-mark {
+  color: #ffffff;
+  font-size: clamp(2rem, 4.8vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.exly-marquee-headline {
+  margin-top: 2.9rem;
+  text-align: center;
+}
+
+.exly-marquee-headline p {
+  margin: 0.4rem 0;
+  font-size: clamp(1.35rem, 3.4vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.exly-offer-section,
+.exly-problem-section,
+.exly-cost-section,
+.exly-visual-panels,
+.exly-included-section,
+.exly-proof-section,
+.exly-process-section {
+  margin-top: 4.4rem;
+}
+
+.exly-offer-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1rem;
+}
+
+.exly-price-card,
+.exly-detail-card,
+.exly-problem-item,
+.exly-included-card,
+.exly-guarantee-card,
+.exly-process-grid article {
+  border: 1px solid #d2d4dc;
+  border-radius: 1.35rem;
+  background: #fff;
+  box-shadow: 0 20px 34px -30px rgba(19, 21, 33, 0.2);
+}
+
+.exly-price-card,
+.exly-detail-card {
+  padding: 1.2rem;
+}
+
+.exly-price-card p,
+.exly-price-card h2,
+.exly-price-card small,
+.exly-price-card strong,
+.exly-price-card span {
+  margin: 0;
+  display: block;
+}
+
+.exly-price-card p {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #686e82;
+}
+
+.exly-price-card h2 {
+  margin-top: 0.72rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.exly-price-card small {
+  margin-top: 0.5rem;
+  color: #5a6074;
+}
+
+.exly-price-card strong {
+  margin-top: 0.8rem;
+  font-size: 1.07rem;
+}
+
+.exly-price-card span {
+  margin-top: 0.55rem;
+  color: #4f5364;
+}
+
+.exly-detail-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+.exly-detail-card ul,
+.exly-problem-item p,
+.exly-included-card ul,
+.exly-guarantee-card ul,
+.exly-process-grid article ul {
+  margin: 0;
+}
+
+.exly-detail-card ul,
+.exly-included-card ul,
+.exly-guarantee-card ul,
+.exly-process-grid article ul {
+  margin-top: 0.85rem;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.45rem;
+  color: #4f5466;
+}
+
+.exly-problem-section h2,
+.exly-cost-section h2,
+.exly-included-section h2,
+.exly-proof-section h2,
+.exly-process-section h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  letter-spacing: -0.03em;
+}
+
+.exly-problem-section > p,
+.exly-cost-section > p {
+  margin: 0.85rem 0 0;
+  color: #4f5466;
+  max-width: 66ch;
+  line-height: 1.7;
+}
+
+.exly-problem-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.exly-problem-item {
+  padding: 1rem;
+}
+
+.exly-problem-item p {
+  color: #4f5466;
+  line-height: 1.62;
+  font-size: 0.92rem;
+}
+
+.exly-cost-table {
+  margin-top: 1rem;
+  border: 1px solid #d2d4dc;
+  border-radius: 1.2rem;
+  overflow-x: auto;
+  background: #fff;
+}
+
+.exly-cost-row {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(2, 1fr);
+  min-width: 680px;
+}
+
+.exly-cost-row + .exly-cost-row {
+  border-top: 1px solid #e0e2e8;
+}
+
+.exly-cost-row-head {
+  background: #f4f6fa;
+}
+
+.exly-cost-head,
+.exly-cost-cell {
+  padding: 0.8rem 0.9rem;
+}
+
+.exly-cost-head {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f5468;
+}
+
+.exly-cost-cell {
+  color: #2b3143;
+  font-size: 0.94rem;
+}
+
+.exly-cost-label {
+  font-weight: 700;
+}
+
+.exly-cost-accent {
+  color: #0d5f34;
+  font-weight: 800;
+}
+
+.exly-savings-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.exly-savings-grid article {
+  border: 1px solid #d2d4dc;
+  border-radius: 1.2rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+.exly-savings-grid p,
+.exly-savings-grid h3 {
+  margin: 0;
+}
+
+.exly-savings-grid p {
+  color: #5b6175;
+  font-size: 0.85rem;
+}
+
+.exly-savings-grid h3 {
+  margin-top: 0.45rem;
+  font-size: 1.16rem;
+}
+
+.exly-visual-panels {
+  display: grid;
+  gap: 0.9rem;
+  width: min(860px, calc(100% - 0.5rem));
+  margin-inline: auto;
+}
+
+.exly-visual-frame {
+  border: 1px solid #d2d7e2;
+  border-radius: 1.2rem;
+  background: rgba(248, 250, 255, 0.7);
+  box-shadow: 0 22px 34px -30px rgba(20, 22, 35, 0.26);
+  overflow: hidden;
+  padding: 0.45rem;
+  animation: exly-float-sway 7.8s ease-in-out infinite;
+}
+
+.exly-visual-frame-lg {
+  min-height: 0;
+}
+
+.exly-visual-frame:nth-child(2) {
+  animation-delay: -1.6s;
+}
+
+.exly-visual-frame img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+  margin-inline: auto;
+}
+
+.exly-included-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.exly-included-card {
+  padding: 1rem;
+}
+
+.exly-included-card > p {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #646a7d;
+  font-weight: 700;
+}
+
+.exly-proof-stats {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.exly-proof-stats span {
+  border: 1px solid #d2d4dc;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.83rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.exly-guarantee-card {
+  margin-top: 0.88rem;
+  padding: 1rem;
+}
+
+.exly-guarantee-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.exly-process-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.exly-process-grid article {
+  padding: 0.95rem;
+}
+
+.exly-process-grid article p,
+.exly-process-grid article h3 {
+  margin: 0;
+}
+
+.exly-process-grid article p {
+  font-size: 0.78rem;
+  color: #646a7d;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.exly-process-grid article h3 {
+  margin-top: 0.6rem;
+  font-size: 1.02rem;
+}
+
+.exly-final-cta {
+  margin-top: 5.3rem;
+  border: 1px solid #cfd2db;
+  background: #fff;
+  border-radius: 1.45rem;
+  padding: 1.55rem;
+  text-align: center;
+}
+
+.exly-final-cta h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+  letter-spacing: -0.02em;
+}
+
+.exly-final-cta p {
+  margin: 0.85rem auto 0;
+  max-width: 58ch;
+  color: #575d71;
+  line-height: 1.7;
+}
+
+.exly-mini-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d5d8e0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.exly-mini-footer p,
+.exly-mini-footer span {
+  margin: 0;
+}
+
+.exly-mini-footer p {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.exly-mini-footer span {
+  font-size: 0.82rem;
+  color: #60667a;
+}
+
+.exly-why {
+  margin-top: 5rem;
+}
+
+.exly-why h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  letter-spacing: -0.03em;
+}
+
+.exly-why > p {
+  margin: 1rem 0 0;
+  color: #4f5466;
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.exly-tab-row {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.exly-tab-row button {
+  border: 1px solid #ced1da;
+  background: #f6f7fa;
+  color: #2f3345;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  padding: 0.58rem 0.7rem;
+  cursor: pointer;
+}
+
+.exly-tab-row button.active {
+  background: #131721;
+  color: #fff;
+  border-color: #131721;
+}
+
+.exly-feature-card {
+  margin-top: 1.2rem;
+  border: 1px solid #d2d4dc;
+  border-radius: 1.55rem;
+  background: #fff;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+}
+
+.exly-feature-copy {
+  padding: 1.45rem;
+}
+
+.exly-feature-copy p {
+  margin: 0;
+}
+
+.exly-feature-copy p:first-child {
+  font-size: 0.78rem;
+  color: #6a6f82;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.exly-feature-copy h3 {
+  margin: 0.75rem 0 0;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.exly-feature-copy p:last-of-type {
+  margin-top: 0.7rem;
+  color: #4f5364;
+  line-height: 1.7;
+}
+
+.exly-inline-btn {
+  margin-top: 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: #11151f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.68rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.33rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.exly-inline-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 26px -22px rgba(17, 21, 31, 0.5);
+}
+
+.exly-feature-media {
+  min-height: 320px;
+}
+
+.exly-feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exly-trusted {
+  margin-top: 4.8rem;
+}
+
+.exly-trusted > p {
+  margin: 0;
+  text-align: center;
+  color: #53586c;
+  font-size: 0.95rem;
+}
+
+.exly-logo-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.exly-logo-cell {
+  border: 1px solid #d7d9e0;
+  background: #fff;
+  border-radius: 0.95rem;
+  padding: 0.55rem;
+  min-height: 4.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.exly-logo-cell img {
+  width: 100%;
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.exly-style-section {
+  margin-top: 5rem;
+}
+
+.exly-style-section h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  letter-spacing: -0.03em;
+}
+
+.exly-style-section > p {
+  margin: 1rem 0 0;
+  color: #4f5364;
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.exly-style-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.exly-style-grid article {
+  border: 1px solid #d2d4dc;
+  border-radius: 1.35rem;
+  background: #fff;
+  padding: 1.2rem;
+  box-shadow: 0 20px 34px -30px rgba(19, 21, 33, 0.2);
+}
+
+.exly-style-grid article p,
+.exly-style-grid article h3 {
+  margin: 0;
+}
+
+.exly-style-grid article p:first-child {
+  font-size: 0.77rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #676c7f;
+}
+
+.exly-style-grid article h3 {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.exly-style-grid article p:last-of-type {
+  margin-top: 0.65rem;
+  color: #4f5364;
+  line-height: 1.7;
+}
+
+.exly-footer {
+  margin-top: 5.5rem;
+  border-top: 1px solid #ced1d9;
+  padding-top: 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.exly-footer h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.exly-footer p {
+  margin: 0.55rem 0 0;
+  color: #575d71;
+}
+
+.exly-city-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.exly-city-grid span {
+  border: 1px solid #cfd1d8;
+  border-radius: 999px;
+  background: #fff;
+  text-align: center;
+  padding: 0.52rem 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.exly-reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.99);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exly-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes exly-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes exly-phone-bob {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -51.4%);
+  }
+}
+
+@keyframes exly-float-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+}
+
+@keyframes exly-orb-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes exly-glow-shift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(8px, -7px) scale(1.08);
+  }
+}
+
+@media (max-width: 1200px) {
+  .exly-stage {
+    min-height: 800px;
+  }
+
+  .exly-float-card-left-top,
+  .exly-float-card-left-bottom,
+  .exly-float-card-right-top,
+  .exly-float-card-right-bottom {
+    width: 228px;
+  }
+
+  .exly-float-card-mini {
+    width: 202px;
+  }
+
+  .exly-float-card-left-mid {
+    top: 22.8rem;
+    left: 1.4rem;
+  }
+
+  .exly-float-card-right-mid {
+    top: 23.2rem;
+    right: 1.6rem;
+  }
+
+  .exly-phone-wrap {
+    width: min(640px, 98%);
+  }
+
+  .exly-logo-asos {
+    right: 18rem;
+  }
+
+  .exly-logo-lyko {
+    right: 11.1rem;
+  }
+
+  .exly-phone-corner-accent {
+    left: 8rem;
+  }
+
+  .exly-stage-glow-l {
+    left: 10%;
+    top: 26%;
+  }
+
+  .exly-stage-glow-r {
+    right: 7%;
+    bottom: 20%;
+  }
+
+  .exly-logo-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .exly-proof-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .exly-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .exly-visual-panels {
+    width: min(760px, calc(100% - 0.5rem));
+  }
+
+  .exly-visual-frame img {
+    max-height: 285px;
+  }
+}
+
+@media (max-width: 960px) {
+  .exly-nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 1rem;
+    padding: 0.75rem;
+  }
+
+  .exly-stage {
+    min-height: 700px;
+    border-radius: 1.4rem;
+  }
+
+  .exly-float-card-right-top,
+  .exly-float-card-right-bottom,
+  .exly-float-card-right-mid,
+  .exly-logo-dyson,
+  .exly-logo-nike,
+  .exly-stage-corner,
+  .exly-stage-glow-r {
+    display: none;
+  }
+
+  .exly-float-card-left-top {
+    left: 1.2rem;
+    top: 2.3rem;
+  }
+
+  .exly-float-card-left-mid {
+    width: 182px;
+    left: 0.85rem;
+    top: 21.4rem;
+  }
+
+  .exly-logo-xlash {
+    left: 7rem;
+    top: 0.4rem;
+  }
+
+  .exly-logo-asos {
+    right: 1.2rem;
+    top: 11.7rem;
+  }
+
+  .exly-logo-lyko {
+    right: 1rem;
+    bottom: 10.4rem;
+  }
+
+  .exly-float-card-left-bottom {
+    left: 1rem;
+    bottom: 8.3rem;
+  }
+
+  .exly-stage-pill-l {
+    left: 2rem;
+    top: 18.2rem;
+  }
+
+  .exly-stage-pill-r {
+    right: 1.1rem;
+    bottom: 13.3rem;
+  }
+
+  .exly-stage-orb-l {
+    left: 26%;
+    top: 45%;
+  }
+
+  .exly-stage-orb-r {
+    right: 20%;
+    top: 62%;
+  }
+
+  .exly-stage-glow-l {
+    left: 6%;
+    top: 30%;
+  }
+
+  .exly-phone-wrap {
+    width: min(620px, 97%);
+    top: 57%;
+  }
+
+  .exly-phone-screen {
+    left: 11.1%;
+    right: 43.3%;
+    top: 1.2%;
+    bottom: 25.2%;
+    border-radius: 2.15rem;
+    clip-path: inset(0 round 2.15rem);
+  }
+
+  .exly-phone-corner-accent {
+    left: 4.8rem;
+    top: 2.6rem;
+    width: 86px;
+    height: 86px;
+    border-top-left-radius: 28px;
+    border-width: 10px;
+  }
+
+  .exly-tab-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .exly-feature-card,
+  .exly-offer-section,
+  .exly-included-grid,
+  .exly-style-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-problem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .exly-savings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-feature-media {
+    min-height: 280px;
+  }
+
+  .exly-visual-frame {
+    padding: 0.6rem;
+  }
+
+  .exly-visual-panels {
+    width: min(680px, 100%);
+  }
+
+  .exly-visual-frame img {
+    max-height: 255px;
+  }
+}
+
+@media (max-width: 640px) {
+  .exly-shell {
+    width: min(1280px, calc(100% - 1.15rem));
+  }
+
+  .exly-nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .exly-hero-top {
+    padding-top: 1.85rem;
+  }
+
+  .exly-stage {
+    min-height: 575px;
+    border-radius: 1.15rem;
+  }
+
+  .exly-stage-tag {
+    font-size: 0.67rem;
+    padding: 0.38rem 0.62rem;
+  }
+
+  .exly-float-card {
+    width: 165px;
+  }
+
+  .exly-float-card-left-top {
+    top: 3.3rem;
+    left: 0.35rem;
+  }
+
+  .exly-float-card-left-bottom {
+    left: 0.35rem;
+    bottom: 7rem;
+  }
+
+  .exly-float-card-left-mid {
+    display: none;
+  }
+
+  .exly-logo-xlash {
+    left: 4.8rem;
+    top: 1.4rem;
+  }
+
+  .exly-logo-adidas {
+    left: 5.2rem;
+    bottom: 13.8rem;
+  }
+
+  .exly-logo-asos {
+    top: 11rem;
+    right: 0.45rem;
+  }
+
+  .exly-logo-lyko {
+    right: 0.5rem;
+    bottom: 9.2rem;
+  }
+
+  .exly-stage-pill-l {
+    width: 96px;
+    height: 22px;
+    left: 0.65rem;
+    top: 16rem;
+  }
+
+  .exly-stage-pill-r {
+    width: 104px;
+    height: 24px;
+    right: 0.45rem;
+    bottom: 11.4rem;
+  }
+
+  .exly-stage-orb {
+    display: none;
+  }
+
+  .exly-stage-glow-l {
+    width: 160px;
+    height: 160px;
+    left: -2%;
+    top: 31%;
+    opacity: 0.32;
+  }
+
+  .exly-phone-wrap {
+    width: min(510px, 100%);
+    top: 60%;
+  }
+
+  .exly-phone-screen {
+    left: 11.15%;
+    right: 43.25%;
+    top: 1.25%;
+    bottom: 25.35%;
+    border-radius: 1.75rem;
+    clip-path: inset(0 round 1.75rem);
+  }
+
+  .exly-phone-corner-accent {
+    left: 2.4rem;
+    top: 2.25rem;
+    width: 68px;
+    height: 68px;
+    border-top-left-radius: 22px;
+    border-width: 8px;
+  }
+
+  .exly-phone-logo-mark {
+    font-size: clamp(1.5rem, 9vw, 2.25rem);
+  }
+
+  .exly-tab-row {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-problem-grid,
+  .exly-proof-stats,
+  .exly-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-mini-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exly-cost-row {
+    min-width: 560px;
+  }
+
+  .exly-visual-panels {
+    gap: 0.72rem;
+    width: 100%;
+  }
+
+  .exly-visual-frame {
+    border-radius: 1rem;
+    padding: 0.4rem;
+  }
+
+  .exly-visual-frame img {
+    max-height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exly-float-card,
+  .exly-logo-badge,
+  .exly-stage-pill,
+  .exly-stage-corner,
+  .exly-phone-wrap,
+  .exly-phone-corner-accent,
+  .exly-stage-orb,
+  .exly-stage-glow {
+    animation: none !important;
+  }
+
+  .exly-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

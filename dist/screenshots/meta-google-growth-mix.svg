@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" fill="none">
+  <rect width="560" height="300" rx="28" fill="#EEF2FF"/>
+  <rect x="26" y="24" width="508" height="252" rx="20" fill="#FFFFFF" stroke="#D9E0F5"/>
+  <text x="48" y="58" fill="#4F5A7C" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="700">Meta + Google Growth Mix</text>
+
+  <rect x="48" y="82" width="146" height="76" rx="14" fill="#F5F7FF" stroke="#DDE4F4"/>
+  <text x="60" y="108" fill="#6A7390" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">Meta</text>
+  <text x="60" y="135" fill="#20283E" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800">62%</text>
+
+  <rect x="208" y="82" width="146" height="76" rx="14" fill="#F5F7FF" stroke="#DDE4F4"/>
+  <text x="220" y="108" fill="#6A7390" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">Google</text>
+  <text x="220" y="135" fill="#20283E" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800">38%</text>
+
+  <rect x="368" y="82" width="144" height="76" rx="14" fill="#4330AA"/>
+  <text x="380" y="108" fill="#BFC8FF" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">Blended ROAS</text>
+  <text x="380" y="136" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800">4.8x</text>
+
+  <path d="M52 220C103 199 154 199 205 184C257 169 306 160 359 146C411 133 457 140 507 120" stroke="#4A50D7" stroke-width="4" stroke-linecap="round"/>
+  <path d="M52 236C102 224 151 223 203 211C254 199 307 188 359 177C410 167 459 171 507 160" stroke="#2ABF9E" stroke-width="4" stroke-linecap="round"/>
+</svg>

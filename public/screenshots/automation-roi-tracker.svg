@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="280" viewBox="0 0 520 280" fill="none">
+  <rect width="520" height="280" rx="28" fill="#EEF2FF"/>
+  <rect x="24" y="22" width="472" height="236" rx="18" fill="#FFFFFF" stroke="#D9E0F5"/>
+  <text x="44" y="56" fill="#4F5A7C" font-family="Manrope, Arial, sans-serif" font-size="17" font-weight="700">Automation + ROI Tracker</text>
+
+  <rect x="44" y="74" width="210" height="72" rx="13" fill="#F6F8FF" stroke="#DDE4F4"/>
+  <text x="58" y="99" fill="#6A7390" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">Recovered revenue</text>
+  <text x="58" y="127" fill="#212A42" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800">₹14.7L</text>
+  <text x="162" y="127" fill="#0E9F6E" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">+41%</text>
+
+  <rect x="266" y="74" width="210" height="72" rx="13" fill="#F6F8FF" stroke="#DDE4F4"/>
+  <text x="280" y="99" fill="#6A7390" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">Checkout recovery</text>
+  <text x="280" y="127" fill="#212A42" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800">18.3%</text>
+
+  <rect x="44" y="160" width="432" height="76" rx="13" fill="#F6F8FF" stroke="#DDE4F4"/>
+  <path d="M62 223C112 214 161 216 210 205C259 194 307 175 356 172C397 170 434 178 462 166" stroke="#5147D9" stroke-width="4" stroke-linecap="round"/>
+  <path d="M62 205C109 196 156 194 204 186C251 178 299 167 347 156C391 146 427 141 462 129" stroke="#2ABF9E" stroke-width="4" stroke-linecap="round"/>
+</svg>

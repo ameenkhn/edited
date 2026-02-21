@@ -41,13 +41,13 @@
   <rect x="548" y="318" width="58" height="42" rx="8" fill="#EEF1F9" stroke="#202A3B" stroke-width="3"/>
   <rect x="503" y="318" width="58" height="42" rx="8" fill="#EEF1F9" stroke="#202A3B" stroke-width="3"/>
 
-  <rect x="766" y="168" width="202" height="56" rx="24" fill="#E8ECFF"/>
-  <text x="788" y="206" fill="#636DE9" font-family="Manrope, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="0.1em">EXLY TEAM</text>
+  <rect x="766" y="168" width="180" height="48" rx="22" fill="#E8ECFF"/>
+  <text x="788" y="199" fill="#636DE9" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="0.1em">EXLY TEAM</text>
 
-  <text x="766" y="278" fill="#172034" font-family="Manrope, Arial, sans-serif" font-size="54" font-weight="800">Brand + Performance + Platform</text>
-  <text x="766" y="334" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">We run ads, optimize funnels, and operate</text>
-  <text x="766" y="372" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">your stack under one fixed-fee</text>
-  <text x="766" y="410" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600">partnership.</text>
+  <text x="766" y="268" fill="#172034" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800">Brand + Performance + Platform</text>
+  <text x="766" y="310" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="13" font-weight="600">We run ads, optimize funnels, and operate</text>
+  <text x="766" y="336" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="13" font-weight="600">your stack under one fixed-fee</text>
+  <text x="766" y="362" fill="#687487" font-family="Manrope, Arial, sans-serif" font-size="13" font-weight="600">partnership.</text>
 
   <circle cx="1320" cy="120" r="130" fill="#D9DDF1"/>
   <rect x="28" y="348" width="92" height="130" rx="24" fill="#D7E8F7"/>
@@ -55,15 +55,15 @@
   <rect x="28" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
   <path d="M58 535H80V524L58 529V535Z" fill="#5C67F3"/>
   <path d="M58 529L82 523" stroke="#5C67F3" stroke-width="4" stroke-linecap="round"/>
-  <text x="102" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">ADS ENGINE</text>
+  <text x="102" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="0.1em">ADS ENGINE</text>
 
   <rect x="484" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
   <circle cx="524" cy="535" r="14" stroke="#4F57EA" stroke-width="4"/>
   <circle cx="524" cy="535" r="7" stroke="#4F57EA" stroke-width="4"/>
-  <text x="554" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">FUNNEL FOCUS</text>
+  <text x="554" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="0.1em">FUNNEL FOCUS</text>
 
   <rect x="940" y="502" width="430" height="66" rx="22" fill="#F8FAFF" stroke="#CCD5E9" stroke-width="2"/>
   <path d="M980 520L994 515L1008 520V534C1008 543 1002 551 994 555C986 551 980 543 980 534V520Z" stroke="#5962E8" stroke-width="4"/>
   <path d="M988 534L993 539L1001 529" stroke="#5962E8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1012" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="0.12em">NO % CUTS</text>
+  <text x="1012" y="545" fill="#404B5E" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="0.1em">NO % CUTS</text>
 </svg>

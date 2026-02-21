@@ -3,15 +3,15 @@
   <rect x="20" y="38" width="590" height="564" rx="34" fill="#F8F2F4" stroke="#F1C7D0" stroke-width="2"/>
   <rect x="640" y="32" width="740" height="570" rx="34" fill="#F3F5FE" stroke="#BFC8FF" stroke-width="2"/>
 
-  <text x="56" y="102" fill="#1D2435" font-family="Manrope, Arial, sans-serif" font-size="48" font-weight="800">Traditional Agencies</text>
-  <rect x="365" y="70" width="210" height="40" rx="20" fill="#F9EBEE" stroke="#E8A8B7" stroke-width="2"/>
-  <text x="386" y="98" fill="#C93356" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="800">High-Cost Model</text>
+  <text x="56" y="95" fill="#1D2435" font-family="Manrope, Arial, sans-serif" font-size="36" font-weight="800">Traditional Agencies</text>
+  <rect x="418" y="106" width="156" height="34" rx="17" fill="#F9EBEE" stroke="#E8A8B7" stroke-width="2"/>
+  <text x="438" y="129" fill="#C93356" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="800">High-Cost Model</text>
 
   <rect x="56" y="142" width="520" height="74" rx="26" fill="#FBFBFD" stroke="#F0D2D9" stroke-width="2"/>
   <circle cx="95" cy="178" r="19" fill="#EE4A4A"/>
   <line x1="85" y1="168" x2="105" y2="188" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
   <line x1="105" y1="168" x2="85" y2="188" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
-  <text x="134" y="189" fill="#4F5A6D" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">20-30% revenue share</text>
+  <text x="134" y="188" fill="#4F5A6D" font-family="Manrope, Arial, sans-serif" font-size="26" font-weight="700">20-30% revenue share</text>
 
   <rect x="56" y="242" width="520" height="246" rx="26" fill="#FBFBFD" stroke="#F0D2D9" stroke-width="2"/>
   <rect x="74" y="268" width="484" height="142" rx="20" fill="#FFF6F8" stroke="#F3D4DC" stroke-width="2"/>
@@ -20,27 +20,27 @@
   <line x1="96" y1="360" x2="536" y2="360" stroke="#F1D5DC" stroke-width="2" stroke-dasharray="8 8"/>
   <path d="M98 378C166 371 228 360 285 343C350 324 413 305 530 282" stroke="#EC355E" stroke-width="6" stroke-linecap="round"/>
   <circle cx="530" cy="282" r="9" fill="#EC355E"/>
-  <text x="74" y="464" fill="#C93356" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="0.08em">FEE BURDEN RISES WITH SCALE</text>
+  <text x="74" y="464" fill="#C93356" font-family="Manrope, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.08em">FEE BURDEN RISES WITH SCALE</text>
 
-  <text x="674" y="98" fill="#1D2435" font-family="Manrope, Arial, sans-serif" font-size="48" font-weight="800">Exly</text>
-  <rect x="1160" y="66" width="174" height="40" rx="20" fill="#E9EEFF" stroke="#A8B7FF" stroke-width="2"/>
-  <text x="1182" y="95" fill="#5363E8" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="800">Exly Advantage</text>
+  <text x="674" y="95" fill="#1D2435" font-family="Manrope, Arial, sans-serif" font-size="42" font-weight="800">Exly</text>
+  <rect x="1148" y="58" width="186" height="42" rx="21" fill="#E9EEFF" stroke="#A8B7FF" stroke-width="2"/>
+  <text x="1172" y="86" fill="#5363E8" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800">Exly Advantage</text>
 
   <rect x="676" y="136" width="300" height="172" rx="30" fill="#EEF0FE" stroke="#B4BEF9" stroke-width="2"/>
   <rect x="700" y="182" width="84" height="84" rx="30" fill="#C4F0DC" stroke="#9EE3C4" stroke-width="2"/>
   <circle cx="742" cy="224" r="21" fill="#2EA85F"/>
   <path d="M731 224L739 232L753 215" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="804" y="220" fill="#212D45" font-family="Manrope, Arial, sans-serif" font-size="70" font-weight="800">0%</text>
-  <text x="804" y="258" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0.12em">REVENUE</text>
-  <text x="804" y="286" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0.12em">SHARE</text>
+  <text x="804" y="220" fill="#212D45" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="800">0%</text>
+  <text x="804" y="253" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em">REVENUE</text>
+  <text x="804" y="275" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em">SHARE</text>
 
   <rect x="1002" y="136" width="350" height="172" rx="30" fill="url(#feeCard)" stroke="#A7C0F7" stroke-width="2"/>
   <rect x="1026" y="182" width="84" height="84" rx="30" fill="#C4F0DC" stroke="#9EE3C4" stroke-width="2"/>
   <circle cx="1068" cy="224" r="21" fill="#2EA85F"/>
   <path d="M1057 224L1065 232L1079 215" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1132" y="218" fill="#212D45" font-family="Manrope, Arial, sans-serif" font-size="78" font-weight="800">Fixed</text>
-  <text x="1132" y="258" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0.12em">MONTHLY</text>
-  <text x="1132" y="286" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0.12em">FEE</text>
+  <text x="1132" y="218" fill="#212D45" font-family="Manrope, Arial, sans-serif" font-size="58" font-weight="800">Fixed</text>
+  <text x="1132" y="250" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em">MONTHLY</text>
+  <text x="1132" y="272" fill="#4E5B74" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em">FEE</text>
 
   <rect x="676" y="336" width="676" height="230" rx="30" fill="#F8FAFF" stroke="#CDD7F4" stroke-width="2"/>
   <rect x="736" y="386" width="556" height="128" rx="24" fill="#F4F6FD" stroke="#CAD3EE" stroke-width="2"/>
@@ -51,7 +51,7 @@
   <circle cx="1222" cy="449" r="10" fill="#8A86EE"/>
   <line x1="764" y1="486" x2="1228" y2="486" stroke="#24B765" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10"/>
   <circle cx="1224" cy="486" r="12" fill="#24B765"/>
-  <text x="692" y="544" fill="#5554CF" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="0.1em">STABLE MODEL, PREDICTABLE MARGIN</text>
+  <text x="692" y="544" fill="#5554CF" font-family="Manrope, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.08em">STABLE MODEL, PREDICTABLE MARGIN</text>
 
   <defs>
     <linearGradient id="feeCard" x1="1002" y1="136" x2="1352" y2="308" gradientUnits="userSpaceOnUse">

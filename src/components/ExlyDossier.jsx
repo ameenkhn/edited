@@ -173,7 +173,7 @@ const ExlyDossier = () => {
       <section className="exly-shell exly-hero-top exly-reveal">
         <h1>
           We <span className="exly-hero-underline">don’t take percentage</span> charges. We{" "}
-          <span className="exly-hero-underline exly-hero-underline-delay">charge a fixed</span> fee.
+          <span className="exly-hero-underline exly-hero-underline-delay">charge a fixed fee</span>.
         </h1>
         <p>
           Fixed-fee Meta + Google Ads growth system for creators spending heavily on ads,

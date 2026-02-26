@@ -155,7 +155,10 @@ const ExlyDossier = () => {
     <main className="exly-page">
       <header className="exly-shell exly-nav-wrap exly-reveal">
         <div className="exly-nav-left">
-          <button className="exly-nav-chip exly-nav-chip-active">Exly Growth Partnership</button>
+          <button className="exly-nav-chip exly-nav-chip-active" aria-label="RevX">
+            <img className="exly-nav-chip-logo" src="/f5af000e-6753-41b3-88e2-f1359e71e8d4.png" alt="" aria-hidden="true" />
+            <span className="exly-nav-chip-text">RevX</span>
+          </button>
         </div>
         <nav className="exly-nav-links">
           <a href="#offer">Offer</a>
@@ -168,7 +171,10 @@ const ExlyDossier = () => {
       </header>
 
       <section className="exly-shell exly-hero-top exly-reveal">
-        <h1>We don’t take percentage charges. We charge a fixed fee.</h1>
+        <h1>
+          We <span className="exly-hero-underline">don’t take percentage</span> charges. We{" "}
+          <span className="exly-hero-underline exly-hero-underline-delay">charge a fixed</span> fee.
+        </h1>
         <p>
           Fixed-fee Meta + Google Ads growth system for creators spending heavily on ads,
           designed to replace percentage-based agency models.

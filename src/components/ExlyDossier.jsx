@@ -168,7 +168,7 @@ const ExlyDossier = () => {
       </header>
 
       <section className="exly-shell exly-hero-top exly-reveal">
-        <h1>Exly Meta Ads Growth Partnership</h1>
+        <h1>We don’t take percentage charges. We charge a fixed fee.</h1>
         <p>
           Fixed-fee Meta + Google Ads growth system for creators spending heavily on ads,
           designed to replace percentage-based agency models.
@@ -227,7 +227,14 @@ const ExlyDossier = () => {
         <span className="exly-stage-glow exly-stage-glow-r" aria-hidden="true" />
 
         <div className="exly-phone-wrap">
-          <img className="exly-phone-device" src={scene.handPhone} alt="Hand holding phone" loading="lazy" />
+          <img
+            className="exly-phone-device"
+            src={scene.handPhone}
+            alt="Hand holding phone"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
           <div className="exly-phone-screen exly-phone-screen-simple" aria-hidden="true">
             <div className="exly-phone-screen-head">
               <span className="exly-phone-brand-title">EXLY</span>
@@ -304,9 +311,9 @@ const ExlyDossier = () => {
               Fixed-fee model
             </span>
           </div>
-          <h2>₹2,80,000 / quarter</h2>
+          <h2>₹3,00,000 / quarter</h2>
           <small>Pilot pricing (regular ₹3,90,000 / quarter)</small>
-          <strong>+ 2.5% platform commission</strong>
+          <strong>&lt; 1% platform commission</strong>
           <span>No revenue share and no percentage of ad spend</span>
 
           <div className="exly-offer-visual" aria-hidden="true">

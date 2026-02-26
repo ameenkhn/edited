@@ -228,7 +228,7 @@
 
 .exly-stage {
   margin-top: 2.4rem;
-  min-height: 960px;
+  min-height: 1080px;
   position: relative;
   overflow: hidden;
   border-radius: 1.65rem;
@@ -781,9 +781,10 @@
 .exly-phone-wrap {
   position: absolute;
   left: 50%;
-  top: 56%;
+  top: auto;
+  bottom: 1.55rem;
   width: min(700px, 94%);
-  transform: translate(-33.85%, -50%);
+  transform: translateX(-33.85%);
   z-index: 8;
   animation: exly-phone-bob 5.8s ease-in-out infinite;
   isolation: isolate;
@@ -793,6 +794,8 @@
   position: relative;
   z-index: 4;
   width: 100%;
+  display: block;
+  height: auto;
   filter: drop-shadow(0 30px 40px rgba(10, 11, 18, 0.2));
 }
 
@@ -3143,10 +3146,10 @@
 @keyframes exly-phone-bob {
   0%,
   100% {
-    transform: translate(-33.85%, -50%);
+    transform: translateX(-33.85%) translateY(0);
   }
   50% {
-    transform: translate(-33.85%, -51.4%);
+    transform: translateX(-33.85%) translateY(-1.4%);
   }
 }
 
@@ -3310,7 +3313,7 @@
   }
 
   .exly-stage {
-    min-height: 860px;
+    min-height: 900px;
   }
 
   .exly-pain-chip {
@@ -3624,7 +3627,7 @@
   }
 
   .exly-stage {
-    min-height: 810px;
+    min-height: 860px;
     border-radius: 1.4rem;
   }
 
@@ -3848,7 +3851,7 @@
 
   .exly-phone-wrap {
     width: min(620px, 97%);
-    top: 57%;
+    bottom: 1.25rem;
   }
 
   .exly-phone-screen {
@@ -4166,7 +4169,7 @@
   }
 
   .exly-stage {
-    min-height: 640px;
+    min-height: 700px;
     border-radius: 1.15rem;
   }
 
@@ -4360,7 +4363,7 @@
 
   .exly-phone-wrap {
     width: min(510px, 100%);
-    top: 60%;
+    bottom: 0.85rem;
   }
 
   .exly-phone-screen {

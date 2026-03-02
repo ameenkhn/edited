@@ -163,10 +163,10 @@
 
 .exly-hero-top h1 {
   margin: 0;
-  font-size: clamp(2.45rem, 5.8vw, 5.1rem);
-  line-height: 1.02;
+  font-size: clamp(3rem, 6.6vw, 6.1rem);
+  line-height: 1;
   letter-spacing: -0.03em;
-  max-width: 13ch;
+  max-width: 14ch;
   margin-inline: auto;
 }
 
@@ -208,33 +208,32 @@
 }
 
 .exly-hero-top p {
-  margin: 1.1rem auto 0;
-  max-width: 65ch;
+  margin: 1rem auto 0;
+  max-width: 58ch;
   color: #4f5364;
-  line-height: 1.68;
-  font-size: 1.02rem;
+  line-height: 1.56;
+  font-size: 1.18rem;
 }
 
 .exly-hero-insight-row {
-  margin-top: 0.95rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.56rem;
 }
 
 .exly-hero-insight-row span {
   display: inline-flex;
   align-items: center;
-  gap: 0.34rem;
   border: 1px solid #d3d9e8;
   border-radius: 999px;
   background: rgba(249, 251, 255, 0.88);
   color: #4e5878;
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.03em;
-  padding: 0.34rem 0.56rem;
+  padding: 0.42rem 0.7rem;
   box-shadow: 0 14px 24px -24px rgba(20, 24, 39, 0.55);
   animation: exly-float 6.2s ease-in-out infinite;
 }
@@ -342,6 +341,15 @@
   width: 1.32rem;
   height: 1.32rem;
   color: #e54a68;
+}
+
+.exly-pain-chip.is-benefit {
+  border-color: #cde9d9;
+  background: rgba(246, 255, 250, 0.95);
+}
+
+.exly-pain-chip.is-benefit svg {
+  color: #1f9f5e;
 }
 
 .exly-pain-chip strong,
@@ -984,7 +992,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.42rem;
-  animation: exly-phone-scroll 15s linear infinite;
+  animation: exly-phone-scroll 22s linear infinite;
   will-change: transform;
 }
 
@@ -996,6 +1004,23 @@
   box-shadow: 0 14px 24px -24px rgba(8, 11, 24, 0.75);
   padding: 0.36rem 0.42rem 0.34rem;
   overflow: hidden;
+}
+
+.exly-phone-feed-section {
+  border: 1px dashed rgba(207, 218, 255, 0.76);
+  border-radius: 0.78rem;
+  background: rgba(236, 242, 255, 0.72);
+  padding: 0.26rem 0.4rem;
+}
+
+.exly-phone-feed-section p {
+  margin: 0;
+  color: #44528a;
+  font-size: 0.42rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  line-height: 1.25;
 }
 
 .exly-phone-feed-top {
@@ -1171,7 +1196,7 @@
 
 .exly-marquee-headline p {
   margin: 0.4rem 0;
-  font-size: clamp(1.35rem, 3.4vw, 2.45rem);
+  font-size: clamp(1.5rem, 3.9vw, 2.8rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
@@ -1233,12 +1258,43 @@
   gap: 0.7rem;
 }
 
+.exly-offer-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
 .exly-offer-head p {
   margin: 0;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #686e82;
+}
+
+.exly-popular-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.24rem;
+  border: 1px solid #ffd2ba;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff7ef 0%, #ffe9da 100%);
+  color: #b5541e;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.3rem 0.5rem;
+  box-shadow: 0 10px 16px -14px rgba(181, 84, 30, 0.65);
+  animation: exly-popular-pop 2.8s ease-in-out infinite;
+}
+
+.exly-popular-icon {
+  color: #e96a2b;
+  transform-origin: 50% 70%;
+  animation: exly-popular-flicker 1.6s ease-in-out infinite;
 }
 
 .exly-offer-pill {
@@ -1317,20 +1373,44 @@
   stroke: #d4daef;
 }
 
+.exly-offer-plot-area {
+  fill: rgba(248, 251, 255, 0.72);
+  stroke: #d3dbf0;
+}
+
 .exly-offer-visual-grid {
-  stroke: #d7deef;
-  stroke-width: 1.4;
+  stroke: #d5dced;
+  stroke-width: 1.2;
   fill: none;
+}
+
+.exly-offer-axis {
+  stroke: #bcc7e0;
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.exly-offer-axis-label {
+  fill: #677391;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  text-anchor: middle;
+}
+
+.exly-offer-axis-label-y {
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
 
 .exly-offer-visual-trad,
 .exly-offer-visual-exly {
   fill: none;
   stroke-linecap: round;
-  stroke-width: 4.6;
-  stroke-dasharray: 420;
-  stroke-dashoffset: 420;
-  animation: exly-offer-line-trace 5s ease-in-out infinite;
+  stroke-width: 4.2;
+  stroke-dasharray: 460;
+  stroke-dashoffset: 460;
 }
 
 .exly-offer-visual-trad {
@@ -1339,11 +1419,24 @@
 
 .exly-offer-visual-exly {
   stroke: #2bb278;
-  animation-delay: -1.2s;
 }
 
 .exly-offer-visual-dot {
-  animation: exly-soft-pulse 2.6s ease-in-out infinite;
+  stroke: #f4f7ff;
+  stroke-width: 2;
+  transform-origin: center;
+}
+
+.exly-reveal.is-visible .exly-offer-visual-trad {
+  animation: exly-offer-line-trace 1.2s cubic-bezier(0.22, 0.75, 0.28, 1) forwards;
+}
+
+.exly-reveal.is-visible .exly-offer-visual-exly {
+  animation: exly-offer-line-trace 1.2s cubic-bezier(0.22, 0.75, 0.28, 1) 180ms forwards;
+}
+
+.exly-reveal.is-visible .exly-offer-visual-dot {
+  animation: exly-offer-dot-pulse 2.4s ease-in-out infinite;
 }
 
 .exly-offer-visual-dot-trad {
@@ -1368,6 +1461,25 @@
   font-size: 0.74rem;
   font-weight: 700;
   color: #59627f;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.exly-offer-legend span::before {
+  content: "";
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.exly-offer-legend span:first-child::before {
+  background: #f05a7b;
+}
+
+.exly-offer-legend span:last-child::before {
+  background: #2bb278;
 }
 
 .exly-detail-card h3 {
@@ -1770,10 +1882,486 @@
   font-weight: 800;
 }
 
+.exly-cost-compare-grid {
+  margin-top: 1rem;
+}
+
+.exly-cost-compare-grid .exly-cost-table {
+  margin-top: 0;
+}
+
+.exly-cost-visual-stack {
+  margin-top: 0.78rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.exly-cost-visual-card {
+  border: 1px solid #d3d9ea;
+  border-radius: 1rem;
+  background: linear-gradient(160deg, #ffffff 0%, #f7f9ff 100%);
+  padding: 0.72rem;
+}
+
+.exly-cost-visual-card.is-traditional {
+  border-color: #ebccda;
+  background: linear-gradient(160deg, #fff9fb 0%, #fff4f8 100%);
+}
+
+.exly-cost-visual-card.is-revx {
+  border-color: #c8e3d3;
+  background: linear-gradient(160deg, #f5fcf8 0%, #eff9f3 100%);
+}
+
+.exly-cost-visual-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.62rem;
+}
+
+.exly-cost-visual-head span {
+  color: #4e5a7b;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exly-cost-visual-head svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.exly-cost-visual-card.is-traditional .exly-cost-visual-head svg {
+  color: #d45579;
+}
+
+.exly-cost-visual-card.is-revx .exly-cost-visual-head svg {
+  color: #269663;
+}
+
+.exly-cost-visual-graph {
+  width: 100%;
+  display: block;
+  margin-top: 0.46rem;
+}
+
+.exly-cost-visual-grid {
+  fill: none;
+  stroke: #dbe2f2;
+  stroke-width: 1.2;
+}
+
+.exly-cost-visual-trad-line,
+.exly-cost-visual-revx-line {
+  fill: none;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-dasharray: 620;
+  animation: exly-flow-draw 5.5s ease-in-out infinite;
+}
+
+.exly-cost-visual-trad-line {
+  stroke: #e95c79;
+}
+
+.exly-cost-visual-revx-line {
+  stroke: #24a86c;
+  animation-direction: reverse;
+}
+
+.exly-cost-visual-trad-dot,
+.exly-cost-visual-revx-dot {
+  animation: exly-soft-pulse 2.6s ease-in-out infinite;
+}
+
+.exly-cost-visual-trad-dot {
+  fill: #e95c79;
+}
+
+.exly-cost-visual-revx-dot {
+  fill: #24a86c;
+}
+
+.exly-cost-visual-card p {
+  margin: 0.42rem 0 0;
+  color: #55607b;
+  font-size: 0.83rem;
+  line-height: 1.52;
+}
+
+.exly-cost-visual-card .exly-vs-avatar {
+  width: min(100%, 340px);
+  margin-top: 0.36rem;
+}
+
+.exly-cost-visual-card .exly-vs-head {
+  filter: drop-shadow(0 4px 6px rgba(36, 44, 69, 0.14));
+}
+
+.exly-cost-visual-card .exly-vs-shirt {
+  filter: drop-shadow(0 4px 6px rgba(35, 39, 57, 0.1));
+}
+
+.exly-cost-visual-card .exly-vs-metric {
+  font-size: 8.6px;
+  letter-spacing: 0.02em;
+}
+
+.exly-vs-visual {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.62rem;
+}
+
+.exly-vs-card {
+  border: 1px solid #d2d7e8;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  padding: 0.62rem;
+  box-shadow: 0 16px 24px -24px rgba(20, 25, 40, 0.36);
+}
+
+.exly-vs-card-traditional {
+  border-color: #e7cad6;
+}
+
+.exly-vs-card-revx {
+  border-color: #c9e2d3;
+}
+
+.exly-vs-card > p,
+.exly-vs-card > span {
+  margin: 0;
+}
+
+.exly-vs-card > p {
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #58617c;
+}
+
+.exly-vs-card > span {
+  margin-top: 0.34rem;
+  display: inline-block;
+  color: #4f5973;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.exly-vs-center {
+  border: 1px solid #cfd6ea;
+  border-radius: 999px;
+  background: #f6f9ff;
+  color: #5c67a1;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.42rem 0.54rem;
+}
+
+.exly-vs-avatar {
+  width: min(100%, 350px);
+  height: auto;
+  display: block;
+  margin: 0.3rem auto 0;
+}
+
+.exly-vs-bg {
+  stroke-width: 1.5;
+}
+
+.exly-vs-bg-bad {
+  fill: #fff8fa;
+  stroke: #ecd2dc;
+}
+
+.exly-vs-bg-good {
+  fill: #f3fbf7;
+  stroke: #c7e1d1;
+}
+
+.exly-vs-panel {
+  stroke-width: 1.4;
+}
+
+.exly-vs-panel-bad {
+  fill: #fdf5f8;
+  stroke: #e8c4d1;
+}
+
+.exly-vs-panel-good {
+  fill: #edf8f2;
+  stroke: #b7dcc8;
+}
+
+.exly-vs-head {
+  stroke-width: 1.9;
+}
+
+.exly-vs-head-bad {
+  fill: #ffe8ef;
+  stroke: #d87a97;
+}
+
+.exly-vs-head-good {
+  fill: #ddf5e7;
+  stroke: #2f9968;
+}
+
+.exly-vs-hair {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exly-vs-hair-bad {
+  fill: #c65d7c;
+}
+
+.exly-vs-hair-good {
+  fill: #2d8a60;
+}
+
+.exly-vs-brow {
+  fill: none;
+  stroke: #465073;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.exly-vs-eye-white {
+  fill: #ffffff;
+  stroke: #a6b0c9;
+  stroke-width: 1;
+}
+
+.exly-vs-eye-pupil {
+  fill: #2a334d;
+}
+
+.exly-vs-cheek {
+  opacity: 0.65;
+}
+
+.exly-vs-cheek-bad {
+  fill: #f7b2c2;
+}
+
+.exly-vs-cheek-good {
+  fill: #b0eacb;
+}
+
+.exly-vs-mouth-bad,
+.exly-vs-mouth-good {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}
+
+.exly-vs-mouth-bad {
+  stroke: #c84d71;
+}
+
+.exly-vs-mouth-good {
+  stroke: #278f61;
+}
+
+.exly-vs-body {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.exly-vs-body-bad {
+  stroke: #e56a8a;
+}
+
+.exly-vs-body-good {
+  stroke: #32b575;
+}
+
+.exly-vs-shirt {
+  stroke-width: 1.8;
+}
+
+.exly-vs-shirt-bad {
+  fill: #f9dbe5;
+  stroke: #df8ea5;
+}
+
+.exly-vs-shirt-good {
+  fill: #d7f1e1;
+  stroke: #69bd93;
+}
+
+.exly-vs-mini-chart-bad,
+.exly-vs-mini-chart-good {
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exly-vs-mini-chart-axis {
+  fill: none;
+  stroke: #bcc4d8;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.exly-vs-mini-chart-bad {
+  stroke: #cb5f82;
+}
+
+.exly-vs-mini-chart-good {
+  stroke: #2aa06e;
+}
+
+.exly-vs-arm {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.exly-vs-arm-bad {
+  stroke: #d47f99;
+}
+
+.exly-vs-arm-good {
+  stroke: #49ab84;
+}
+
+.exly-vs-accent {
+  stroke-width: 1.8;
+  animation: exly-vs-accent-pulse 2.8s ease-in-out infinite;
+}
+
+.exly-vs-accent-bad {
+  fill: #ffe4ed;
+  stroke: #d97f98;
+}
+
+.exly-vs-accent-good {
+  fill: #ddf6e7;
+  stroke: #2f9968;
+}
+
+.exly-vs-accent-mark-bad,
+.exly-vs-accent-mark-good {
+  fill: none;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exly-vs-accent-mark-bad {
+  stroke: #bf5a77;
+}
+
+.exly-vs-accent-mark-good {
+  stroke: #248657;
+}
+
+.exly-vs-cloud-bad,
+.exly-vs-cloud-good {
+  opacity: 0.8;
+}
+
+.exly-vs-cloud-bad {
+  fill: #ffdce6;
+}
+
+.exly-vs-cloud-good {
+  fill: #d4f4e3;
+}
+
+.exly-vs-sweat {
+  fill: #8aa9f5;
+  animation: exly-vs-sweat 1.8s ease-in-out infinite;
+}
+
+.exly-vs-coin {
+  fill: #ffd873;
+  stroke: #cf9d24;
+  stroke-width: 1.8;
+  animation: exly-vs-coin 2.2s ease-in-out infinite;
+}
+
+.exly-vs-coin-mark {
+  fill: #a9780d;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.exly-vs-confetti {
+  fill: #36b677;
+  animation: exly-vs-confetti 2.4s ease-in-out infinite;
+}
+
+.exly-vs-confetti-2 {
+  fill: #6f81f2;
+  animation-delay: -1.2s;
+}
+
+.exly-vs-stress,
+.exly-vs-spark {
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.exly-vs-stress {
+  stroke: #e56a8a;
+  animation: exly-vs-stress 1.9s ease-in-out infinite;
+}
+
+.exly-vs-stress-2 {
+  animation-delay: -0.95s;
+}
+
+.exly-vs-spark {
+  stroke: #26a96b;
+  animation: exly-vs-spark 2s ease-in-out infinite;
+}
+
+.exly-vs-spark-2 {
+  animation-delay: -1s;
+}
+
+.exly-vs-metric {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+}
+
+.exly-vs-metric-bad {
+  fill: #b64c67;
+}
+
+.exly-vs-metric-good {
+  fill: #1f8e5b;
+}
+
+.exly-vs-avatar-trad {
+  animation: exly-vs-bob-bad 5.4s ease-in-out infinite;
+}
+
+.exly-vs-avatar-good {
+  animation: exly-vs-bob-good 5.4s ease-in-out infinite;
+}
+
 .exly-savings-grid {
   margin-top: 0.85rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.72rem;
 }
 
@@ -2182,6 +2770,123 @@
   gap: 0.8rem;
 }
 
+.exly-included-support {
+  margin-top: 0.82rem;
+  border: 1px solid #cfd8ee;
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, #f7faff 0%, #f3fbf8 100%);
+  padding: 0.78rem 0.86rem;
+  box-shadow: 0 22px 34px -32px rgba(26, 33, 52, 0.34);
+  overflow: hidden;
+}
+
+.exly-included-support-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.exly-included-support-head p,
+.exly-included-support-head span {
+  margin: 0;
+}
+
+.exly-included-support-head p {
+  color: #3f4d72;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.exly-included-support-head span {
+  color: #5a647f;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  max-width: 56ch;
+}
+
+.exly-included-logo-row {
+  margin-top: 0.56rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.exly-included-logo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  border: 1px solid #d3dbef;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #4c5674;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  padding: 0.22rem 0.44rem 0.22rem 0.22rem;
+  box-shadow: 0 14px 22px -24px rgba(22, 27, 45, 0.46);
+}
+
+.exly-included-logo-icon {
+  width: 1.02rem;
+  height: 1.02rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.exly-included-logo-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.exly-included-logo-icon.is-shopify,
+.exly-included-logo-icon.is-analytics,
+.exly-included-logo-icon.is-razorpay {
+  border-radius: 0.24rem;
+}
+
+.exly-included-support-flow {
+  width: 100%;
+  display: block;
+  margin-top: 0.45rem;
+}
+
+.exly-included-support-flow path:first-child {
+  fill: none;
+  stroke: #d5def1;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.exly-included-support-flow path:nth-child(2) {
+  fill: none;
+  stroke: #5f72f1;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: exly-flow-draw 7.4s ease-in-out infinite;
+}
+
+.exly-included-support-flow circle {
+  fill: #5f72f1;
+  animation: exly-soft-pulse 2.4s ease-in-out infinite;
+}
+
+.exly-included-support-flow circle:nth-child(4),
+.exly-included-support-flow circle:nth-child(6),
+.exly-included-support-flow circle:nth-child(8) {
+  animation-delay: -1.2s;
+}
+
 .exly-included-cartoon {
   margin-top: 0.84rem;
   border: 1px solid #d5dced;
@@ -2230,23 +2935,14 @@
   padding: 1rem;
 }
 
-.exly-included-card > p {
-  margin: 0;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #646a7d;
-  font-weight: 700;
-}
-
 .exly-proof-stats {
   margin-top: 0.95rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.85fr);
   gap: 0.65rem;
 }
 
-.exly-proof-stats span {
+.exly-proof-stats > span {
   border: 1px solid #d2d4dc;
   border-radius: 999px;
   background: #fff;
@@ -2302,6 +2998,10 @@
   border-radius: 1.45rem;
   padding: 1.55rem;
   text-align: center;
+}
+
+.exly-popular-chip-cta {
+  margin: 0 auto 0.72rem;
 }
 
 .exly-final-cta h2 {
@@ -2511,18 +3211,67 @@
   grid-column: 2;
 }
 
-.exly-included-card > p {
+.exly-included-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.exly-included-card-head > p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #646a7d;
+  font-weight: 700;
 }
 
-.exly-included-card > p svg {
+.exly-included-card-head > p svg {
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
   color: #5e69ff;
+}
+
+.exly-included-head-mini {
+  width: 112px;
+  height: 36px;
+  flex: 0 0 auto;
+}
+
+.exly-included-head-mini rect {
+  fill: rgba(246, 249, 255, 0.84);
+  stroke: #cad4ee;
+  stroke-width: 1.6;
+}
+
+.exly-included-head-mini path {
+  fill: none;
+  stroke: #5f72f1;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 210;
+  stroke-dashoffset: 210;
+  animation: exly-draw-line 5.6s ease-in-out infinite;
+}
+
+.exly-platform-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  margin-right: 0.08rem;
+}
+
+.exly-platform-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  display: block;
 }
 
 .exly-included-card ul {
@@ -2544,17 +3293,80 @@
   margin-top: 0.22rem;
 }
 
-.exly-proof-stats span {
+.exly-included-special-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: #5d6ff0;
+  margin-top: 0.18rem;
+}
+
+.exly-included-mini-pills {
+  margin-top: 0.58rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36rem;
+}
+
+.exly-included-mini-pills span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d3dbef;
+  border-radius: 999px;
+  background: #f8faff;
+  color: #58617b;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.3rem 0.46rem;
+}
+
+.exly-proof-stats > span {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
 }
 
-.exly-proof-stats span svg {
+.exly-proof-stats > span > svg {
   width: 0.95rem;
   height: 0.95rem;
   color: #5968eb;
+}
+
+.exly-proof-investor-pill {
+  grid-column: auto;
+  justify-content: flex-start !important;
+  text-align: left;
+}
+
+.exly-proof-investor-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.exly-investor-inline-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.exly-investor-logo {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  flex: 0 0 auto;
+  border-radius: 0.22rem;
+}
+
+.exly-investor-logo-chiratae {
+  width: 2.95rem;
+  height: 1rem;
+  border-radius: 0.16rem;
 }
 
 .exly-guarantee-head {
@@ -2564,26 +3376,30 @@
   gap: 0.9rem;
 }
 
-.exly-guarantee-head svg {
-  width: 120px;
-  height: 52px;
-  flex: 0 0 auto;
-  color: #5f6ef0;
+.exly-guarantee-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.44rem;
+  border: 1px solid #cfd6eb;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f8faff 0%, #f2f6ff 100%);
+  padding: 0.34rem 0.62rem 0.34rem 0.34rem;
+  box-shadow: 0 10px 18px -18px rgba(40, 52, 94, 0.48);
 }
 
-.exly-guarantee-head rect,
-.exly-guarantee-head path {
-  stroke: currentColor;
-  stroke-width: 1.8;
+.exly-guarantee-brand-logo {
+  width: 1.26rem;
+  height: 1.26rem;
+  border-radius: 0.28rem;
+  object-fit: cover;
 }
 
-.exly-guarantee-head rect {
-  fill: rgba(95, 110, 240, 0.07);
-}
-
-.exly-guarantee-head path {
-  stroke-dasharray: 120;
-  animation: exly-draw-line 4.8s ease-in-out infinite;
+.exly-guarantee-brand span {
+  color: #3f4e82;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .exly-guarantee-card ul {
@@ -3296,12 +4112,113 @@
 
 @keyframes exly-offer-line-trace {
   0% {
-    stroke-dashoffset: 420;
-    opacity: 0.75;
+    stroke-dashoffset: 460;
+    opacity: 0.2;
   }
-  42%,
   100% {
     stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes exly-offer-dot-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: saturate(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: saturate(1.12);
+  }
+}
+
+@keyframes exly-vs-bob-bad {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1.5px);
+  }
+}
+
+@keyframes exly-vs-bob-good {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+}
+
+@keyframes exly-vs-accent-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes exly-vs-stress {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: rotate(7deg);
+    opacity: 1;
+  }
+}
+
+@keyframes exly-vs-spark {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 1;
+  }
+}
+
+@keyframes exly-vs-sweat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+}
+
+@keyframes exly-vs-coin {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(8deg);
+  }
+}
+
+@keyframes exly-vs-confetti {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-3px);
     opacity: 1;
   }
 }
@@ -3335,6 +4252,28 @@
   50% {
     transform: scale(1.08);
     opacity: 1;
+  }
+}
+
+@keyframes exly-popular-pop {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 10px 16px -14px rgba(181, 84, 30, 0.65);
+  }
+  50% {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 20px -14px rgba(181, 84, 30, 0.72);
+  }
+}
+
+@keyframes exly-popular-flicker {
+  0%,
+  100% {
+    transform: rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.08);
   }
 }
 
@@ -3618,6 +4557,15 @@
     padding: 0.18rem;
   }
 
+  .exly-cost-visual-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-included-support-head {
+    flex-direction: column;
+    gap: 0.36rem;
+  }
+
   .exly-savings-grid article {
     grid-template-columns: 1.75rem 1fr;
   }
@@ -3655,9 +4603,17 @@
     align-items: flex-start;
   }
 
-  .exly-guarantee-head svg {
-    width: 90px;
-    height: 42px;
+  .exly-guarantee-brand {
+    padding: 0.3rem 0.52rem 0.3rem 0.3rem;
+  }
+
+  .exly-guarantee-brand-logo {
+    width: 1.08rem;
+    height: 1.08rem;
+  }
+
+  .exly-guarantee-brand span {
+    font-size: 0.68rem;
   }
 
   .exly-final-cta {
@@ -3988,6 +4944,14 @@
     grid-template-columns: 1fr;
   }
 
+  .exly-vs-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .exly-vs-center {
+    justify-self: center;
+  }
+
   .exly-offer-head {
     flex-wrap: wrap;
   }
@@ -4067,8 +5031,52 @@
     padding: 0.9rem;
   }
 
+  .exly-included-support {
+    padding: 0.64rem;
+    border-radius: 1rem;
+  }
+
+  .exly-included-support-head p {
+    font-size: 0.73rem;
+  }
+
+  .exly-included-support-head span {
+    font-size: 0.76rem;
+  }
+
+  .exly-included-logo-pill {
+    font-size: 0.64rem;
+    padding: 0.2rem 0.36rem 0.2rem 0.2rem;
+  }
+
+  .exly-included-logo-icon {
+    width: 0.94rem;
+    height: 0.94rem;
+  }
+
+  .exly-included-support-flow {
+    margin-top: 0.32rem;
+  }
+
+  .exly-included-head-mini {
+    width: 96px;
+    height: 32px;
+  }
+
   .exly-cost-motion {
     display: none;
+  }
+
+  .exly-cost-visual-card {
+    padding: 0.62rem;
+  }
+
+  .exly-cost-visual-head span {
+    font-size: 0.66rem;
+  }
+
+  .exly-cost-visual-card p {
+    font-size: 0.76rem;
   }
 
   .exly-cost-chip-row {
@@ -4115,8 +5123,17 @@
     padding: 0.3rem 0.5rem;
   }
 
+  .exly-popular-chip {
+    font-size: 0.56rem;
+    padding: 0.28rem 0.42rem;
+  }
+
   .exly-offer-visual {
     margin-top: 0.84rem;
+  }
+
+  .exly-vs-card {
+    padding: 0.72rem;
   }
 
   .exly-offer-legend span {
@@ -4164,12 +5181,12 @@
     font-size: 0.66rem;
   }
 
-  .exly-proof-stats span {
+  .exly-proof-stats > span {
     justify-content: flex-start;
   }
 
-  .exly-guarantee-head svg {
-    display: none;
+  .exly-guarantee-brand {
+    align-self: flex-start;
   }
 
   .exly-process-step-index {
@@ -4572,6 +5589,8 @@
   .exly-phone-feed-line,
   .exly-phone-feed-progress span,
   .exly-phone-activity-row span,
+  .exly-popular-chip,
+  .exly-popular-icon,
   .exly-hero-insight-row span,
   .exly-hero-insight-row svg path,
   .exly-offer-cartoon-arrow,
@@ -4595,6 +5614,21 @@
   .exly-section-title-svg path,
   .exly-cost-motion-red,
   .exly-cost-motion-green,
+  .exly-cost-visual-trad-line,
+  .exly-cost-visual-revx-line,
+  .exly-cost-visual-trad-dot,
+  .exly-cost-visual-revx-dot,
+  .exly-offer-visual-trad,
+  .exly-offer-visual-exly,
+  .exly-offer-visual-dot,
+  .exly-vs-avatar-trad,
+  .exly-vs-avatar-good,
+  .exly-vs-accent,
+  .exly-vs-stress,
+  .exly-vs-spark,
+  .exly-vs-sweat,
+  .exly-vs-coin,
+  .exly-vs-confetti,
   .exly-live-trad-curve,
   .exly-live-stable-blue,
   .exly-live-stable-green,
@@ -5437,7 +6471,7 @@ html {
   }
 
   .exly-hero-top h1 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(2.25rem, 10.6vw, 3.35rem);
     line-height: 1.06;
     max-width: 11ch;
     letter-spacing: -0.025em;
@@ -5445,8 +6479,8 @@ html {
 
   .exly-hero-top p {
     margin-top: 0.9rem;
-    font-size: 0.95rem;
-    line-height: 1.58;
+    font-size: 1.02rem;
+    line-height: 1.54;
   }
 
   .exly-hero-insight-row {
@@ -5517,7 +6551,7 @@ html {
     grid-template-columns: 1fr;
   }
 
-  .exly-proof-stats span {
+  .exly-proof-stats > span {
     text-align: left;
     justify-content: flex-start;
   }
@@ -5585,7 +6619,7 @@ html {
   }
 
   .exly-cost-row .exly-cost-cell:nth-child(3)::before {
-    content: "Exly";
+    content: "RevX";
   }
 
   .exly-cost-good {
@@ -5647,12 +6681,20 @@ html {
   }
 
   .exly-hero-top h1 {
-    font-size: clamp(1.74rem, 10.4vw, 2.35rem);
+    font-size: clamp(1.9rem, 10.8vw, 2.6rem);
     max-width: 10.4ch;
   }
 
   .exly-hero-top p {
-    font-size: 0.9rem;
+    font-size: 0.96rem;
+  }
+
+  .exly-included-support {
+    padding: 0.58rem;
+  }
+
+  .exly-included-support-flow {
+    display: none;
   }
 
   .exly-hero-underline {

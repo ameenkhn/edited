@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ChevronRight } from "lucide-react";
+import { BadgeCheck, BarChart3, ChevronRight, Flame, MessageCircle, Users2 } from "lucide-react";
 
 const scene = {
   handPhone:
@@ -8,128 +8,120 @@ const scene = {
 
 const offerScope = [
   "Meta + Google Ads management",
-  "Landing pages + funnels on your own domain",
-  "CRM setup with segmentation + lead scoring",
+  "Landing pages + funnel setup",
+  "CRM setup + lead tracking",
   "Email + WhatsApp automation",
-  "Payment gateway integration",
-  "Analytics dashboard + weekly review calls",
-  "Dedicated team: Account Manager, Media Buyer, Tech Support",
+  "Payment + analytics integration",
+  "Weekly review calls with action plan",
 ];
 
 const scopeHighlights = [
-  { title: "Weekly strategy reviews", detail: "Every 7 days" },
-  { title: "Dedicated experts", detail: "AM + Media Buyer + Tech Support" },
-  { title: "Ownership retained", detail: "Accounts, funnels, and data stay with you" },
-  { title: "Aligned pricing", detail: "No revenue share and no % ad spend fee" },
+  { title: "Zero revenue share", detail: "Keep what you earn" },
+  { title: "Managed stack", detail: "Ads, funnel, CRM, automation" },
+  { title: "Weekly reviews", detail: "Clear next steps every week" },
+  { title: "Full ownership", detail: "Accounts and data stay with you" },
 ];
 
 const problemPoints = [
-  "Traditional agencies typically charge 15%-20% of ad spend.",
-  "Extra charges for landing pages, CRM, email tools, and payments.",
-  "Total leak can hit 30%-40% of revenue across agency + tools.",
-  "Incentives are misaligned: spend grows, agency fee grows.",
-  "Multiple vendors create coordination chaos and broken tracking.",
-];
-
-const comparisonRows = [
-  {
-    label: "Agency fee (15% of ₹10L x 12)",
-    traditional: "₹18,00,000",
-    exly: "Included in fixed fee",
-  },
-  {
-    label: "Tools + stack (landing, CRM, automation, payments)",
-    traditional: "₹1,41,000",
-    exly: "Included",
-  },
-  {
-    label: "Total per year (before ad spend)",
-    traditional: "₹19,41,000",
-    exly: "₹9,00,000",
-  },
+  "Agency fees grow when ad spend grows.",
+  "Tool bills keep adding up every month.",
+  "Many vendors means slow execution.",
+  "Tracking breaks across disconnected systems.",
+  "Your profit gets hit from every side.",
 ];
 
 const includeAds = [
-  "Campaign setup + account structure",
-  "Audience research + segmentation",
-  "Creative testing + A/B iterations",
-  "Retargeting strategy",
-  "Daily monitoring and optimization",
+  "Campaign setup",
+  "Audience targeting",
+  "Creative testing",
+  "Daily optimization",
 ];
 
 const includeTech = [
-  "Landing pages + funnel architecture",
-  "CRM + lead scoring",
-  "Email + WhatsApp automations",
-  "Payment gateway setup",
-  "Analytics dashboard + weekly strategy calls",
+  "Landing page + checkout flow",
+  "CRM + lead pipeline",
+  "Email + WhatsApp automation",
+  "Payments + dashboard tracking",
+];
+
+const includedSupportLogos = [
+  { name: "Google Ads", kind: "google" },
+  { name: "Meta Ads", kind: "meta" },
+  { name: "WhatsApp", kind: "whatsapp" },
+  { name: "Shopify", kind: "shopify" },
+  { name: "Razorpay", kind: "razorpay" },
+  { name: "Analytics", kind: "analytics" },
 ];
 
 const proofStats = [
-  "₹50Cr+ ad budget managed",
-  "650+ creators supported",
-  "Backed by Y Combinator, Lightspeed, Chiratae, Kunal Shah",
+  { label: "₹50Cr+ ad budget managed", Icon: BarChart3 },
+  { label: "1,00,000+ creators supported", Icon: Users2 },
+  { label: "Backed by Y Combinator, Lightspeed, Chiratae, Kunal Shah", investorLogos: true },
 ];
 
 const guarantees = [
-  "You own ad accounts, pages, funnels, data, and creatives.",
-  "No lock-in. Everything remains live and usable if you exit.",
-  "No revenue-share penalty.",
-  "No percentage fee on ad spend.",
+  "You own ad accounts, pages, funnels, and data.",
+  "No lock-in. Your stack stays live if you exit.",
+  "No revenue share and no % fee on ad spend.",
 ];
 
 const processPhases = [
   {
     phase: "Phase 1 (Week 1)",
-    title: "Discovery + Setup",
-    points: ["Discovery", "Market analysis", "Tech setup", "Creative brief"],
+    title: "Audit + Setup",
+    points: ["Business audit", "Tracking setup", "Creative plan"],
   },
   {
     phase: "Phase 2 (Week 2)",
     title: "Build + Tracking",
-    points: ["Landing pages", "Funnels", "Campaign structure", "Tracking"],
+    points: ["Landing flow", "Campaign structure", "Tracking checks"],
   },
   {
     phase: "Phase 3 (Week 3)",
     title: "Launch + Optimize",
-    points: ["Campaign launch", "A/B testing", "CPL optimization", "Funnel fixes"],
+    points: ["Launch campaigns", "A/B tests", "CPL optimization"],
   },
   {
     phase: "Phase 4 (Month 2)",
     title: "Scale Winners",
-    points: ["Scale winners", "Budget increases", "New audiences", "Retargeting + reviews"],
+    points: ["Scale winners", "Add new audiences", "Weekly growth reviews"],
   },
 ];
 
 const painSignals = [
-  { title: "30-40% revenue drain", detail: "Agency fees + tool stack eat margins" },
-  { title: "10-20% spend fee", detail: "Costs rise as ad budget scales" },
-  { title: "Scattered stack", detail: "Landing, CRM, WhatsApp, payments split" },
-  { title: "Extra tool spend", detail: "Website, CRM, automation billed separately" },
-  { title: "Poor integrations", detail: "Lead leakage + manual work + bad tracking" },
-  { title: "Low ownership control", detail: "Accounts, creatives, pixels locked by agency" },
-  { title: "No profit accountability", detail: "Paid on spend, not profitable growth" },
-  { title: "Margins shrink at scale", detail: "Fee model punishes growth velocity" },
-  { title: "Operational overhead", detail: "Too many vendors to coordinate" },
-  { title: "High lock-in risk", detail: "Switching stacks/agencies is painful" },
-  { title: "Manual ops overload", detail: "Reporting + fixes consume creator bandwidth" },
-  { title: "Attribution blind spots", detail: "Disconnected tools hide true ROI signals" },
+  { title: "Revenue share model", detail: "You lose margin on every sale", side: "left" },
+  { title: "Rising % fee", detail: "Agency fee grows with spend", side: "left" },
+  { title: "Tool bill overload", detail: "Separate stack means extra cost", side: "left" },
+  { title: "Slow operations", detail: "Too many vendors to manage", side: "left" },
+  { title: "Broken tracking", detail: "Hard to see true ROI clearly", side: "left" },
+  { title: "Zero revenue share", detail: "Keep 100% of your profits", side: "right" },
+  { title: "Fixed cost model", detail: "Predictable monthly economics", side: "right" },
+  { title: "Managed stack", detail: "Ads, funnel, CRM, automation", side: "right" },
+  { title: "Automation first", detail: "Less manual work every week", side: "right" },
+  { title: "Profit-focused growth", detail: "Scale with better margins", side: "right" },
 ];
 
 const phoneFeed = [
-  { title: "Meta Ads", value: "ROAS 4.8x", delta: "+28%", tags: ["Meta", "Prospecting"], progress: 82, tone: "good" },
-  { title: "Google Search", value: "CPL ₹182", delta: "-14%", tags: ["Google", "Intent"], progress: 74, tone: "good" },
-  { title: "Retargeting", value: "CVR 5.1%", delta: "+19%", tags: ["Retargeting", "Warm"], progress: 79, tone: "good" },
-  { title: "CRM Automation", value: "Lead score synced", delta: "Live", tags: ["CRM", "Automation"], progress: 88, tone: "good" },
-  { title: "Revenue Snapshot", value: "₹4,80,123", delta: "+41%", tags: ["Revenue", "Attribution"], progress: 91, tone: "good" },
+  { type: "section", title: "Services Offered" },
+  { type: "item", title: "Service", value: "Meta + Google Ads Management", delta: "Live", tags: ["Ads", "Managed"], tone: "good" },
+  { type: "item", title: "Service", value: "Landing + Funnel Setup", delta: "Live", tags: ["Funnel", "Checkout"], tone: "good" },
+  { type: "item", title: "Service", value: "CRM + Automation Flows", delta: "Live", tags: ["CRM", "Automation"], tone: "good" },
+  { type: "section", title: "Creator Milestones After Moving to Exly" },
+  { type: "item", title: "Milestone", value: "2.1x ROAS in Month 1", delta: "Growth", tags: ["Revenue", "ROAS"], tone: "good" },
+  { type: "item", title: "Milestone", value: "+38% Qualified Leads", delta: "Growth", tags: ["Leads", "Pipeline"], tone: "good" },
+  { type: "item", title: "Milestone", value: "12 hrs/week Ops Saved", delta: "Efficiency", tags: ["Ops", "Time Saved"], tone: "good" },
 ];
 
-const phoneTicker = ["ROAS 4.8x", "CPL ₹182", "CVR 5.1%", "650+ creators", "₹50Cr+ managed"];
+const phoneTicker = ["Managed Stack", "Services Live", "2.1x ROAS", "+38% Leads", "12 hrs/week saved"];
 
-const phoneTraces = [
-  "M12 40c38-10 58-8 94-18 35-10 56-16 102-22",
-  "M12 42c26-13 46-12 72-18 31-8 64-8 124-24",
-  "M12 41c36-7 64-18 96-22 38-5 68-9 100-16",
+const valueBadges = ["Zero Revenue Share", "Managed Stack", "Automation", "Fixed Cost", "Higher Profits"];
+
+const costComparisonRows = [
+  { label: "Total annual cost", traditional: "₹19,41,000", revx: "₹9,00,000", revxAccent: true },
+  { label: "Annual money saved with RevX", traditional: "—", revx: "₹10,41,000", revxAccent: true },
+  { label: "Savings multiple", traditional: "1x baseline", revx: "Up to 2x lower cost", revxAccent: true },
+  { label: "Team + stack handling", traditional: "Multiple vendors", revx: "One managed stack" },
+  { label: "Profit impact", traditional: "Lower retained margin", revx: "Higher retained profit", revxAccent: true },
 ];
 
 const ExlyDossier = () => {
@@ -162,7 +154,7 @@ const ExlyDossier = () => {
         </div>
         <nav className="exly-nav-links">
           <a href="#offer">Offer</a>
-          <a href="#cost">Cost</a>
+          <a href="#cost">Savings</a>
           <a href="#process">Process</a>
           <a href="#cta" className="exly-signup-link">
             Book Call
@@ -172,32 +164,17 @@ const ExlyDossier = () => {
 
       <section className="exly-shell exly-hero-top exly-reveal">
         <h1>
-          We <span className="exly-hero-underline">don’t take percentage</span> charges. We{" "}
-          <span className="exly-hero-underline exly-hero-underline-delay">charge a fixed fee</span>.
+          Keep <span className="exly-hero-underline">100%</span> of the{" "}
+          <span className="exly-hero-underline exly-hero-underline-delay">Revenue &amp; Profits</span> You Make
         </h1>
         <p>
-          Fixed-fee Meta + Google Ads growth system for creators spending heavily on ads,
-          designed to replace percentage-based agency models.
+          RevX runs your ads, funnel, CRM, and automation in one fixed-cost model.
+          No revenue share. Book a call to see your custom savings plan.
         </p>
         <div className="exly-hero-insight-row" aria-hidden="true">
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M4 17h16M6.5 17V9.3M12 17V6.6M17.5 17v-4.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            Fixed-fee model
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M12 3.2l6 2.5v4c0 3.5-2.4 6.7-6 7.8-3.6-1.1-6-4.3-6-7.8v-4zM9 10.7l2 2 4-4.2" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            No revenue share
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M5 17l6-6 4 4 4-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            Scale with margin
-          </span>
+          {valueBadges.map((badge) => (
+            <span key={badge}>{badge}</span>
+          ))}
         </div>
         <button className="exly-cta-btn">
           Book a Strategy Call
@@ -208,11 +185,11 @@ const ExlyDossier = () => {
       <section className="exly-shell exly-stage exly-reveal" aria-label="Exly Meta Ads hero visual">
         <div className="exly-pain-cloud" aria-label="Growth pain points">
           {painSignals.map((item, index) => (
-            <article key={item.title} className={`exly-pain-chip exly-pain-chip-${index + 1}`}>
+            <article key={item.title} className={`exly-pain-chip exly-pain-chip-${index + 1} ${item.side === "right" ? "is-benefit" : "is-problem"}`}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
                 <path
-                  d="M12 7.2v6.8m0 2.8h.01"
+                  d="M7.5 12.4l2.9 2.9 6.1-6.2"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -257,51 +234,56 @@ const ExlyDossier = () => {
             </div>
             <div className="exly-phone-scroll-viewport">
               <div className="exly-phone-scroll-track">
-                {[...phoneFeed, ...phoneFeed].map((item, index) => (
-                  <article key={`${item.title}-${index}`} className={`exly-phone-feed-card ${item.tone === "good" ? "is-good" : ""}`}>
-                    <div className="exly-phone-feed-top">
-                      <p>
-                        <span className="exly-phone-feed-dot" />
-                        {item.title}
-                      </p>
-                      <span>{item.delta}</span>
-                    </div>
-                    <strong>{item.value}</strong>
-                    <div className="exly-phone-feed-tags">
-                      <span>{item.tags[0]}</span>
-                      <span>{item.tags[1]}</span>
-                    </div>
-                    <div className="exly-phone-feed-progress">
-                      <span style={{ width: `${item.progress}%` }} />
-                    </div>
-                    <svg viewBox="0 0 220 58" aria-hidden="true">
-                      <path className="exly-phone-feed-grid" d="M10 43h200M10 29h200M10 15h200" />
-                      <path className={`exly-phone-feed-line exly-phone-feed-line-${(index % phoneTraces.length) + 1}`} d={phoneTraces[index % phoneTraces.length]} />
-                    </svg>
-                  </article>
+                {[...phoneFeed, ...phoneFeed, ...phoneFeed, ...phoneFeed].map((item, index) => (
+                  item.type === "section" ? (
+                    <article key={`${item.title}-${index}`} className="exly-phone-feed-section">
+                      <p>{item.title}</p>
+                    </article>
+                  ) : (
+                    <article key={`${item.title}-${index}`} className={`exly-phone-feed-card ${item.tone === "good" ? "is-good" : ""}`}>
+                      <div className="exly-phone-feed-top">
+                        <p>
+                          <span className="exly-phone-feed-dot" />
+                          {item.title}
+                        </p>
+                        <span>{item.delta}</span>
+                      </div>
+                      <strong>{item.value}</strong>
+                      <div className="exly-phone-feed-tags">
+                        <span>{item.tags[0]}</span>
+                        <span>{item.tags[1]}</span>
+                      </div>
+                    </article>
+                  )
                 ))}
               </div>
               <span className="exly-phone-screen-fade exly-phone-screen-fade-top" />
               <span className="exly-phone-screen-fade exly-phone-screen-fade-bottom" />
             </div>
             <div className="exly-phone-activity-row">
-              <span>Creative tests</span>
-              <span>Budget pacing</span>
-              <span>Lead scoring</span>
+              <span>Ads</span>
+              <span>Funnel</span>
+              <span>Automation</span>
             </div>
           </div>
         </div>
       </section>
 
       <section className="exly-shell exly-marquee-headline exly-reveal" id="offer">
-        <p>Zero Revenue Share. Zero % of Ad Spend.</p>
-        <p>Fixed-fee growth partnership built for scale.</p>
+        <p>Save up to 2x annually with the RevX model.</p>
+        <p>See your annual money saved vs traditional agencies.</p>
       </section>
 
       <section className="exly-shell exly-offer-section exly-reveal">
         <article className="exly-price-card">
           <div className="exly-offer-head">
-            <p>Core Offer</p>
+            <div className="exly-offer-title-wrap">
+              <p>Core Offer</p>
+              <span className="exly-popular-chip">
+                <Flame className="exly-popular-icon" size={14} />
+                Popular
+              </span>
+            </div>
             <span className="exly-offer-pill">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -314,26 +296,34 @@ const ExlyDossier = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Fixed-fee model
+              Fixed-cost model
             </span>
           </div>
-          <h2>₹3,00,000 / quarter</h2>
-          <small>Pilot pricing (regular ₹3,90,000 / quarter)</small>
-          <strong>&lt; 1% platform commission</strong>
-          <span>No revenue share and no percentage of ad spend</span>
+          <h2>One team. One fixed cost. Higher profit focus.</h2>
+          <small>Get your custom plan on the strategy call.</small>
+          <strong>No revenue share. No % fee on ad spend.</strong>
+          <span>Everything is built to improve margins as you scale.</span>
 
           <div className="exly-offer-visual" aria-hidden="true">
             <svg viewBox="0 0 420 150">
               <rect className="exly-offer-visual-frame" x="1" y="1" width="418" height="148" rx="18" />
-              <path className="exly-offer-visual-grid" d="M30 112h360M30 82h360M30 52h360" />
-              <path className="exly-offer-visual-trad" d="M34 108c66-6 96-24 146-34 62-12 112-18 204-22" />
-              <path className="exly-offer-visual-exly" d="M34 111c90-1 165-2 252-3 38 0 66 0 98 0" />
-              <circle className="exly-offer-visual-dot exly-offer-visual-dot-trad" cx="384" cy="52" r="5.5" />
-              <circle className="exly-offer-visual-dot exly-offer-visual-dot-exly" cx="384" cy="108" r="5.5" />
+              <rect className="exly-offer-plot-area" x="34" y="14" width="356" height="104" rx="12" />
+              <path className="exly-offer-axis" d="M40 112V22M40 112H386" />
+              <path className="exly-offer-visual-grid" d="M40 98h346M40 77h346M40 56h346M40 35h346" />
+              <path className="exly-offer-visual-trad" d="M40 106c64-3 99-19 144-33 58-18 114-30 202-33" />
+              <path className="exly-offer-visual-exly" d="M40 108c98-1 184-2 278-2 24 0 45 0 68 0" />
+              <circle className="exly-offer-visual-dot exly-offer-visual-dot-trad" cx="386" cy="40" r="5" />
+              <circle className="exly-offer-visual-dot exly-offer-visual-dot-exly" cx="386" cy="106" r="5" />
+              <text className="exly-offer-axis-label exly-offer-axis-label-y" x="17" y="66" transform="rotate(-90 17 66)">
+                Annual Fee Burden
+              </text>
+              <text className="exly-offer-axis-label" x="212" y="136">
+                Monthly Ad Spend
+              </text>
             </svg>
             <div className="exly-offer-legend">
-              <span>Agency % fee rises</span>
-              <span>Exly stays predictable</span>
+              <span>Traditional fees keep rising</span>
+              <span>RevX stays predictable</span>
             </div>
           </div>
         </article>
@@ -365,10 +355,10 @@ const ExlyDossier = () => {
             ))}
           </ul>
           <div className="exly-scope-tags" aria-hidden="true">
-            <span>Ads</span>
-            <span>Funnels</span>
-            <span>CRM</span>
+            <span>Managed Stack</span>
+            <span>Ownership</span>
             <span>Automation</span>
+            <span>Higher Profits</span>
           </div>
           <div className="exly-scope-foot" aria-label="Included delivery details">
             {scopeHighlights.map((item) => (
@@ -396,15 +386,15 @@ const ExlyDossier = () => {
 
       <section className="exly-shell exly-problem-section exly-reveal" id="problem">
         <div className="exly-section-title-row">
-          <h2>Problem Framing</h2>
+          <h2>Why Traditional Setup Hurts</h2>
           <svg className="exly-section-title-svg" viewBox="0 0 120 40" aria-hidden="true">
             <rect x="1" y="1" width="118" height="38" rx="19" fill="none" />
             <path d="M16 24c10-10 18-10 28 0s18 10 28 0 18-10 28 0" fill="none" />
           </svg>
         </div>
         <p>
-          Percentage-based agencies and fragmented tools create margin loss,
-          misaligned incentives, and operational chaos as spend scales.
+          Most creators pay more every month but keep less profit.
+          That is exactly what RevX fixes.
         </p>
         <div className="exly-problem-grid">
           {problemPoints.map((point, index) => (
@@ -430,69 +420,150 @@ const ExlyDossier = () => {
 
       <section className="exly-shell exly-cost-section exly-reveal" id="cost">
         <div className="exly-section-title-row">
-          <h2>Cost Comparison (₹10L/month ad spend)</h2>
+          <h2>Annual Savings Snapshot</h2>
           <svg className="exly-section-title-svg exly-section-title-svg-green" viewBox="0 0 120 40" aria-hidden="true">
             <rect x="1" y="1" width="118" height="38" rx="19" fill="none" />
             <path d="M14 24h22l12-10 14 14 18-18 26 0" fill="none" />
           </svg>
         </div>
-        <p>Before ad spend, traditional agency + tools can cost over 2x Exly&apos;s model.</p>
+        <p>At ₹10L/month ad spend, creators can save up to 2x per year with RevX.</p>
         <div className="exly-cost-chip-row" aria-hidden="true">
           <span>
             <svg viewBox="0 0 24 24">
               <path d="M4 17h16M6 17V9m6 8V6m6 11v-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
-            Spending up, fee up
+            Spend grows, fee grows
           </span>
           <span>
             <svg viewBox="0 0 24 24">
               <path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
-            Disconnected tools
+            Tool stack costs extra
           </span>
           <span>
             <svg viewBox="0 0 24 24">
               <path d="M5 17l6-6 4 4 4-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
-            Exly keeps it flat
+            RevX keeps it fixed
           </span>
         </div>
-        <div className="exly-cost-motion" aria-hidden="true">
-          <svg viewBox="0 0 560 90">
-            <rect x="0" y="0" width="560" height="90" rx="18" />
-            <path className="exly-cost-motion-grid" d="M22 70h516M22 52h516M22 34h516" />
-            <path className="exly-cost-motion-red" d="M30 66c62-4 100-10 148-20 56-12 104-18 156-22 66-6 134-5 196-3" />
-            <path className="exly-cost-motion-green" d="M30 70c72 0 132-1 204-2 74-1 150-1 296-2" />
-          </svg>
-        </div>
-        <div className="exly-cost-table">
-          <div className="exly-cost-row exly-cost-row-head">
-            <div className="exly-cost-head">Cost Component</div>
-            <div className="exly-cost-head">Traditional</div>
-            <div className="exly-cost-head">Exly</div>
-          </div>
-          {comparisonRows.map((row) => (
-            <div key={row.label} className="exly-cost-row">
-              <div className="exly-cost-cell exly-cost-label">{row.label}</div>
-              <div className="exly-cost-cell">{row.traditional}</div>
-              <div className="exly-cost-cell exly-cost-accent">
-                <span className="exly-cost-good">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                    <path
-                      d="M7.5 12.6l3.1 3.1 5.9-6.1"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  {row.exly}
-                </span>
-              </div>
+        <div className="exly-cost-compare-grid">
+          <div className="exly-cost-table" role="table" aria-label="Traditional vs RevX annual cost comparison">
+            <div className="exly-cost-row exly-cost-row-head" role="row">
+              <div className="exly-cost-head" role="columnheader">Cost Component</div>
+              <div className="exly-cost-head" role="columnheader">Traditional</div>
+              <div className="exly-cost-head" role="columnheader">RevX</div>
             </div>
-          ))}
+            {costComparisonRows.map((row) => (
+              <div className="exly-cost-row" role="row" key={row.label}>
+                <div className="exly-cost-cell exly-cost-label" role="cell">{row.label}</div>
+                <div className="exly-cost-cell" role="cell">{row.traditional}</div>
+                <div className={`exly-cost-cell ${row.revxAccent ? "exly-cost-accent" : ""}`} role="cell">
+                  {row.revxAccent ? (
+                    <span className="exly-cost-good">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <path
+                          d="M7.8 12.5l2.8 2.8 5.9-6.1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      {row.revx}
+                    </span>
+                  ) : (
+                    row.revx
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="exly-cost-visual-stack" aria-hidden="true">
+          <article className="exly-cost-visual-card is-traditional">
+            <div className="exly-cost-visual-head">
+              <span>Traditional agency</span>
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path d="M12 7.2v5.8m0 3h.01" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </div>
+            <svg className="exly-vs-avatar exly-vs-avatar-trad" viewBox="0 0 220 170" aria-hidden="true">
+              <rect className="exly-vs-bg exly-vs-bg-bad" x="6" y="8" width="208" height="154" rx="24" />
+              <rect className="exly-vs-panel exly-vs-panel-bad" x="20" y="27" width="180" height="116" rx="18" />
+              <path className="exly-vs-cloud-bad" d="M38 50c0-6 5-11 11-11 5 0 9 2 11 6 1-1 3-2 5-2 4 0 8 4 8 8z" />
+              <circle className="exly-vs-head exly-vs-head-bad" cx="110" cy="66" r="24" />
+              <path className="exly-vs-hair exly-vs-hair-bad" d="M86 61c1-14 11-22 24-22 11 0 21 6 24 17-7-3-14-5-24-5s-17 3-24 10z" />
+              <path className="exly-vs-brow exly-vs-brow-bad" d="M95 59l9-2M116 57l9 2" />
+              <circle className="exly-vs-eye-white" cx="100" cy="64" r="3.4" />
+              <circle className="exly-vs-eye-white" cx="120" cy="64" r="3.4" />
+              <circle className="exly-vs-eye-pupil" cx="100" cy="64" r="1.7" />
+              <circle className="exly-vs-eye-pupil" cx="120" cy="64" r="1.7" />
+              <circle className="exly-vs-cheek exly-vs-cheek-bad" cx="93" cy="75" r="4.2" />
+              <circle className="exly-vs-cheek exly-vs-cheek-bad" cx="127" cy="75" r="4.2" />
+              <path className="exly-vs-mouth-bad" d="M98 81c7-6 17-6 24 0" />
+              <path className="exly-vs-shirt exly-vs-shirt-bad" d="M72 129c5-20 18-30 38-30s33 10 38 30z" />
+              <path className="exly-vs-arm exly-vs-arm-bad" d="M82 111l-12 8M138 111l12 8" />
+              <path className="exly-vs-mini-chart-axis" d="M24 134h38" />
+              <path className="exly-vs-mini-chart-bad" d="M28 130l7-4 8 6 9-10" />
+              <circle className="exly-vs-accent exly-vs-accent-bad" cx="176" cy="46" r="10" />
+              <path className="exly-vs-accent-mark-bad" d="M172 46h8M176 42v8" />
+              <path className="exly-vs-sweat" d="M147 55c2-3 5-4 7-1s2 6-1 8c-3 2-6 1-7-2-1-2 0-4 1-5z" />
+              <path className="exly-vs-stress" d="M62 44l8 8" />
+              <path className="exly-vs-stress exly-vs-stress-2" d="M150 44l8-8" />
+              <text className="exly-vs-metric exly-vs-metric-bad" x="56" y="154">₹19,41,000 / year</text>
+            </svg>
+            <p>Fee burden keeps rising as ad spend grows.</p>
+          </article>
+
+          <article className="exly-cost-visual-card is-revx">
+            <div className="exly-cost-visual-head">
+              <span>RevX fixed-cost model</span>
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M7.8 12.5l2.8 2.8 5.9-6.1"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <svg className="exly-vs-avatar exly-vs-avatar-good" viewBox="0 0 220 170" aria-hidden="true">
+              <rect className="exly-vs-bg exly-vs-bg-good" x="6" y="8" width="208" height="154" rx="24" />
+              <rect className="exly-vs-panel exly-vs-panel-good" x="20" y="27" width="180" height="116" rx="18" />
+              <path className="exly-vs-cloud-good" d="M157 47c0-6 5-11 11-11 5 0 9 2 11 6 1-1 3-2 5-2 4 0 8 4 8 8z" />
+              <circle className="exly-vs-head exly-vs-head-good" cx="110" cy="66" r="24" />
+              <path className="exly-vs-hair exly-vs-hair-good" d="M86 58c4-12 13-19 24-19 11 0 21 5 25 16-7-3-14-4-25-4s-18 2-24 7z" />
+              <path className="exly-vs-brow exly-vs-brow-good" d="M95 57c3-2 6-2 9 0M116 57c3-2 6-2 9 0" />
+              <circle className="exly-vs-eye-white" cx="100" cy="64" r="3.4" />
+              <circle className="exly-vs-eye-white" cx="120" cy="64" r="3.4" />
+              <circle className="exly-vs-eye-pupil" cx="100" cy="64" r="1.7" />
+              <circle className="exly-vs-eye-pupil" cx="120" cy="64" r="1.7" />
+              <circle className="exly-vs-cheek exly-vs-cheek-good" cx="93" cy="75" r="4.2" />
+              <circle className="exly-vs-cheek exly-vs-cheek-good" cx="127" cy="75" r="4.2" />
+              <path className="exly-vs-mouth-good" d="M97 75c7 9 19 9 26 0" />
+              <path className="exly-vs-shirt exly-vs-shirt-good" d="M72 129c5-20 18-30 38-30s33 10 38 30z" />
+              <path className="exly-vs-arm exly-vs-arm-good" d="M82 111l-12 8M138 111l12 8" />
+              <path className="exly-vs-mini-chart-axis" d="M24 134h38" />
+              <path className="exly-vs-mini-chart-good" d="M28 130l7-2 8-6 9-8" />
+              <circle className="exly-vs-accent exly-vs-accent-good" cx="176" cy="46" r="10" />
+              <path className="exly-vs-accent-mark-good" d="M171.5 46.5l3.1 3.1 5.4-5.5" />
+              <circle className="exly-vs-coin" cx="158" cy="73" r="8.5" />
+              <text className="exly-vs-coin-mark" x="154.5" y="75.5">₹</text>
+              <circle className="exly-vs-confetti" cx="167" cy="37" r="2.2" />
+              <circle className="exly-vs-confetti exly-vs-confetti-2" cx="70" cy="42" r="2" />
+              <path className="exly-vs-spark" d="M46 106l7-8" />
+              <path className="exly-vs-spark exly-vs-spark-2" d="M145 36l6-7" />
+              <text className="exly-vs-metric exly-vs-metric-good" x="64" y="154">₹9,00,000 / year</text>
+            </svg>
+            <p>Predictable operating cost with better margin control.</p>
+          </article>
         </div>
         <div className="exly-savings-grid">
           <article>
@@ -500,16 +571,24 @@ const ExlyDossier = () => {
               <circle cx="16" cy="16" r="15" fill="none" />
               <path d="M10 17l4 4 8-10" fill="none" />
             </svg>
-            <p>At ₹10L/month ad spend</p>
-            <h3>Save ₹10L - ₹15L / year</h3>
+            <p>Cost savings</p>
+            <h3>Save up to ₹10,41,000 annually</h3>
           </article>
           <article>
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <circle cx="16" cy="16" r="15" fill="none" />
               <path d="M10 17l4 4 8-10" fill="none" />
             </svg>
-            <p>At ₹20L/month ad spend</p>
-            <h3>Save ₹25L+ / year</h3>
+            <p>Revenue growth</p>
+            <h3>Reinvest savings into winning campaigns</h3>
+          </article>
+          <article>
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="none" />
+              <path d="M10 17l4 4 8-10" fill="none" />
+            </svg>
+            <p>Operational efficiency</p>
+            <h3>One team and one dashboard for faster execution</h3>
           </article>
         </div>
       </section>
@@ -522,20 +601,103 @@ const ExlyDossier = () => {
             <path d="M14 22h18l9-8 11 12 14-16 12 12h28" fill="none" />
           </svg>
         </div>
+        <article className="exly-included-support" aria-label="Managed integrations">
+          <div className="exly-included-support-head">
+            <p>Managed Integrations</p>
+            <span>One connected stack from ad click to payment, CRM, and automation.</span>
+          </div>
+          <div className="exly-included-logo-row" aria-hidden="true">
+            {includedSupportLogos.map((item) => (
+              <span key={item.name} className="exly-included-logo-pill">
+                <span className={`exly-included-logo-icon is-${item.kind}`}>
+                  {item.kind === "google" && (
+                    <svg viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.22 3.31v2.74h3.6c2.1-1.93 3.26-4.77 3.26-8.06z" />
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.69l-3.6-2.74c-.98.66-2.24 1.06-3.68 1.06-2.83 0-5.23-1.91-6.09-4.47H2.2v2.81C4.01 20.6 7.7 23 12 23z" />
+                      <path fill="#FBBC05" d="M5.91 14.16A6.94 6.94 0 0 1 5.57 12c0-.75.13-1.48.34-2.16V7.03H2.2A10.94 10.94 0 0 0 1 12c0 1.77.42 3.45 1.2 4.97l3.71-2.81z" />
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.2 1.64l3.15-3.15C17.45 2.09 14.96 1 12 1 7.7 1 4.01 3.4 2.2 7.03l3.71 2.81C6.77 7.29 9.17 5.38 12 5.38z" />
+                    </svg>
+                  )}
+                  {item.kind === "meta" && (
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="11" fill="#1877F2" />
+                      <path
+                        fill="#FFFFFF"
+                        d="M13.7 8.3h2V5.2h-2.4c-2.6 0-4.1 1.6-4.1 4.2v2h-2v3h2v5.4h3.3v-5.4h2.5l.4-3h-2.9V9.8c0-.9.4-1.5 1.2-1.5z"
+                      />
+                    </svg>
+                  )}
+                  {item.kind === "whatsapp" && (
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="11" fill="#25D366" />
+                      <path
+                        fill="#FFFFFF"
+                        d="M7.3 18.2l1-3.2a5.9 5.9 0 1 1 2.7 1l-3.7 2.2zm4.7-10.4c-.3 0-.6 0-.8.2-.2.1-.5.5-.6.8-.2.4-.6 1.3.1 2.6.6 1.1 1.8 2.4 3.4 3 .6.3 1.2.3 1.5.2.4-.1.9-.6 1-.9.1-.3.1-.7 0-.8-.1-.1-.3-.2-.6-.4l-.9-.4c-.2-.1-.4 0-.5.2l-.4.5c-.1.2-.2.2-.4.2-.1 0-.6-.2-1.2-.7-.4-.4-.7-.8-.8-.9-.1-.2 0-.3.1-.4l.3-.4c.1-.1.1-.2.2-.3l.1-.3c0-.1 0-.2-.1-.3l-.4-.9c-.1-.2-.2-.3-.4-.3z"
+                      />
+                    </svg>
+                  )}
+                  {item.kind === "shopify" && (
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="3" width="20" height="18" rx="4" fill="#95BF47" />
+                      <path d="M7 9h10l-1 9H8z" fill="#FFFFFF" opacity=".92" />
+                      <path d="M9 9a3 3 0 0 1 6 0" fill="none" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
+                      <path d="M10.2 15.2c.6.5 1.2.7 1.9.7.7 0 1.2-.3 1.2-.8 0-.4-.3-.6-1.2-.9-1.1-.4-1.8-1-1.8-1.9 0-1.2 1-2 2.4-2 .8 0 1.5.2 2 .5l-.4 1.1c-.4-.2-1-.4-1.7-.4-.7 0-1.1.3-1.1.8 0 .4.4.6 1.3.9 1.2.5 1.7 1.1 1.7 2 0 1.2-.9 2-2.5 2-.9 0-1.7-.2-2.2-.6z" fill="#5A7F1F" />
+                    </svg>
+                  )}
+                  {item.kind === "razorpay" && (
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" fill="#2B5BFF" />
+                      <path d="M8 17V7h4.7c2 0 3.2 1 3.2 2.7 0 1.2-.6 2.1-1.8 2.5L17 17h-2.6l-2.4-4h-1.5v4zM10.5 11h1.9c.8 0 1.3-.4 1.3-1.1s-.5-1.1-1.3-1.1h-1.9z" fill="#FFFFFF" />
+                    </svg>
+                  )}
+                  {item.kind === "analytics" && (
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" fill="#5D6FF0" />
+                      <path d="M6 17h12M8 17v-5m4 5V8m4 9v-3" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  )}
+                </span>
+                <span>{item.name}</span>
+              </span>
+            ))}
+          </div>
+          <svg className="exly-included-support-flow" viewBox="0 0 1000 110" aria-hidden="true">
+            <path d="M24 56h952" />
+            <path d="M24 56h170l64-22 92 34 120-27 132 18 114-29 140 26h120" />
+            <circle cx="190" cy="56" r="5" />
+            <circle cx="350" cy="68" r="5" />
+            <circle cx="470" cy="44" r="5" />
+            <circle cx="602" cy="60" r="5" />
+            <circle cx="716" cy="42" r="5" />
+            <circle cx="858" cy="56" r="5" />
+          </svg>
+        </article>
         <div className="exly-included-grid">
           <article className="exly-included-card">
-            <p>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M4 17.8h16M6.5 17.8V9.2M12 17.8V6.3M17.5 17.8V11"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
+            <div className="exly-included-card-head">
+              <p>
+                <span className="exly-platform-icons" aria-hidden="true">
+                  <svg className="exly-platform-icon" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.22 3.31v2.74h3.6c2.1-1.93 3.26-4.77 3.26-8.06z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.69l-3.6-2.74c-.98.66-2.24 1.06-3.68 1.06-2.83 0-5.23-1.91-6.09-4.47H2.2v2.81C4.01 20.6 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.91 14.16A6.94 6.94 0 0 1 5.57 12c0-.75.13-1.48.34-2.16V7.03H2.2A10.94 10.94 0 0 0 1 12c0 1.77.42 3.45 1.2 4.97l3.71-2.81z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.2 1.64l3.15-3.15C17.45 2.09 14.96 1 12 1 7.7 1 4.01 3.4 2.2 7.03l3.71 2.81C6.77 7.29 9.17 5.38 12 5.38z" />
+                  </svg>
+                  <svg className="exly-platform-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="11" fill="#1877F2" />
+                    <path
+                      fill="#FFFFFF"
+                      d="M13.7 8.3h2V5.2h-2.4c-2.6 0-4.1 1.6-4.1 4.2v2h-2v3h2v5.4h3.3v-5.4h2.5l.4-3h-2.9V9.8c0-.9.4-1.5 1.2-1.5z"
+                    />
+                  </svg>
+                </span>
+                Meta + Google Ads
+              </p>
+              <svg className="exly-included-head-mini" viewBox="0 0 120 40" aria-hidden="true">
+                <rect x="1" y="1" width="118" height="38" rx="14" />
+                <path d="M14 26h22l10-10 14 12 18-18 14 12h14" />
               </svg>
-              Meta + Google Ads
-            </p>
+            </div>
             <ul>
               {includeAds.map((point) => (
                 <li key={point}>
@@ -546,57 +708,108 @@ const ExlyDossier = () => {
                 </li>
               ))}
             </ul>
+            <div className="exly-included-mini-pills" aria-hidden="true">
+              <span>Creative testing</span>
+              <span>Lead quality</span>
+              <span>Scale winners</span>
+            </div>
           </article>
           <article className="exly-included-card">
-            <p>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="4" y="4" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
-                <rect x="13" y="4" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
-                <rect x="8.5" y="13" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
+            <div className="exly-included-card-head">
+              <p>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="4" y="4" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <rect x="13" y="4" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <rect x="8.5" y="13" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" strokeWidth="2" />
+                </svg>
+                Tech Stack + Ops
+              </p>
+              <svg className="exly-included-head-mini" viewBox="0 0 120 40" aria-hidden="true">
+                <rect x="1" y="1" width="118" height="38" rx="14" />
+                <path d="M16 20h22l12-8 12 12 12-12 12 8h18" />
               </svg>
-              Tech Stack + Ops
-            </p>
+            </div>
             <ul>
               {includeTech.map((point) => (
                 <li key={point}>
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path d="M3 8.2l3 3 7-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
+                  {point === "Email + WhatsApp automation" ? (
+                    <MessageCircle className="exly-included-special-icon" size={14} strokeWidth={2} aria-hidden="true" />
+                  ) : (
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M3 8.2l3 3 7-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  )}
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
+            <div className="exly-included-mini-pills" aria-hidden="true">
+              <span>Automation live</span>
+              <span>Single dashboard</span>
+              <span>Fast execution</span>
+            </div>
           </article>
         </div>
       </section>
 
       <section className="exly-shell exly-proof-section exly-reveal" id="guarantees">
         <div className="exly-section-title-row">
-          <h2>Positioning and Guarantees</h2>
+          <h2>Trust and Ownership</h2>
           <svg className="exly-section-title-svg exly-section-title-svg-indigo" viewBox="0 0 120 40" aria-hidden="true">
             <rect x="1" y="1" width="118" height="38" rx="19" fill="none" />
             <path d="M18 24l11-11 10 9 14-12 10 9 15-13 23 0" fill="none" />
           </svg>
         </div>
         <div className="exly-proof-stats">
-          {proofStats.map((item, index) => (
-            <span key={item}>
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                {index === 0 && <path d="M3 14h14M5.5 14V7.5M10 14V5.5M14.5 14V9" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />}
-                {index === 1 && <path d="M6.4 9a3 3 0 116 0 3 3 0 01-6 0zm-2.6 6.3c.8-2.3 3-3.6 5.6-3.6s4.8 1.3 5.6 3.6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />}
-                {index === 2 && <path d="M10 2.8l5.8 2.4v3.8c0 3.3-2.4 6.2-5.8 7.2C6.6 15.2 4.2 12.3 4.2 9V5.2z" fill="none" stroke="currentColor" strokeWidth="1.8" />}
-              </svg>
-              {item}
+          {proofStats.map(({ label, Icon, investorLogos }) => (
+            <span key={label} className={investorLogos ? "exly-proof-investor-pill" : undefined}>
+              {investorLogos ? (
+                <>
+                  <BadgeCheck size={16} strokeWidth={2} aria-hidden="true" />
+                  <span className="exly-proof-investor-inline">
+                    Backed by{" "}
+                    <span className="exly-investor-inline-logo" aria-hidden="true">
+                      <svg className="exly-investor-logo" viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" fill="#F26522" />
+                        <path d="M8 8l4.2 6.2L16.3 8h-2.2L12.2 11 10.3 8z" fill="#FFFFFF" />
+                      </svg>
+                    </span>
+                    Y Combinator,{" "}
+                    <span className="exly-investor-inline-logo" aria-hidden="true">
+                      <svg className="exly-investor-logo" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="#E53935" />
+                        <path d="M8 14.7l4.2-8.2h3l-2.8 5.2h3.1l-4.6 6.8h-2l2.1-4.4z" fill="#FFFFFF" />
+                      </svg>
+                    </span>
+                    Lightspeed,{" "}
+                    <span className="exly-investor-inline-logo" aria-hidden="true">
+                      <svg className="exly-investor-logo exly-investor-logo-chiratae" viewBox="0 0 140 40">
+                        <rect x="1" y="1" width="138" height="38" rx="7" fill="#FFFFFF" stroke="#D6D9E3" />
+                        <text x="14" y="22" fill="#B3122F" fontSize="19" fontStyle="italic" fontFamily="'Brush Script MT', 'Segoe Script', cursive">
+                          chiratae
+                        </text>
+                        <text x="46" y="33" fill="#2F3342" fontSize="7.5" fontWeight="700" letterSpacing="0.16em" fontFamily="Manrope, sans-serif">
+                          VENTURES
+                        </text>
+                      </svg>
+                    </span>
+                    Chiratae and Kunal Shah
+                  </span>
+                </>
+              ) : (
+                <Icon size={16} strokeWidth={2} aria-hidden="true" />
+              )}
+              {!investorLogos && label}
             </span>
           ))}
         </div>
         <article className="exly-guarantee-card">
           <div className="exly-guarantee-head">
             <h3>Ownership Promise</h3>
-            <svg viewBox="0 0 120 52" aria-hidden="true">
-              <rect x="1" y="1" width="118" height="50" rx="18" fill="none" />
-              <path d="M14 33h22l10-9 12 11 12-13 11 8 25 0" fill="none" />
-            </svg>
+            <div className="exly-guarantee-brand" aria-label="RevX branding">
+              <img className="exly-guarantee-brand-logo" src="/f5af000e-6753-41b3-88e2-f1359e71e8d4.png" alt="RevX logo" />
+              <span>RevX</span>
+            </div>
           </div>
           <ul>
             {guarantees.map((item) => (
@@ -614,7 +827,7 @@ const ExlyDossier = () => {
 
       <section className="exly-shell exly-process-section exly-reveal" id="process">
         <div className="exly-section-title-row">
-          <h2>4-Phase Execution Process</h2>
+          <h2>Simple 4-Phase Process</h2>
           <svg className="exly-section-title-svg exly-section-title-svg-violet" viewBox="0 0 120 40" aria-hidden="true">
             <rect x="1" y="1" width="118" height="38" rx="19" fill="none" />
             <path d="M16 20h20l10-10 12 20 10-14 14 10h24" fill="none" />
@@ -667,8 +880,12 @@ const ExlyDossier = () => {
           <path d="M32 124c150-48 236-66 344-66s202 12 292 50 166 38 300 4" />
           <path d="M32 140c154-32 250-44 350-44s184 6 278 34 176 30 308-4" />
         </svg>
-        <h2>Book your Exly Meta Ads Growth Partnership call</h2>
-        <p>Get a discovery audit, savings estimate, and 90-day growth roadmap.</p>
+        <span className="exly-popular-chip exly-popular-chip-cta">
+          <Flame className="exly-popular-icon" size={14} />
+          Popular with scaling creators
+        </span>
+        <h2>Book your RevX growth call</h2>
+        <p>Get a simple audit, annual savings estimate, and 90-day action plan.</p>
         <div className="exly-cta-trust-row" aria-hidden="true">
           <span>
             <svg viewBox="0 0 24 24">

@@ -260,23 +260,70 @@
 
 .exly-cta-btn {
   margin-top: 1.35rem;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
-  background: #11151f;
+  background: linear-gradient(160deg, #1a2030 0%, #11151f 64%);
   color: #fff;
   font-weight: 800;
-  font-size: 0.9rem;
-  padding: 0.76rem 1.1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 0.82rem 1.32rem;
+  min-height: 3rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  justify-content: center;
+  gap: 0.45rem;
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 220ms ease;
+  touch-action: manipulation;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 12px 22px -15px rgba(17, 21, 31, 0.7);
+  transition:
+    transform 180ms ease,
+    box-shadow 220ms ease,
+    background-position 260ms ease;
+  will-change: transform;
 }
 
 .exly-cta-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 28px -20px rgba(21, 25, 37, 0.55);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 22px 30px -20px rgba(17, 21, 31, 0.72);
+}
+
+.exly-cta-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 18px -15px rgba(17, 21, 31, 0.65);
+}
+
+.exly-cta-btn:focus-visible {
+  outline: 3px solid rgba(95, 131, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.exly-cta-btn svg {
+  transition: transform 180ms ease;
+}
+
+.exly-cta-btn:hover svg {
+  transform: translateX(2px);
+}
+
+@media (pointer: coarse) {
+  .exly-cta-btn {
+    min-height: 3.2rem;
+    padding-inline: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exly-cta-btn,
+  .exly-cta-btn svg {
+    transition: none;
+  }
 }
 
 .exly-stage {
@@ -340,6 +387,10 @@
 .exly-pain-chip svg {
   width: 1.32rem;
   height: 1.32rem;
+  color: #e54a68;
+}
+
+.exly-pain-chip.is-problem svg {
   color: #e54a68;
 }
 
@@ -1995,6 +2046,30 @@
 .exly-cost-visual-card .exly-vs-avatar {
   width: min(100%, 340px);
   margin-top: 0.36rem;
+  margin-inline: auto;
+}
+
+.exly-cost-visual-card .exly-vs-image-slice {
+  border-radius: 0.86rem;
+  overflow: hidden;
+  border: 1px solid rgba(190, 201, 223, 0.55);
+  aspect-ratio: 52 / 59;
+}
+
+.exly-cost-visual-card .exly-vs-image-slice img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
+}
+
+.exly-cost-visual-card .exly-vs-image-slice-trad img {
+  transform: none;
+}
+
+.exly-cost-visual-card .exly-vs-image-slice-revx img {
+  transform: none;
 }
 
 .exly-cost-visual-card .exly-vs-head {
@@ -2852,41 +2927,6 @@
   border-radius: 0.24rem;
 }
 
-.exly-included-support-flow {
-  width: 100%;
-  display: block;
-  margin-top: 0.45rem;
-}
-
-.exly-included-support-flow path:first-child {
-  fill: none;
-  stroke: #d5def1;
-  stroke-width: 2.2;
-  stroke-linecap: round;
-}
-
-.exly-included-support-flow path:nth-child(2) {
-  fill: none;
-  stroke: #5f72f1;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-  animation: exly-flow-draw 7.4s ease-in-out infinite;
-}
-
-.exly-included-support-flow circle {
-  fill: #5f72f1;
-  animation: exly-soft-pulse 2.4s ease-in-out infinite;
-}
-
-.exly-included-support-flow circle:nth-child(4),
-.exly-included-support-flow circle:nth-child(6),
-.exly-included-support-flow circle:nth-child(8) {
-  animation-delay: -1.2s;
-}
-
 .exly-included-cartoon {
   margin-top: 0.84rem;
   border: 1px solid #d5dced;
@@ -3360,7 +3400,16 @@
   height: 1rem;
   display: block;
   flex: 0 0 auto;
+  border-radius: 0;
+}
+
+.exly-investor-logo-yc {
   border-radius: 0.22rem;
+}
+
+.exly-investor-logo-lightspeed {
+  width: 0.96rem;
+  height: 1rem;
 }
 
 .exly-investor-logo-chiratae {
@@ -5054,10 +5103,6 @@
     height: 0.94rem;
   }
 
-  .exly-included-support-flow {
-    margin-top: 0.32rem;
-  }
-
   .exly-included-head-mini {
     width: 96px;
     height: 32px;
@@ -6709,10 +6754,6 @@ html {
 
   .exly-included-support {
     padding: 0.58rem;
-  }
-
-  .exly-included-support-flow {
-    display: none;
   }
 
   .exly-hero-underline {

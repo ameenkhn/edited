@@ -49,7 +49,7 @@ const includedSupportLogos = [
   { name: "Meta Ads", kind: "meta" },
   { name: "WhatsApp", kind: "whatsapp" },
   { name: "Shopify", kind: "shopify" },
-  { name: "Razorpay", kind: "razorpay" },
+  { name: "JustPay", kind: "justpay" },
   { name: "Analytics", kind: "analytics" },
 ];
 
@@ -644,10 +644,11 @@ const ExlyDossier = () => {
                       <path d="M10.2 15.2c.6.5 1.2.7 1.9.7.7 0 1.2-.3 1.2-.8 0-.4-.3-.6-1.2-.9-1.1-.4-1.8-1-1.8-1.9 0-1.2 1-2 2.4-2 .8 0 1.5.2 2 .5l-.4 1.1c-.4-.2-1-.4-1.7-.4-.7 0-1.1.3-1.1.8 0 .4.4.6 1.3.9 1.2.5 1.7 1.1 1.7 2 0 1.2-.9 2-2.5 2-.9 0-1.7-.2-2.2-.6z" fill="#5A7F1F" />
                     </svg>
                   )}
-                  {item.kind === "razorpay" && (
+                  {item.kind === "justpay" && (
                     <svg viewBox="0 0 24 24">
-                      <rect x="2" y="2" width="20" height="20" rx="5" fill="#2B5BFF" />
-                      <path d="M8 17V7h4.7c2 0 3.2 1 3.2 2.7 0 1.2-.6 2.1-1.8 2.5L17 17h-2.6l-2.4-4h-1.5v4zM10.5 11h1.9c.8 0 1.3-.4 1.3-1.1s-.5-1.1-1.3-1.1h-1.9z" fill="#FFFFFF" />
+                      <rect x="2" y="2" width="20" height="20" rx="5" fill="#17A673" />
+                      <path d="M14.8 7h-2.2v6.3c0 1.2-.6 1.8-1.8 1.8-.8 0-1.5-.2-2.1-.7l-.9 1.8c.9.7 2.1 1 3.3 1 2.5 0 3.7-1.5 3.7-4V7z" fill="#FFFFFF" />
+                      <circle cx="15.8" cy="6.2" r="1.2" fill="#A4F4CF" />
                     </svg>
                   )}
                   {item.kind === "analytics" && (

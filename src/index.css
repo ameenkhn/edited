@@ -2848,7 +2848,7 @@
 
 .exly-included-logo-icon.is-shopify,
 .exly-included-logo-icon.is-analytics,
-.exly-included-logo-icon.is-razorpay {
+.exly-included-logo-icon.is-justpay {
   border-radius: 0.24rem;
 }
 
@@ -6554,6 +6554,24 @@ html {
   .exly-proof-stats > span {
     text-align: left;
     justify-content: flex-start;
+  }
+
+  .exly-proof-investor-pill {
+    align-items: flex-start;
+  }
+
+  .exly-proof-investor-inline {
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    column-gap: 0.28rem;
+    row-gap: 0.2rem;
+    line-height: 1.35;
+  }
+
+  .exly-proof-investor-inline .exly-investor-inline-logo {
+    flex: 0 0 auto;
   }
 
   .exly-cost-table {

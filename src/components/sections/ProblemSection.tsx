@@ -10,7 +10,7 @@ const fadeUp = {
 };
 
 const problems = [
-  { icon: "🔗", title: "Tool Fragmentation", desc: "Zoom + Razorpay + Mailchimp + Notion + Calendly + WhatsApp. Nothing talks to each other." },
+  { icon: "🔗", title: "Tool Fragmentation", desc: "Zoom + JustPay + Mailchimp + Notion + Calendly + WhatsApp. Nothing talks to each other." },
   { icon: "💸", title: "Revenue Leakage", desc: "Every disconnected tool is a point of failure. Payments drop. Leads slip. Data is lost." },
   { icon: "⏱", title: "Time Drain", desc: "Creators spend 60% of time on operations instead of creating and connecting with their audience." },
   { icon: "📉", title: "Invisible Growth Ceiling", desc: "Without unified analytics, you can't see what's working. Growth stalls without knowing why." },

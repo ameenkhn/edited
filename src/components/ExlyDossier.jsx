@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BadgeCheck, BarChart3, ChevronRight, Flame, MessageCircle, Users2 } from "lucide-react";
 
 const scene = {
@@ -115,7 +115,12 @@ const costComparisonRows = [
   { label: "Profit impact", traditional: "Lower retained margin", revx: "Higher retained profit", revxAccent: true },
 ];
 
+const SIDE_POPUP_VISIBLE_MS = 4600;
+const SIDE_POPUP_REPEAT_MS = 11000;
+
 const ExlyDossier = () => {
+  const [isSidePopupVisible, setIsSidePopupVisible] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -132,6 +137,27 @@ const ExlyDossier = () => {
     const nodes = document.querySelectorAll(".exly-reveal");
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let hideTimer;
+
+    const showSidePopup = () => {
+      setIsSidePopupVisible(true);
+      window.clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(() => {
+        setIsSidePopupVisible(false);
+      }, SIDE_POPUP_VISIBLE_MS);
+    };
+
+    const initialTimer = window.setTimeout(showSidePopup, 1800);
+    const repeatTimer = window.setInterval(showSidePopup, SIDE_POPUP_REPEAT_MS);
+
+    return () => {
+      window.clearTimeout(initialTimer);
+      window.clearInterval(repeatTimer);
+      window.clearTimeout(hideTimer);
+    };
   }, []);
 
   return (
@@ -799,6 +825,33 @@ const ExlyDossier = () => {
         <p>Exly Growth Partnership</p>
         <span>Meta + Google Ads | Funnels | CRM | Automation | Analytics</span>
       </footer>
+
+      <aside
+        className={`exly-side-popup ${isSidePopupVisible ? "is-visible" : ""}`}
+        aria-label="Book a strategy call prompt"
+        aria-hidden={!isSidePopupVisible}
+      >
+        <div className="exly-side-popup-card">
+          <button
+            type="button"
+            className="exly-side-popup-close"
+            aria-label="Dismiss strategy call popup"
+            onClick={() => setIsSidePopupVisible(false)}
+          >
+            ×
+          </button>
+          <div className="exly-side-popup-brand" aria-label="RevX">
+            <img src="/f5af000e-6753-41b3-88e2-f1359e71e8d4.png" alt="RevX logo" />
+            <span>RevX</span>
+          </div>
+          <p className="exly-side-popup-kicker">PROFIT PLAN READY</p>
+          <h3 className="exly-side-popup-title">Book a Strategy Call</h3>
+          <p className="exly-side-popup-subtext">Get your custom savings estimate and growth action plan.</p>
+          <a className="exly-side-popup-cta" href="#cta" onClick={() => setIsSidePopupVisible(false)}>
+            Book a Strategy Call
+          </a>
+        </div>
+      </aside>
     </main>
   );
 };

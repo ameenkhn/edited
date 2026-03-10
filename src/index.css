@@ -146,12 +146,29 @@
   text-decoration: none;
 }
 
-.exly-signup-link {
+.exly-nav-links .exly-signup-link {
   padding: 0.5rem 0.86rem;
-  border: 1px solid #c8cbd4;
+  border: 1px solid #4a42b1;
   border-radius: 999px;
-  background: #f6f6f9;
+  background: #4a42b1;
+  color: #ffffff;
   font-weight: 700;
+  box-shadow: 0 8px 16px -12px rgba(67, 48, 170, 0.75);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.exly-nav-links .exly-signup-link:hover {
+  background: #4330aa;
+  border-color: #4330aa;
+  color: #ffffff;
+}
+
+.exly-nav-links .exly-signup-link:focus-visible {
+  outline: 3px solid rgba(95, 131, 255, 0.45);
+  outline-offset: 2px;
 }
 
 .exly-hero-top {

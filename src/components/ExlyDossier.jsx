@@ -117,6 +117,7 @@ const costComparisonRows = [
 
 const SIDE_POPUP_VISIBLE_MS = 4600;
 const SIDE_POPUP_REPEAT_MS = 11000;
+const CTA_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSedJNV0_-J0Hq32WKM-_eojm766XwCQhdaz-RrU0Jbx1LFsMQ/viewform";
 
 const ExlyDossier = () => {
   const [isSidePopupVisible, setIsSidePopupVisible] = useState(false);
@@ -173,7 +174,7 @@ const ExlyDossier = () => {
           <a href="#offer">Offer</a>
           <a href="#cost">Savings</a>
           <a href="#process">Process</a>
-          <a href="#cta" className="exly-signup-link">
+          <a href={CTA_FORM_URL} className="exly-signup-link" target="_blank" rel="noopener noreferrer">
             Book Call
           </a>
         </nav>
@@ -193,10 +194,10 @@ const ExlyDossier = () => {
             <span key={badge}>{badge}</span>
           ))}
         </div>
-        <button className="exly-cta-btn">
+        <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
           Book a Strategy Call
           <ChevronRight size={18} />
-        </button>
+        </a>
       </section>
 
       <section className="exly-shell exly-stage exly-reveal" aria-label="Exly Meta Ads hero visual">
@@ -815,10 +816,10 @@ const ExlyDossier = () => {
             Weekly strategy cadence
           </span>
         </div>
-        <button className="exly-cta-btn">
+        <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
           Book a Strategy Call
           <ChevronRight size={18} />
-        </button>
+        </a>
       </section>
 
       <footer className="exly-shell exly-mini-footer exly-reveal">
@@ -847,7 +848,13 @@ const ExlyDossier = () => {
           <p className="exly-side-popup-kicker">PROFIT PLAN READY</p>
           <h3 className="exly-side-popup-title">Book a Strategy Call</h3>
           <p className="exly-side-popup-subtext">Get your custom savings estimate and growth action plan.</p>
-          <a className="exly-side-popup-cta" href="#cta" onClick={() => setIsSidePopupVisible(false)}>
+          <a
+            className="exly-side-popup-cta"
+            href={CTA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsSidePopupVisible(false)}
+          >
             Book a Strategy Call
           </a>
         </div>

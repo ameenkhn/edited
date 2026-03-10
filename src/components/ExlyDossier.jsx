@@ -4,6 +4,7 @@ import { BadgeCheck, BarChart3, ChevronRight, Flame, MessageCircle, Users2 } fro
 const scene = {
   handPhone:
     "https://cdn.prod.website-files.com/686512b3b26f4afedae0d452/687a092b27efcb468d635b5d_Hand.avif",
+  ctaConcernImage: "/image101.png",
 };
 
 const offerScope = [
@@ -859,36 +860,53 @@ const ExlyDossier = () => {
           <path d="M32 124c150-48 236-66 344-66s202 12 292 50 166 38 300 4" />
           <path d="M32 140c154-32 250-44 350-44s184 6 278 34 176 30 308-4" />
         </svg>
-        <span className="exly-popular-chip exly-popular-chip-cta">
-          <Flame className="exly-popular-icon" size={14} />
-          Popular with scaling creators
-        </span>
-        <h2>Book your RevX growth call</h2>
-        <p>Get a simple audit, annual savings estimate, and 90-day action plan.</p>
-        <div className="exly-cta-trust-row" aria-hidden="true">
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M12 3.2l6 2.5v4c0 3.5-2.4 6.7-6 7.8-3.6-1.1-6-4.3-6-7.8v-4zM9 10.7l2 2 4-4.2" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Full ownership
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M5 17l6-6 4 4 4-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            Predictable growth economics
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24">
-              <path d="M4 17h16M6.5 17V9.3M12 17V6.6M17.5 17v-4.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            Weekly strategy cadence
-          </span>
+        <div className="exly-final-cta-layout">
+          <div className="exly-final-cta-copy">
+            <span className="exly-popular-chip exly-popular-chip-cta">
+              <Flame className="exly-popular-icon" size={14} />
+              Popular with scaling creators
+            </span>
+            <h2>Book your RevX growth call</h2>
+            <p>Get a simple audit, annual savings estimate, and 90-day action plan.</p>
+            <div className="exly-cta-trust-row" aria-hidden="true">
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3.2l6 2.5v4c0 3.5-2.4 6.7-6 7.8-3.6-1.1-6-4.3-6-7.8v-4zM9 10.7l2 2 4-4.2" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Full ownership
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 17l6-6 4 4 4-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                Predictable growth economics
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 17h16M6.5 17V9.3M12 17V6.6M17.5 17v-4.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                Weekly strategy cadence
+              </span>
+            </div>
+            <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+              Book a Strategy Call
+              <ChevronRight size={18} />
+            </a>
+          </div>
+          <div className="exly-cta-image-wrap">
+            <span className="exly-cta-image-orb exly-cta-image-orb-l" />
+            <span className="exly-cta-image-orb exly-cta-image-orb-r" />
+            <figure className="exly-cta-image-frame">
+              <img
+                src={scene.ctaConcernImage}
+                alt="Concerned customer visual with brand investment message"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <span className="exly-cta-image-pill">Before strategy: confusion and doubt</span>
+          </div>
         </div>
-        <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
-          Book a Strategy Call
-          <ChevronRight size={18} />
-        </a>
       </section>
 
       <footer className="exly-shell exly-mini-footer exly-reveal">

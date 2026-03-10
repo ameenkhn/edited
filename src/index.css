@@ -64,7 +64,7 @@
 
 .exly-page {
   --exly-glass-border: rgba(120, 134, 240, 0.3);
-  --exly-glass-surface: linear-gradient(104deg, rgba(25, 31, 53, 0.86) 0%, rgba(34, 40, 68, 0.88) 52%, rgba(28, 35, 59, 0.88) 100%);
+  --exly-glass-surface: linear-gradient(104deg, rgba(22, 28, 49, 0.98) 0%, rgba(32, 39, 66, 0.98) 52%, rgba(26, 33, 56, 0.98) 100%);
   --exly-glass-shadow:
     0 1px 0 rgba(255, 255, 255, 0.14) inset,
     0 18px 30px -24px rgba(8, 12, 28, 0.68),
@@ -106,17 +106,23 @@
 .exly-nav-wrap {
   position: sticky;
   top: 0.7rem;
-  z-index: 50;
+  z-index: 95;
+  isolation: isolate;
   overflow: hidden;
   margin-top: 0.75rem;
-  padding: 0.65rem 0.8rem;
-  display: flex;
+  padding: 0.46rem 0.68rem;
+  min-height: 4.25rem;
+  display: grid;
+  grid-template-columns: max-content max-content minmax(0, 1fr);
+  justify-content: start;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  column-gap: 0.7rem;
   border: 1px solid var(--exly-glass-border);
   border-radius: 999px;
-  background: var(--exly-glass-surface);
+  background:
+    radial-gradient(120% 140% at 16% 0%, rgba(108, 124, 255, 0.16), rgba(108, 124, 255, 0) 44%),
+    radial-gradient(120% 140% at 92% 100%, rgba(76, 91, 214, 0.14), rgba(76, 91, 214, 0) 48%),
+    var(--exly-glass-surface);
   box-shadow: var(--exly-glass-shadow);
   backdrop-filter: blur(14px);
 }
@@ -144,21 +150,25 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
+  justify-self: start;
 }
 
 .exly-nav-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.52rem;
-  border: 1px solid var(--exly-chip-border);
-  background: var(--exly-chip-bg);
+  gap: 0.5rem;
+  border: 1px solid rgba(152, 168, 255, 0.68);
+  background: linear-gradient(132deg, rgba(98, 111, 234, 0.72), rgba(57, 71, 176, 0.82));
   color: #dbe3ff;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 10px 16px -14px rgba(36, 46, 117, 0.84);
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  padding: 0.34rem 0.84rem 0.34rem 0.34rem;
+  min-height: 2.4rem;
+  padding: 0.28rem 0.96rem 0.28rem 0.28rem;
   line-height: 1.08;
   cursor: pointer;
 }
@@ -168,6 +178,7 @@
   height: 1.92rem;
   display: block;
   border-radius: 0.42rem;
+  box-shadow: 0 0 0 1px rgba(172, 186, 255, 0.44);
   object-fit: cover;
   object-position: center 20%;
 }
@@ -184,40 +195,115 @@
   box-shadow: var(--exly-brand-shadow);
 }
 
+.exly-nav-center {
+  position: relative;
+  z-index: 2;
+  justify-self: start;
+  transform: none;
+  width: fit-content;
+  max-width: min(100%, 34rem);
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.32rem;
+  border: 1px solid rgba(148, 163, 255, 0.36);
+  border-radius: 999px;
+  background: linear-gradient(108deg, rgba(66, 78, 139, 0.58), rgba(80, 94, 176, 0.34));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    0 14px 20px -18px rgba(8, 12, 28, 0.8);
+  min-height: 2.42rem;
+  padding: 0.32rem 0.58rem;
+  overflow: hidden;
+}
+
+.exly-nav-center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(106deg, rgba(255, 255, 255, 0) 18%, rgba(214, 224, 255, 0.2) 48%, rgba(255, 255, 255, 0) 76%);
+  transform: translateX(-130%);
+  animation: exly-nav-sheen 9.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.exly-nav-center-rail {
+  min-width: 0;
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  overflow: hidden;
+}
+
+.exly-nav-center-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.42rem;
+  padding: 0.14rem 0.44rem;
+  border: 1px solid rgba(155, 170, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(91, 105, 196, 0.2);
+  color: #dce5ff;
+  font-size: 0.61rem;
+  font-weight: 760;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.exly-nav-center-chip.is-primary {
+  border-color: rgba(176, 188, 255, 0.52);
+  background: linear-gradient(120deg, rgba(120, 136, 244, 0.44), rgba(83, 98, 194, 0.34));
+  box-shadow: 0 8px 14px -14px rgba(102, 117, 225, 0.85);
+  animation: exly-nav-pill-breathe 3.8s ease-in-out infinite;
+}
+
 .exly-nav-links {
   position: relative;
   z-index: 2;
+  justify-self: end;
   display: flex;
   align-items: center;
-  gap: 0.78rem;
+  gap: 0.92rem;
   font-size: 0.86rem;
 }
 
 .exly-nav-links a {
-  color: rgba(230, 236, 255, 0.92);
-  font-weight: 620;
+  color: rgba(224, 232, 255, 0.9);
+  font-weight: 600;
   letter-spacing: -0.005em;
   line-height: 1.15;
   text-decoration: none;
-  transition: color 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .exly-nav-links a:hover {
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .exly-nav-links .exly-signup-link {
-  padding: 0.5rem 0.86rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4rem;
+  padding: 0.42rem 0.96rem;
+  text-align: center;
+  white-space: nowrap;
   border: 1px solid var(--exly-brand-border);
   border-radius: 999px;
   background: var(--exly-brand-gradient);
   background-size: 165% 100%;
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   letter-spacing: -0.004em;
   line-height: 1.1;
-  box-shadow: var(--exly-brand-shadow);
+  box-shadow:
+    var(--exly-brand-shadow),
+    0 1px 0 rgba(255, 255, 255, 0.18) inset;
   transition:
     background-position 260ms ease,
     box-shadow 230ms ease,
@@ -228,7 +314,7 @@
   background-position: 100% 50%;
   color: #ffffff;
   box-shadow: var(--exly-brand-shadow-hover);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.01);
 }
 
 .exly-nav-links .exly-signup-link:focus-visible {
@@ -5049,10 +5135,17 @@
   }
 
   .exly-nav-wrap {
+    display: flex;
+    min-height: auto;
     flex-direction: column;
     align-items: flex-start;
     border-radius: 1rem;
-    padding: 0.75rem;
+    padding: 0.72rem;
+    gap: 0.52rem;
+  }
+
+  .exly-nav-center {
+    display: none;
   }
 
   .exly-stage {
@@ -6805,6 +6898,29 @@ html {
     width: min(1160px, calc(100% - 1.5rem));
   }
 
+  .exly-nav-wrap {
+    grid-template-columns: max-content minmax(14rem, max-content) minmax(0, 1fr);
+    column-gap: 0.62rem;
+  }
+
+  .exly-nav-center {
+    max-width: 26rem;
+    transform: none;
+  }
+
+  .exly-nav-center-rail {
+    gap: 0.28rem;
+  }
+
+  .exly-nav-center-chip {
+    font-size: 0.58rem;
+    padding-inline: 0.42rem;
+  }
+
+  .exly-nav-center-chip:nth-child(3) {
+    display: none;
+  }
+
   .exly-offer-section,
   .exly-problem-section,
   .exly-cost-section,
@@ -6843,6 +6959,7 @@ html {
   .exly-nav-wrap {
     top: 0.45rem;
     display: flex;
+    min-height: auto;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
@@ -6854,6 +6971,10 @@ html {
 
   .exly-nav-left {
     flex: 0 0 auto;
+  }
+
+  .exly-nav-center {
+    display: none;
   }
 
   .exly-nav-links {
@@ -7317,6 +7438,36 @@ html {
   }
 }
 
+@keyframes exly-nav-sheen {
+  0% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.75;
+  }
+  54% {
+    transform: translateX(112%);
+    opacity: 0.92;
+  }
+  100% {
+    transform: translateX(112%);
+    opacity: 0;
+  }
+}
+
+@keyframes exly-nav-pill-breathe {
+  0%,
+  100% {
+    box-shadow: 0 8px 14px -14px rgba(102, 117, 225, 0.72);
+    filter: saturate(1);
+  }
+  50% {
+    box-shadow: 0 10px 16px -14px rgba(126, 141, 244, 0.84);
+    filter: saturate(1.08);
+  }
+}
+
 @keyframes exly-sticky-sheen {
   0% {
     transform: translateX(-120%);
@@ -7441,6 +7592,7 @@ html {
     transition: none;
   }
 
+  .exly-nav-center::after,
   .exly-nav-wrap::after,
   .exly-sticky-callbar-inner::after,
   .exly-sticky-callbar-chip::before {
@@ -7452,6 +7604,10 @@ html {
   }
 
   .exly-sticky-callbar-copy-rotate {
+    animation: none;
+  }
+
+  .exly-nav-center-chip.is-primary {
     animation: none;
   }
 

@@ -178,7 +178,8 @@ const PhraseIcon = ({ type }) => {
   }
 };
 
-const CTA_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSedJNV0_-J0Hq32WKM-_eojm766XwCQhdaz-RrU0Jbx1LFsMQ/viewform";
+const CTA_FORM_URL =
+  "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10?dynamic_link=d60aea22-db3b-49f4-93d0-76bee72da807";
 
 const ExlyDossier = () => {
   const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());
@@ -230,6 +231,13 @@ const ExlyDossier = () => {
             <img className="exly-nav-chip-logo" src="/f5af000e-6753-41b3-88e2-f1359e71e8d4.png" alt="" aria-hidden="true" />
             <span className="exly-nav-chip-text">RevX</span>
           </button>
+        </div>
+        <div className="exly-nav-center" aria-hidden="true">
+          <div className="exly-nav-center-rail">
+            <span className="exly-nav-center-chip is-primary">0% Revenue Share</span>
+            <span className="exly-nav-center-chip">Managed Stack</span>
+            <span className="exly-nav-center-chip">Fixed-Cost Growth</span>
+          </div>
         </div>
         <nav className="exly-nav-links">
           <a href="#offer">Offer</a>

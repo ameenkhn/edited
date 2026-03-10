@@ -63,13 +63,38 @@
 }
 
 .exly-page {
+  --exly-glass-border: rgba(120, 134, 240, 0.3);
+  --exly-glass-surface: linear-gradient(104deg, rgba(25, 31, 53, 0.86) 0%, rgba(34, 40, 68, 0.88) 52%, rgba(28, 35, 59, 0.88) 100%);
+  --exly-glass-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 18px 30px -24px rgba(8, 12, 28, 0.68),
+    0 8px 18px -14px rgba(74, 66, 177, 0.48);
+  --exly-glass-topline: linear-gradient(90deg, rgba(95, 108, 255, 0), rgba(95, 108, 255, 0.72), rgba(95, 108, 255, 0));
+  --exly-glass-sheen: linear-gradient(104deg, rgba(255, 255, 255, 0) 14%, rgba(205, 218, 255, 0.22) 44%, rgba(255, 255, 255, 0) 70%);
+  --exly-sticky-border: rgba(122, 137, 246, 0.36);
+  --exly-sticky-surface: linear-gradient(104deg, rgba(18, 24, 42, 0.92) 0%, rgba(28, 35, 58, 0.93) 56%, rgba(21, 28, 49, 0.93) 100%);
+  --exly-sticky-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 20px 34px -26px rgba(8, 12, 28, 0.8),
+    0 8px 20px -15px rgba(74, 66, 177, 0.56);
+  --exly-brand-border: rgba(147, 162, 255, 0.68);
+  --exly-brand-gradient: linear-gradient(118deg, #2f2487 0%, #4330aa 44%, #5f6cff 100%);
+  --exly-brand-shadow:
+    0 14px 22px -16px rgba(44, 35, 118, 0.84),
+    0 8px 18px -14px rgba(95, 108, 255, 0.6);
+  --exly-brand-shadow-hover:
+    0 18px 28px -16px rgba(44, 35, 118, 0.9),
+    0 10px 22px -14px rgba(95, 108, 255, 0.75);
+  --exly-chip-border: rgba(140, 157, 255, 0.42);
+  --exly-chip-bg: linear-gradient(124deg, rgba(87, 101, 225, 0.22), rgba(76, 64, 172, 0.2));
+  --exly-chip-text: #dbe4ff;
   background-color: #ebebee;
   background-image: radial-gradient(circle, #c9ced8 1.4px, transparent 1.4px);
   background-size: 44px 44px;
   background-position: -8px -8px;
   color: #161626;
   min-height: 100vh;
-  padding-bottom: 4rem;
+  padding-bottom: 9.1rem;
   overflow-x: clip;
 }
 
@@ -82,19 +107,41 @@
   position: sticky;
   top: 0.7rem;
   z-index: 50;
+  overflow: hidden;
   margin-top: 0.75rem;
   padding: 0.65rem 0.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px solid #d6d8df;
+  border: 1px solid var(--exly-glass-border);
   border-radius: 999px;
-  background: rgba(243, 244, 248, 0.84);
-  backdrop-filter: blur(10px);
+  background: var(--exly-glass-surface);
+  box-shadow: var(--exly-glass-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.exly-nav-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--exly-glass-topline);
+}
+
+.exly-nav-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--exly-glass-sheen);
+  transform: translateX(-120%);
+  pointer-events: none;
+  animation: exly-sticky-sheen 6.1s ease-in-out infinite;
 }
 
 .exly-nav-left {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.55rem;
@@ -104,14 +151,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.52rem;
-  border: 1px solid #cfd1d8;
-  background: #f5f6f8;
-  color: #2f3242;
+  border: 1px solid var(--exly-chip-border);
+  background: var(--exly-chip-bg);
+  color: #dbe3ff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   padding: 0.34rem 0.84rem 0.34rem 0.34rem;
-  line-height: 1;
+  line-height: 1.08;
   cursor: pointer;
 }
 
@@ -125,49 +173,66 @@
 }
 
 .exly-nav-chip-text {
-  letter-spacing: 0.01em;
+  letter-spacing: 0.012em;
+  font-weight: 700;
 }
 
 .exly-nav-chip-active {
-  background: #11151f;
+  border-color: var(--exly-brand-border);
+  background: var(--exly-brand-gradient);
   color: #fff;
-  border-color: #11151f;
+  box-shadow: var(--exly-brand-shadow);
 }
 
 .exly-nav-links {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.78rem;
-  font-size: 0.83rem;
+  font-size: 0.86rem;
 }
 
 .exly-nav-links a {
-  color: #2d3142;
+  color: rgba(230, 236, 255, 0.92);
+  font-weight: 620;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
   text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.exly-nav-links a:hover {
+  color: #ffffff;
 }
 
 .exly-nav-links .exly-signup-link {
   padding: 0.5rem 0.86rem;
-  border: 1px solid #4a42b1;
+  border: 1px solid var(--exly-brand-border);
   border-radius: 999px;
-  background: #4a42b1;
+  background: var(--exly-brand-gradient);
+  background-size: 165% 100%;
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 8px 16px -12px rgba(67, 48, 170, 0.75);
+  font-size: 0.86rem;
+  letter-spacing: -0.004em;
+  line-height: 1.1;
+  box-shadow: var(--exly-brand-shadow);
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+    background-position 260ms ease,
+    box-shadow 230ms ease,
+    transform 170ms ease;
 }
 
 .exly-nav-links .exly-signup-link:hover {
-  background: #4330aa;
-  border-color: #4330aa;
+  background-position: 100% 50%;
   color: #ffffff;
+  box-shadow: var(--exly-brand-shadow-hover);
+  transform: translateY(-1px);
 }
 
 .exly-nav-links .exly-signup-link:focus-visible {
-  outline: 3px solid rgba(95, 131, 255, 0.45);
+  outline: 3px solid rgba(128, 146, 255, 0.56);
   outline-offset: 2px;
 }
 
@@ -226,10 +291,12 @@
 
 .exly-hero-top p {
   margin: 1rem auto 0;
-  max-width: 58ch;
+  max-width: 56ch;
   color: #4f5364;
-  line-height: 1.56;
-  font-size: 1.18rem;
+  line-height: 1.5;
+  font-size: clamp(1.04rem, 0.54vw + 0.92rem, 1.2rem);
+  letter-spacing: -0.007em;
+  font-weight: 500;
 }
 
 .exly-hero-insight-row {
@@ -3816,6 +3883,291 @@
   color: #60667a;
 }
 
+.exly-sticky-callbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1160px, calc(100% - 2rem));
+  bottom: max(0.6rem, env(safe-area-inset-bottom));
+  z-index: 75;
+  pointer-events: none;
+}
+
+.exly-sticky-callbar-inner {
+  position: relative;
+  overflow: hidden;
+  min-height: 2.86rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.62rem;
+  border: 1px solid var(--exly-sticky-border);
+  border-radius: 999px;
+  background: var(--exly-sticky-surface);
+  box-shadow: var(--exly-sticky-shadow);
+  padding: 0.34rem 0.42rem 0.34rem 0.46rem;
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+}
+
+.exly-sticky-callbar-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--exly-glass-topline);
+}
+
+.exly-sticky-callbar-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--exly-glass-sheen);
+  transform: translateX(-120%);
+  pointer-events: none;
+  animation: exly-sticky-sheen 8.4s ease-in-out infinite;
+}
+
+.exly-sticky-callbar-text {
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  justify-self: start;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  color: #f1f5ff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.26;
+  letter-spacing: -0.008em;
+}
+
+.exly-sticky-callbar-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.18rem 0.52rem;
+  border: 1px solid var(--exly-chip-border);
+  border-radius: 999px;
+  background: var(--exly-chip-bg);
+  color: var(--exly-chip-text);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.exly-sticky-callbar-chip::before {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 999px;
+  background: #8ca0ff;
+  box-shadow: 0 0 0 0 rgba(140, 160, 255, 0.42);
+  animation: exly-sticky-dot-pulse 1.8s ease-out infinite;
+}
+
+.exly-sticky-callbar-chip-timer {
+  grid-column: 2;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+  gap: 0.36rem;
+  padding: 0.16rem 0.44rem 0.16rem 0.32rem;
+}
+
+.exly-sticky-callbar-chip-timer::before {
+  content: none;
+}
+
+.exly-sticky-timer {
+  width: 0.96rem;
+  height: 0.96rem;
+  filter: drop-shadow(0 0 4px rgba(140, 160, 255, 0.32));
+}
+
+.exly-sticky-timer-ring,
+.exly-sticky-timer-face {
+  fill: none;
+}
+
+.exly-sticky-timer-ring {
+  stroke: rgba(166, 182, 255, 0.32);
+  stroke-width: 1.8;
+}
+
+.exly-sticky-timer-face {
+  stroke: rgba(174, 190, 255, 0.24);
+  stroke-width: 1.4;
+}
+
+.exly-sticky-timer-ticks {
+  fill: none;
+  stroke: rgba(177, 192, 255, 0.66);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.exly-sticky-timer-hand {
+  stroke-linecap: round;
+  transform-origin: 10px 10px;
+  transition: transform 900ms linear;
+}
+
+.exly-sticky-timer-hand-minute {
+  stroke: #c4d2ff;
+  stroke-width: 1.5;
+}
+
+.exly-sticky-timer-hand-second {
+  stroke: #8fa5ff;
+  stroke-width: 1.1;
+}
+
+.exly-sticky-timer-hub {
+  fill: #9fb1ff;
+}
+
+.exly-sticky-timer-label {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.exly-sticky-callbar-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.46rem;
+  max-width: 100%;
+  min-width: 0;
+  color: rgba(230, 236, 255, 0.95);
+  font-weight: 620;
+  padding-inline-end: 0.16rem;
+}
+
+.exly-sticky-callbar-copy-text {
+  min-width: 0;
+  letter-spacing: -0.004em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exly-sticky-phrase-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 1.12rem;
+  height: 1.12rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(146, 162, 255, 0.42);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(97, 112, 235, 0.3), rgba(66, 78, 170, 0.16));
+  box-shadow:
+    0 0 0 1px rgba(187, 199, 255, 0.16) inset,
+    0 8px 14px -12px rgba(84, 100, 220, 0.6);
+}
+
+.exly-sticky-phrase-icon::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 1px solid rgba(163, 178, 255, 0.28);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.exly-sticky-phrase-icon-svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  fill: none;
+  stroke: #a8b6ff;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-origin: center;
+}
+
+.exly-sticky-phrase-icon-svg.is-leak {
+  animation: exly-phrase-leak-intro 620ms cubic-bezier(0.22, 0.7, 0.24, 1) both;
+}
+
+.exly-sticky-phrase-icon-svg.is-compete {
+  animation: exly-phrase-compete-intro 780ms cubic-bezier(0.22, 0.7, 0.24, 1) both;
+}
+
+.exly-sticky-phrase-icon-svg.is-funnel .funnel-crack {
+  stroke-dasharray: 6;
+  stroke-dashoffset: 6;
+  animation: exly-phrase-crack-intro 760ms cubic-bezier(0.22, 0.7, 0.24, 1) both;
+}
+
+.exly-sticky-phrase-icon-svg.is-slip {
+  animation: exly-phrase-slip-intro 680ms cubic-bezier(0.22, 0.7, 0.24, 1) both;
+}
+
+.exly-sticky-phrase-icon-svg.is-loss .warn-dot {
+  animation: exly-phrase-dot-intro 700ms cubic-bezier(0.22, 0.7, 0.24, 1) both;
+}
+
+.exly-sticky-callbar-copy-rotate {
+  animation: exly-sticky-copy-swap 420ms cubic-bezier(0.2, 0.72, 0.26, 1);
+  will-change: opacity, transform;
+}
+
+.exly-sticky-callbar-btn {
+  position: relative;
+  z-index: 2;
+  grid-column: 3;
+  justify-self: end;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  min-height: 2.08rem;
+  padding: 0.42rem 0.98rem;
+  border-radius: 999px;
+  border: 1px solid var(--exly-brand-border);
+  background: var(--exly-brand-gradient);
+  background-size: 165% 100%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.004em;
+  line-height: 1.1;
+  box-shadow: var(--exly-brand-shadow);
+  transition:
+    transform 170ms ease,
+    box-shadow 230ms ease,
+    background-position 260ms ease;
+}
+
+.exly-sticky-callbar-btn::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(112deg, rgba(235, 241, 255, 0.34), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.exly-sticky-callbar-btn:hover {
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: var(--exly-brand-shadow-hover);
+  background-position: 100% 50%;
+}
+
+.exly-sticky-callbar-btn:focus-visible {
+  outline: 3px solid rgba(128, 146, 255, 0.56);
+  outline-offset: 2px;
+}
+
 .exly-why {
   margin-top: 5rem;
 }
@@ -6475,7 +6827,7 @@ html {
 @media (max-width: 768px) {
   .exly-page {
     overflow-x: hidden;
-    padding-bottom: 2.8rem;
+    padding-bottom: calc(11.8rem + env(safe-area-inset-bottom));
   }
 
   .exly-shell {
@@ -6510,7 +6862,7 @@ html {
     justify-content: flex-end;
     flex-wrap: nowrap;
     gap: 0.5rem;
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     white-space: nowrap;
   }
 
@@ -6523,9 +6875,14 @@ html {
     padding-inline: 0.04rem;
   }
 
+  .exly-nav-links a:nth-child(3) {
+    display: none;
+  }
+
   .exly-signup-link {
     margin-left: 0.2rem;
-    padding: 0.36rem 0.58rem;
+    min-height: 2rem;
+    padding: 0.38rem 0.62rem;
   }
 
   .exly-hero-top {
@@ -6541,8 +6898,8 @@ html {
 
   .exly-hero-top p {
     margin-top: 0.9rem;
-    font-size: 1.02rem;
-    line-height: 1.54;
+    font-size: clamp(0.98rem, 0.88vw + 0.8rem, 1.08rem);
+    line-height: 1.48;
   }
 
   .exly-hero-insight-row {
@@ -6729,9 +7086,97 @@ html {
     align-items: flex-start;
     gap: 0.3rem;
   }
+
+  .exly-sticky-callbar {
+    width: calc(100% - 1rem);
+    bottom: max(0.42rem, env(safe-area-inset-bottom));
+  }
+
+  .exly-sticky-callbar-inner {
+    min-height: auto;
+    border-radius: 1.05rem;
+    gap: 0.36rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "timer"
+      "text"
+      "cta";
+    padding: 0.36rem 0.4rem 0.4rem;
+  }
+
+  .exly-sticky-callbar-text {
+    grid-area: text;
+    justify-self: center;
+    align-self: center;
+    font-size: 0.74rem;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .exly-sticky-phrase-icon {
+    width: 0.92rem;
+    height: 0.92rem;
+  }
+
+  .exly-sticky-phrase-icon-svg {
+    width: 0.68rem;
+    height: 0.68rem;
+  }
+
+  .exly-sticky-callbar-chip {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .exly-sticky-callbar-chip-timer {
+    grid-area: timer;
+    justify-self: center;
+    padding: 0.15rem 0.38rem 0.15rem 0.28rem;
+    gap: 0.3rem;
+  }
+
+  .exly-sticky-timer {
+    width: 0.82rem;
+    height: 0.82rem;
+  }
+
+  .exly-sticky-timer-label {
+    font-size: 0.54rem;
+  }
+
+  .exly-sticky-callbar-copy {
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .exly-sticky-callbar-copy-text {
+    white-space: normal;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .exly-sticky-callbar-btn {
+    grid-area: cta;
+    justify-self: center;
+    width: min(100%, 260px);
+    min-height: 1.94rem;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.68rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .exly-page {
+    padding-bottom: calc(14.2rem + env(safe-area-inset-bottom));
+  }
+
+  .exly-nav-wrap {
+    padding: 0.48rem 0.54rem;
+    gap: 0.34rem;
+  }
+
   .exly-nav-chip {
     padding: 0.22rem 0.52rem 0.22rem 0.22rem;
     gap: 0.34rem;
@@ -6747,17 +7192,21 @@ html {
   }
 
   .exly-nav-links {
-    gap: 0.42rem;
+    margin-left: auto;
+    gap: 0.34rem;
     font-size: 0.68rem;
+    justify-content: flex-end;
   }
 
   .exly-nav-links a:not(.exly-signup-link) {
-    padding-inline: 0.03rem;
+    display: none;
   }
 
   .exly-signup-link {
-    margin-left: 0.16rem;
-    padding: 0.32rem 0.5rem;
+    margin-left: 0;
+    min-height: 1.92rem;
+    padding: 0.34rem 0.58rem;
+    font-size: 0.7rem;
   }
 
   .exly-hero-top h1 {
@@ -6766,7 +7215,8 @@ html {
   }
 
   .exly-hero-top p {
-    font-size: 0.96rem;
+    font-size: 0.95rem;
+    line-height: 1.46;
   }
 
   .exly-included-support {
@@ -6816,185 +7266,68 @@ html {
     font-size: 0.74rem;
     line-height: 1.45;
   }
-}
 
-.exly-side-popup {
-  --exly-brand: #4a42b1;
-  --exly-brand-dark: #4330aa;
-  --exly-brand-soft: #7a71da;
-  position: fixed;
-  right: 0.64rem;
-  bottom: max(0.56rem, env(safe-area-inset-bottom));
-  z-index: 80;
-  width: min(248px, calc(100vw - 0.94rem));
-  opacity: 0;
-  pointer-events: none;
-  transform: translate3d(calc(100% + 1.1rem), 0, 0);
-  transition:
-    transform 400ms cubic-bezier(0.2, 0.76, 0.24, 1),
-    opacity 240ms ease;
-}
-
-.exly-side-popup.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate3d(0, 0, 0);
-}
-
-.exly-side-popup-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(74, 66, 177, 0.28);
-  border-radius: 0.28rem;
-  background: linear-gradient(150deg, #fafaff 0%, #f0efff 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.85) inset,
-    0 20px 34px -28px rgba(40, 30, 97, 0.68);
-  padding: 0.68rem 0.74rem 0.74rem;
-  overflow: hidden;
-}
-
-.exly-side-popup-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(108deg, rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, 0.68) 46%, rgba(255, 255, 255, 0) 72%);
-  transform: translateX(-120%);
-  pointer-events: none;
-  animation: exly-side-card-sheen 3.1s ease-in-out infinite;
-}
-
-.exly-side-popup.is-visible .exly-side-popup-card {
-  animation: exly-side-card-bob 3s ease-in-out infinite;
-}
-
-.exly-side-popup-close {
-  position: absolute;
-  top: 0.28rem;
-  right: 0.3rem;
-  width: 1.3rem;
-  height: 1.3rem;
-  border: 1px solid rgba(74, 66, 177, 0.2);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: #6a6791;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.exly-side-popup-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.34rem;
-  margin-right: 1.9rem;
-}
-
-.exly-side-popup-brand img {
-  width: 1.08rem;
-  height: 1.08rem;
-  border-radius: 0.18rem;
-  object-fit: cover;
-  object-position: center 20%;
-}
-
-.exly-side-popup-brand span {
-  color: #2f2b6a;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.exly-side-popup-kicker {
-  margin: 0.28rem 0 0;
-  font-size: 0.56rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--exly-brand);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.exly-side-popup-kicker::before {
-  content: "";
-  width: 0.36rem;
-  height: 0.36rem;
-  border-radius: 999px;
-  background: var(--exly-brand);
-  box-shadow: 0 0 0 0 rgba(74, 66, 177, 0.42);
-  animation: exly-side-kicker-ping 1.9s ease-out infinite;
-}
-
-.exly-side-popup-title {
-  margin: 0.34rem 0 0;
-  color: #1a1641;
-  font-size: 0.9rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-.exly-side-popup-subtext {
-  margin: 0.32rem 0 0;
-  color: #4d4a77;
-  font-size: 0.73rem;
-  line-height: 1.38;
-}
-
-.exly-side-popup-cta {
-  margin-top: 0.56rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 1.9rem;
-  width: 100%;
-  padding: 0.4rem 0.68rem;
-  border-radius: 0.42rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(120deg, #2f2487 0%, #4330aa 44%, #5d4fd0 70%, #4330aa 100%);
-  background-size: 180% 100%;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  transition:
-    transform 170ms ease,
-    box-shadow 230ms ease;
-  animation: exly-side-cta-glide 2.3s linear infinite;
-}
-
-.exly-side-popup-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 22px -16px rgba(43, 33, 112, 0.82);
-}
-
-@keyframes exly-side-card-bob {
-  0%,
-  100% {
-    transform: translateX(0);
+  .exly-sticky-callbar-text {
+    font-size: 0.67rem;
+    max-width: none;
+    text-align: center;
   }
-  50% {
-    transform: translateX(-3px);
+
+  .exly-sticky-phrase-icon {
+    width: 0.82rem;
+    height: 0.82rem;
+  }
+
+  .exly-sticky-phrase-icon-svg {
+    width: 0.58rem;
+    height: 0.58rem;
+  }
+
+  .exly-sticky-callbar {
+    width: calc(100% - 0.72rem);
+    bottom: max(0.34rem, env(safe-area-inset-bottom));
+  }
+
+  .exly-sticky-callbar-inner {
+    border-radius: 1rem;
+    gap: 0.36rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "timer"
+      "text"
+      "cta";
+    padding: 0.36rem 0.34rem 0.38rem;
+  }
+
+  .exly-sticky-callbar-copy {
+    justify-content: center;
+  }
+
+  .exly-sticky-callbar-chip {
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
+  }
+
+  .exly-sticky-callbar-btn {
+    justify-self: stretch;
+    width: 100%;
+    min-height: 1.88rem;
+    font-size: 0.69rem;
+    padding-inline: 0.7rem;
   }
 }
 
-@keyframes exly-side-card-sheen {
+@keyframes exly-sticky-sheen {
   0% {
     transform: translateX(-120%);
     opacity: 0;
   }
-  34% {
-    opacity: 0.95;
+  32% {
+    opacity: 0.82;
   }
-  60% {
+  58% {
     transform: translateX(115%);
-    opacity: 1;
+    opacity: 0.95;
   }
   100% {
     transform: translateX(115%);
@@ -7002,88 +7335,129 @@ html {
   }
 }
 
-@keyframes exly-side-line-sweep {
+@keyframes exly-sticky-dot-pulse {
   0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 220% 50%;
-  }
-}
-
-@keyframes exly-side-kicker-ping {
-  0% {
-    box-shadow: 0 0 0 0 rgba(74, 66, 177, 0.45);
+    box-shadow: 0 0 0 0 rgba(140, 160, 255, 0.46);
     transform: scale(1);
   }
   70% {
-    box-shadow: 0 0 0 6px rgba(74, 66, 177, 0);
-    transform: scale(1.08);
+    box-shadow: 0 0 0 6px rgba(140, 160, 255, 0);
+    transform: scale(1.1);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(74, 66, 177, 0);
+    box-shadow: 0 0 0 0 rgba(140, 160, 255, 0);
     transform: scale(1);
   }
 }
 
-@keyframes exly-side-cta-glide {
+@keyframes exly-phrase-leak-intro {
   0% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: translateY(-1.6px) scale(0.86);
+  }
+  62% {
+    opacity: 1;
+    transform: translateY(0.4px) scale(1.06);
   }
   100% {
-    background-position: 180% 50%;
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-@media (max-width: 640px) {
-  .exly-side-popup {
-    left: auto;
-    right: 0.52rem;
-    width: min(220px, calc(100vw - 0.86rem));
-    bottom: max(0.5rem, env(safe-area-inset-bottom));
-    transform: translate3d(calc(100% + 0.9rem), 0, 0);
+@keyframes exly-phrase-compete-intro {
+  0% {
+    opacity: 0;
+    transform: rotate(-36deg) scale(0.86);
   }
-
-  .exly-side-popup-card {
-    border-radius: 0.24rem;
-    padding: 0.62rem 0.66rem 0.68rem;
+  70% {
+    opacity: 1;
+    transform: rotate(6deg) scale(1.04);
   }
-
-  .exly-side-popup-brand img {
-    width: 1rem;
-    height: 1rem;
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
   }
+}
 
-  .exly-side-popup-brand span {
-    font-size: 0.58rem;
+@keyframes exly-phrase-crack-intro {
+  0% {
+    stroke-dashoffset: 6;
+    opacity: 0.25;
   }
-
-  .exly-side-popup-title {
-    font-size: 0.82rem;
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
-
-  .exly-side-popup-subtext {
-    font-size: 0.68rem;
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.88;
   }
+}
 
-  .exly-side-popup-cta {
-    min-height: 1.78rem;
-    font-size: 0.66rem;
+@keyframes exly-phrase-slip-intro {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.8px) scale(0.88);
+  }
+  64% {
+    opacity: 1;
+    transform: translateY(0.6px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes exly-phrase-dot-intro {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  58% {
+    opacity: 1;
+    transform: scale(1.24);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+@keyframes exly-sticky-copy-swap {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .exly-side-popup {
+  .exly-sticky-callbar-btn {
     transition: none;
   }
 
-  .exly-side-popup.is-visible .exly-side-popup-card,
-  .exly-side-popup-card::before,
-  .exly-side-popup-card::after,
-  .exly-side-popup-kicker::before,
-  .exly-side-popup-cta,
-  .exly-side-popup-close {
+  .exly-nav-wrap::after,
+  .exly-sticky-callbar-inner::after,
+  .exly-sticky-callbar-chip::before {
     animation: none;
+  }
+
+  .exly-sticky-timer-hand {
     transition: none;
+  }
+
+  .exly-sticky-callbar-copy-rotate {
+    animation: none;
+  }
+
+  .exly-sticky-phrase-icon-svg,
+  .exly-sticky-phrase-icon-svg.is-funnel .funnel-crack,
+  .exly-sticky-phrase-icon-svg.is-loss .warn-dot {
+    animation: none;
   }
 }

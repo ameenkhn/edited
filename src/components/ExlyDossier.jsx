@@ -115,12 +115,74 @@ const costComparisonRows = [
   { label: "Profit impact", traditional: "Lower retained margin", revx: "Higher retained profit", revxAccent: true },
 ];
 
-const SIDE_POPUP_VISIBLE_MS = 4600;
-const SIDE_POPUP_REPEAT_MS = 11000;
+const getMsUntilMidnight = (now = new Date()) => {
+  const nextMidnight = new Date(now);
+  nextMidnight.setHours(24, 0, 0, 0);
+  return Math.max(0, nextMidnight.getTime() - now.getTime());
+};
+
+const formatCountdown = (ms) => {
+  const totalSeconds = Math.floor(ms / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+};
+
+const HARSH_PHRASES = [
+  { text: "No conversion system? You're paying to lose.", icon: "leak" },
+  { text: "Your ad budget is funding competitors.", icon: "compete" },
+  { text: "Leaky funnels burn profit every day.", icon: "funnel" },
+  { text: "Traffic without conversion is pure loss.", icon: "slip" },
+  { text: "Scale a broken funnel, multiply the waste.", icon: "loss" },
+];
+
+const PhraseIcon = ({ type }) => {
+  switch (type) {
+    case "compete":
+      return (
+        <svg className="exly-sticky-phrase-icon-svg is-compete" viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="10" cy="10" r="6.5" />
+          <circle cx="10" cy="10" r="2.1" />
+          <path d="M12.8 7.2l3.6-3.6M13.9 3.6h2.5v2.5" />
+        </svg>
+      );
+    case "funnel":
+      return (
+        <svg className="exly-sticky-phrase-icon-svg is-funnel" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M3.4 4.1h13.2L12 10v4.3l-4 1.7V10z" />
+          <path className="funnel-crack" d="M9.8 5.7v5.8" />
+        </svg>
+      );
+    case "slip":
+      return (
+        <svg className="exly-sticky-phrase-icon-svg is-slip" viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="10" cy="6.2" r="3.4" />
+          <path d="M10 10.2v5.7M7.8 13.8L10 16l2.2-2.2" />
+        </svg>
+      );
+    case "loss":
+      return (
+        <svg className="exly-sticky-phrase-icon-svg is-loss" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M10 2.8l7 12.1H3z" />
+          <path d="M10 7.3v4.3" />
+          <circle className="warn-dot" cx="10" cy="13.8" r="0.9" />
+        </svg>
+      );
+    default:
+      return (
+        <svg className="exly-sticky-phrase-icon-svg is-leak" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M10 3.2c2.4 2.8 4.2 5 4.2 7.2A4.2 4.2 0 1 1 5.8 10.4c0-2.2 1.8-4.4 4.2-7.2z" />
+        </svg>
+      );
+  }
+};
+
 const CTA_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSedJNV0_-J0Hq32WKM-_eojm766XwCQhdaz-RrU0Jbx1LFsMQ/viewform";
 
 const ExlyDossier = () => {
-  const [isSidePopupVisible, setIsSidePopupVisible] = useState(false);
+  const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());
+  const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -141,25 +203,24 @@ const ExlyDossier = () => {
   }, []);
 
   useEffect(() => {
-    let hideTimer;
-
-    const showSidePopup = () => {
-      setIsSidePopupVisible(true);
-      window.clearTimeout(hideTimer);
-      hideTimer = window.setTimeout(() => {
-        setIsSidePopupVisible(false);
-      }, SIDE_POPUP_VISIBLE_MS);
-    };
-
-    const initialTimer = window.setTimeout(showSidePopup, 1800);
-    const repeatTimer = window.setInterval(showSidePopup, SIDE_POPUP_REPEAT_MS);
-
-    return () => {
-      window.clearTimeout(initialTimer);
-      window.clearInterval(repeatTimer);
-      window.clearTimeout(hideTimer);
-    };
+    const timer = window.setInterval(() => {
+      setMsUntilReset(getMsUntilMidnight());
+    }, 1000);
+    return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const phraseTicker = window.setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % HARSH_PHRASES.length);
+    }, 5000);
+    return () => window.clearInterval(phraseTicker);
+  }, []);
+
+  const timerText = formatCountdown(msUntilReset);
+  const totalSecondsLeft = Math.floor(msUntilReset / 1000);
+  const timerSecondAngle = (totalSecondsLeft % 60) * 6;
+  const timerMinuteAngle = ((Math.floor(totalSecondsLeft / 60) % 60) + (totalSecondsLeft % 60) / 60) * 6;
+  const activePhrase = HARSH_PHRASES[phraseIndex];
 
   return (
     <main className="exly-page">
@@ -827,38 +888,47 @@ const ExlyDossier = () => {
         <span>Meta + Google Ads | Funnels | CRM | Automation | Analytics</span>
       </footer>
 
-      <aside
-        className={`exly-side-popup ${isSidePopupVisible ? "is-visible" : ""}`}
-        aria-label="Book a strategy call prompt"
-        aria-hidden={!isSidePopupVisible}
-      >
-        <div className="exly-side-popup-card">
-          <button
-            type="button"
-            className="exly-side-popup-close"
-            aria-label="Dismiss strategy call popup"
-            onClick={() => setIsSidePopupVisible(false)}
-          >
-            ×
-          </button>
-          <div className="exly-side-popup-brand" aria-label="RevX">
-            <img src="/f5af000e-6753-41b3-88e2-f1359e71e8d4.png" alt="RevX logo" />
-            <span>RevX</span>
-          </div>
-          <p className="exly-side-popup-kicker">PROFIT PLAN READY</p>
-          <h3 className="exly-side-popup-title">Book a Strategy Call</h3>
-          <p className="exly-side-popup-subtext">Get your custom savings estimate and growth action plan.</p>
-          <a
-            className="exly-side-popup-cta"
-            href={CTA_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsSidePopupVisible(false)}
-          >
+      <div className="exly-sticky-callbar" role="region" aria-label="Book your strategy call">
+        <div className="exly-sticky-callbar-inner">
+          <p className="exly-sticky-callbar-text">
+            <span key={phraseIndex} className="exly-sticky-callbar-copy exly-sticky-callbar-copy-rotate">
+              <span className="exly-sticky-phrase-icon" aria-hidden="true">
+                <PhraseIcon type={activePhrase.icon} />
+              </span>
+              <span className="exly-sticky-callbar-copy-text">{activePhrase.text}</span>
+            </span>
+          </p>
+          <span className="exly-sticky-callbar-chip exly-sticky-callbar-chip-timer" aria-label={`Offer ends in ${timerText}`}>
+            <svg className="exly-sticky-timer" viewBox="0 0 20 20" aria-hidden="true">
+              <circle className="exly-sticky-timer-ring" cx="10" cy="10" r="8" />
+              <circle className="exly-sticky-timer-face" cx="10" cy="10" r="6.3" />
+              <path className="exly-sticky-timer-ticks" d="M10 3.8v1.4M16.2 10h-1.4M10 16.2v-1.4M3.8 10h1.4" />
+              <line
+                className="exly-sticky-timer-hand exly-sticky-timer-hand-minute"
+                x1="10"
+                y1="10"
+                x2="10"
+                y2="5.5"
+                style={{ transform: `rotate(${timerMinuteAngle}deg)` }}
+              />
+              <line
+                className="exly-sticky-timer-hand exly-sticky-timer-hand-second"
+                x1="10"
+                y1="10"
+                x2="10"
+                y2="4.6"
+                style={{ transform: `rotate(${timerSecondAngle}deg)` }}
+              />
+              <circle className="exly-sticky-timer-hub" cx="10" cy="10" r="1.05" />
+            </svg>
+            <span className="exly-sticky-timer-label">Offer ends in {timerText}</span>
+          </span>
+          <a className="exly-sticky-callbar-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
             Book a Strategy Call
+            <ChevronRight size={16} />
           </a>
         </div>
-      </aside>
+      </div>
     </main>
   );
 };

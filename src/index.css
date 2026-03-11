@@ -7772,3 +7772,122 @@ html {
     animation: none;
   }
 }
+
+/* Exly runtime + mobile optimization overrides */
+.exly-page [id] {
+  scroll-margin-top: 6.75rem;
+}
+
+.exly-offer-section,
+.exly-problem-section,
+.exly-cost-section,
+.exly-included-section,
+.exly-proof-section,
+.exly-process-section,
+.exly-final-cta {
+  content-visibility: auto;
+  contain-intrinsic-size: 760px;
+}
+
+@media (pointer: coarse) {
+  .exly-nav-wrap,
+  .exly-sticky-callbar-inner {
+    backdrop-filter: none;
+  }
+
+  .exly-nav-wrap::after,
+  .exly-nav-center::after,
+  .exly-stage-orb,
+  .exly-stage-glow {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .exly-page {
+    overscroll-behavior-y: contain;
+  }
+
+  .exly-nav-links {
+    overflow-x: auto;
+    max-width: calc(100vw - 9.5rem);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .exly-nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .exly-phone-wrap {
+    width: min(560px, 112%);
+  }
+
+  .exly-final-cta-layout {
+    gap: 0.9rem;
+  }
+
+  .exly-cta-image-wrap {
+    width: min(100%, 300px);
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+    padding-inline: 0;
+    animation: none;
+  }
+
+  .exly-cta-image-frame {
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .exly-cta-image-frame img {
+    object-position: center center;
+  }
+
+  .exly-cta-image-orb {
+    display: none;
+  }
+
+  .exly-mini-footer {
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+  }
+
+  .exly-mini-footer p,
+  .exly-mini-footer span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .exly-nav-links a,
+  .exly-cta-btn,
+  .exly-sticky-callbar-btn,
+  .exly-signup-link {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 480px) {
+  .exly-nav-links {
+    max-width: calc(100vw - 8.05rem);
+  }
+
+  .exly-nav-links a:not(.exly-signup-link) {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .exly-nav-links a:nth-child(3) {
+    display: none;
+  }
+
+  .exly-phone-wrap {
+    width: min(560px, 124%);
+  }
+
+  .exly-cta-image-wrap {
+    width: min(100%, 292px);
+  }
+}

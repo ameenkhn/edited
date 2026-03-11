@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { BadgeCheck, BarChart3, ChevronRight, Flame, MessageCircle, Users2 } from "lucide-react";
 
 const scene = {
@@ -105,6 +105,8 @@ const phoneFeed = [
 ];
 
 const phoneTicker = ["Managed Stack", "Services Live", "2.1x ROAS", "+38% Leads", "12 hrs/week saved"];
+const phoneTickerLoop = [...phoneTicker, ...phoneTicker];
+const phoneFeedLoop = [...phoneFeed, ...phoneFeed, ...phoneFeed, ...phoneFeed];
 
 const valueBadges = ["Zero Revenue Share", "Managed Stack", "Automation", "Fixed Cost", "Higher Profits"];
 
@@ -182,27 +184,9 @@ const PhraseIcon = ({ type }) => {
 const CTA_FORM_URL =
   "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10?dynamic_link=d60aea22-db3b-49f4-93d0-76bee72da807";
 
-const ExlyDossier = () => {
+const StickyCallbar = memo(() => {
   const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());
   const [phraseIndex, setPhraseIndex] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 },
-    );
-
-    const nodes = document.querySelectorAll(".exly-reveal");
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -223,6 +207,70 @@ const ExlyDossier = () => {
   const timerSecondAngle = (totalSecondsLeft % 60) * 6;
   const timerMinuteAngle = ((Math.floor(totalSecondsLeft / 60) % 60) + (totalSecondsLeft % 60) / 60) * 6;
   const activePhrase = HARSH_PHRASES[phraseIndex];
+
+  return (
+    <div className="exly-sticky-callbar" role="region" aria-label="Book your strategy call">
+      <div className="exly-sticky-callbar-inner">
+        <p className="exly-sticky-callbar-text">
+          <span key={phraseIndex} className="exly-sticky-callbar-copy exly-sticky-callbar-copy-rotate">
+            <span className="exly-sticky-phrase-icon" aria-hidden="true">
+              <PhraseIcon type={activePhrase.icon} />
+            </span>
+            <span className="exly-sticky-callbar-copy-text">{activePhrase.text}</span>
+          </span>
+        </p>
+        <span className="exly-sticky-callbar-chip exly-sticky-callbar-chip-timer" aria-label={`Offer ends in ${timerText}`}>
+          <svg className="exly-sticky-timer" viewBox="0 0 20 20" aria-hidden="true">
+            <circle className="exly-sticky-timer-ring" cx="10" cy="10" r="8" />
+            <circle className="exly-sticky-timer-face" cx="10" cy="10" r="6.3" />
+            <path className="exly-sticky-timer-ticks" d="M10 3.8v1.4M16.2 10h-1.4M10 16.2v-1.4M3.8 10h1.4" />
+            <line
+              className="exly-sticky-timer-hand exly-sticky-timer-hand-minute"
+              x1="10"
+              y1="10"
+              x2="10"
+              y2="5.5"
+              style={{ transform: `rotate(${timerMinuteAngle}deg)` }}
+            />
+            <line
+              className="exly-sticky-timer-hand exly-sticky-timer-hand-second"
+              x1="10"
+              y1="10"
+              x2="10"
+              y2="4.6"
+              style={{ transform: `rotate(${timerSecondAngle}deg)` }}
+            />
+            <circle className="exly-sticky-timer-hub" cx="10" cy="10" r="1.05" />
+          </svg>
+          <span className="exly-sticky-timer-label">Offer ends in {timerText}</span>
+        </span>
+        <a className="exly-sticky-callbar-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+          Book a Strategy Call
+          <ChevronRight size={16} />
+        </a>
+      </div>
+    </div>
+  );
+});
+
+const ExlyDossier = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    const nodes = document.querySelectorAll(".exly-reveal");
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main className="exly-page">
@@ -320,7 +368,7 @@ const ExlyDossier = () => {
             </div>
             <div className="exly-phone-kpi-strip">
               <div className="exly-phone-kpi-track">
-                {[...phoneTicker, ...phoneTicker].map((item, index) => (
+                {phoneTickerLoop.map((item, index) => (
                   <span key={`${item}-${index}`} className="exly-phone-kpi-chip">
                     {item}
                   </span>
@@ -329,7 +377,7 @@ const ExlyDossier = () => {
             </div>
             <div className="exly-phone-scroll-viewport">
               <div className="exly-phone-scroll-track">
-                {[...phoneFeed, ...phoneFeed, ...phoneFeed, ...phoneFeed].map((item, index) => (
+                {phoneFeedLoop.map((item, index) => (
                   item.type === "section" ? (
                     <article key={`${item.title}-${index}`} className="exly-phone-feed-section">
                       <p>{item.title}</p>
@@ -913,48 +961,7 @@ const ExlyDossier = () => {
         <p>Exly Growth Partnership</p>
         <span>Meta + Google Ads | Funnels | CRM | Automation | Analytics</span>
       </footer>
-
-      <div className="exly-sticky-callbar" role="region" aria-label="Book your strategy call">
-        <div className="exly-sticky-callbar-inner">
-          <p className="exly-sticky-callbar-text">
-            <span key={phraseIndex} className="exly-sticky-callbar-copy exly-sticky-callbar-copy-rotate">
-              <span className="exly-sticky-phrase-icon" aria-hidden="true">
-                <PhraseIcon type={activePhrase.icon} />
-              </span>
-              <span className="exly-sticky-callbar-copy-text">{activePhrase.text}</span>
-            </span>
-          </p>
-          <span className="exly-sticky-callbar-chip exly-sticky-callbar-chip-timer" aria-label={`Offer ends in ${timerText}`}>
-            <svg className="exly-sticky-timer" viewBox="0 0 20 20" aria-hidden="true">
-              <circle className="exly-sticky-timer-ring" cx="10" cy="10" r="8" />
-              <circle className="exly-sticky-timer-face" cx="10" cy="10" r="6.3" />
-              <path className="exly-sticky-timer-ticks" d="M10 3.8v1.4M16.2 10h-1.4M10 16.2v-1.4M3.8 10h1.4" />
-              <line
-                className="exly-sticky-timer-hand exly-sticky-timer-hand-minute"
-                x1="10"
-                y1="10"
-                x2="10"
-                y2="5.5"
-                style={{ transform: `rotate(${timerMinuteAngle}deg)` }}
-              />
-              <line
-                className="exly-sticky-timer-hand exly-sticky-timer-hand-second"
-                x1="10"
-                y1="10"
-                x2="10"
-                y2="4.6"
-                style={{ transform: `rotate(${timerSecondAngle}deg)` }}
-              />
-              <circle className="exly-sticky-timer-hub" cx="10" cy="10" r="1.05" />
-            </svg>
-            <span className="exly-sticky-timer-label">Offer ends in {timerText}</span>
-          </span>
-          <a className="exly-sticky-callbar-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
-            Book a Strategy Call
-            <ChevronRight size={16} />
-          </a>
-        </div>
-      </div>
+      <StickyCallbar />
     </main>
   );
 };

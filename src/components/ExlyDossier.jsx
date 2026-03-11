@@ -182,7 +182,7 @@ const PhraseIcon = ({ type }) => {
 };
 
 const CTA_FORM_URL =
-  "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10?dynamic_link=d60aea22-db3b-49f4-93d0-76bee72da807";
+  "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10?dynamic_link=0c5b8c8a-dac3-44b5-8ba6-4a916bc7d99c";
 
 const StickyCallbar = memo(() => {
   const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());

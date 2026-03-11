@@ -3230,10 +3230,10 @@
 .exly-cta-image-wrap {
   position: relative;
   z-index: 3;
-  width: min(100%, 285px);
+  width: min(100%, 360px);
   margin: 0 0 0 auto;
   padding: 0.18rem;
-  animation: exly-float-sway 8.8s ease-in-out infinite;
+  animation: none;
 }
 
 .exly-cta-image-orb {
@@ -3270,8 +3270,7 @@
   border: 1px solid #d4d9eb;
   background: #ffffff;
   box-shadow: 0 22px 40px -28px rgba(14, 20, 38, 0.5), 0 10px 18px -14px rgba(92, 106, 172, 0.48);
-  transform: rotate(-1.8deg);
-  transform-origin: 50% 65%;
+  transform: none;
 }
 
 .exly-cta-image-frame::after {
@@ -4082,7 +4081,7 @@
 .exly-sticky-callbar-inner {
   position: relative;
   overflow: hidden;
-  min-height: 2.86rem;
+  min-height: 3.28rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
@@ -4091,7 +4090,7 @@
   border-radius: 999px;
   background: var(--exly-sticky-surface);
   box-shadow: var(--exly-sticky-shadow);
-  padding: 0.34rem 0.42rem 0.34rem 0.46rem;
+  padding: 0.44rem 0.5rem 0.44rem 0.56rem;
   backdrop-filter: blur(12px);
   pointer-events: auto;
 }
@@ -4123,7 +4122,7 @@
   min-width: 0;
   display: block;
   color: #f1f5ff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.26;
   letter-spacing: -0.008em;
@@ -4134,7 +4133,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.32rem;
-  padding: 0.18rem 0.52rem;
+  padding: 0.22rem 0.56rem;
   border: 1px solid var(--exly-chip-border);
   border-radius: 999px;
   background: var(--exly-chip-bg);
@@ -4162,7 +4161,7 @@
   position: relative;
   z-index: 2;
   gap: 0.36rem;
-  padding: 0.16rem 0.44rem 0.16rem 0.32rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.36rem;
 }
 
 .exly-sticky-callbar-chip-timer::before {
@@ -4170,8 +4169,8 @@
 }
 
 .exly-sticky-timer {
-  width: 0.96rem;
-  height: 0.96rem;
+  width: 1.04rem;
+  height: 1.04rem;
   filter: drop-shadow(0 0 4px rgba(140, 160, 255, 0.32));
 }
 
@@ -4315,8 +4314,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.32rem;
-  min-height: 2.08rem;
-  padding: 0.42rem 0.98rem;
+  min-height: 2.34rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 999px;
   border: 1px solid var(--exly-brand-border);
   background: var(--exly-brand-gradient);
@@ -7828,7 +7827,7 @@ html {
   }
 
   .exly-cta-image-wrap {
-    width: min(100%, 300px);
+    width: min(100%, 360px);
     margin-left: auto;
     margin-right: auto;
     justify-self: center;
@@ -7847,6 +7846,20 @@ html {
 
   .exly-cta-image-orb {
     display: none;
+  }
+
+  .exly-sticky-callbar-inner {
+    min-height: 4.25rem;
+    padding: 0.5rem 0.45rem 0.52rem;
+  }
+
+  .exly-sticky-callbar-chip-timer {
+    padding: 0.2rem 0.44rem 0.2rem 0.34rem;
+  }
+
+  .exly-sticky-callbar-btn {
+    min-height: 2.12rem;
+    padding: 0.38rem 0.76rem;
   }
 
   .exly-mini-footer {
@@ -7888,6 +7901,15 @@ html {
   }
 
   .exly-cta-image-wrap {
-    width: min(100%, 292px);
+    width: min(100%, 330px);
+  }
+
+  .exly-sticky-callbar-inner {
+    min-height: 4.45rem;
+    padding: 0.44rem 0.38rem 0.5rem;
+  }
+
+  .exly-sticky-callbar-btn {
+    min-height: 2.05rem;
   }
 }

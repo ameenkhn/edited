@@ -4,7 +4,7 @@ import { BadgeCheck, BarChart3, ChevronRight, Flame, MessageCircle, Users2 } fro
 const scene = {
   handPhone:
     "https://cdn.prod.website-files.com/686512b3b26f4afedae0d452/687a092b27efcb468d635b5d_Hand.avif",
-  ctaConcernImage: "/image101.png",
+  ctaConcernImage: "/revx-cta-updated.png",
 };
 
 const offerScope = [
@@ -952,7 +952,6 @@ const ExlyDossier = () => {
                 decoding="async"
               />
             </figure>
-            <span className="exly-cta-image-pill">Before strategy: confusion and doubt</span>
           </div>
         </div>
       </section>

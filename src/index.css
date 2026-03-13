@@ -1433,9 +1433,9 @@
 
 .exly-offer-section,
 .exly-problem-section,
+.exly-cost-visual-section,
 .exly-cost-section,
 .exly-visual-panels,
-.exly-included-section,
 .exly-proof-section,
 .exly-process-section {
   margin-top: 3.5rem;
@@ -1451,7 +1451,6 @@
 .exly-price-card,
 .exly-detail-card,
 .exly-problem-item,
-.exly-included-card,
 .exly-guarantee-card,
 .exly-process-grid article {
   border: 1px solid #d2d4dc;
@@ -1748,14 +1747,12 @@
 
 .exly-detail-card ul,
 .exly-problem-item p,
-.exly-included-card ul,
 .exly-guarantee-card ul,
 .exly-process-grid article ul {
   margin: 0;
 }
 
 .exly-detail-card ul,
-.exly-included-card ul,
 .exly-guarantee-card ul,
 .exly-process-grid article ul {
   margin-top: 0.85rem;
@@ -1972,7 +1969,6 @@
 
 .exly-problem-section h2,
 .exly-cost-section h2,
-.exly-included-section h2,
 .exly-proof-section h2,
 .exly-process-section h2 {
   margin: 0;
@@ -2117,6 +2113,10 @@
 }
 
 .exly-cost-compare-grid .exly-cost-table {
+  margin-top: 0;
+}
+
+.exly-cost-visual-section .exly-cost-visual-stack {
   margin-top: 0;
 }
 
@@ -3017,143 +3017,6 @@
   margin-inline: auto;
 }
 
-.exly-included-grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
-}
-
-.exly-included-support {
-  margin-top: 0.82rem;
-  border: 1px solid #cfd8ee;
-  border-radius: 1.2rem;
-  background: linear-gradient(145deg, #f7faff 0%, #f3fbf8 100%);
-  padding: 0.78rem 0.86rem;
-  box-shadow: 0 22px 34px -32px rgba(26, 33, 52, 0.34);
-  overflow: hidden;
-}
-
-.exly-included-support-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-}
-
-.exly-included-support-head p,
-.exly-included-support-head span {
-  margin: 0;
-}
-
-.exly-included-support-head p {
-  color: #3f4d72;
-  font-size: 0.8rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.exly-included-support-head span {
-  color: #5a647f;
-  font-size: 0.84rem;
-  line-height: 1.55;
-  max-width: 56ch;
-}
-
-.exly-included-logo-row {
-  margin-top: 0.56rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.exly-included-logo-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.34rem;
-  border: 1px solid #d3dbef;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  color: #4c5674;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  padding: 0.22rem 0.44rem 0.22rem 0.22rem;
-  box-shadow: 0 14px 22px -24px rgba(22, 27, 45, 0.46);
-}
-
-.exly-included-logo-icon {
-  width: 1.02rem;
-  height: 1.02rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  flex: 0 0 auto;
-}
-
-.exly-included-logo-icon svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.exly-included-logo-icon.is-shopify,
-.exly-included-logo-icon.is-analytics,
-.exly-included-logo-icon.is-justpay {
-  border-radius: 0.24rem;
-}
-
-.exly-included-cartoon {
-  margin-top: 0.84rem;
-  border: 1px solid #d5dced;
-  border-radius: 1rem;
-  background: linear-gradient(145deg, #f8faff 0%, #f4f8ff 100%);
-  padding: 0.34rem;
-  overflow: hidden;
-}
-
-.exly-included-cartoon svg {
-  width: 100%;
-  display: block;
-}
-
-.exly-included-cartoon > svg > rect:first-child {
-  fill: rgba(248, 251, 255, 0.9);
-  stroke: #cfdaef;
-  stroke-width: 1.5;
-}
-
-.exly-included-cartoon-block {
-  fill: #ffffff;
-  stroke: #ccd7ef;
-  stroke-width: 1.4;
-}
-
-.exly-included-cartoon-flow {
-  fill: none;
-  stroke: #6072f1;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: exly-flow-draw 6.8s ease-in-out infinite;
-}
-
-.exly-included-cartoon-title {
-  fill: #404b68;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.exly-included-card {
-  padding: 1rem;
-}
-
 .exly-proof-stats {
   margin-top: 0.95rem;
   display: grid;
@@ -3521,117 +3384,6 @@
   grid-column: 2;
 }
 
-.exly-included-card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
-}
-
-.exly-included-card-head > p {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #646a7d;
-  font-weight: 700;
-}
-
-.exly-included-card-head > p svg {
-  width: 1rem;
-  height: 1rem;
-  flex: 0 0 auto;
-  color: #5e69ff;
-}
-
-.exly-included-head-mini {
-  width: 112px;
-  height: 36px;
-  flex: 0 0 auto;
-}
-
-.exly-included-head-mini rect {
-  fill: rgba(246, 249, 255, 0.84);
-  stroke: #cad4ee;
-  stroke-width: 1.6;
-}
-
-.exly-included-head-mini path {
-  fill: none;
-  stroke: #5f72f1;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 210;
-  stroke-dashoffset: 210;
-  animation: exly-draw-line 5.6s ease-in-out infinite;
-}
-
-.exly-platform-icons {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.34rem;
-  margin-right: 0.08rem;
-}
-
-.exly-platform-icon {
-  width: 1rem;
-  height: 1rem;
-  flex: 0 0 auto;
-  display: block;
-}
-
-.exly-included-card ul {
-  padding-left: 0;
-}
-
-.exly-included-card li {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 0.9rem 1fr;
-  gap: 0.45rem;
-  align-items: start;
-}
-
-.exly-included-card li svg {
-  width: 0.9rem;
-  height: 0.9rem;
-  color: #25ae72;
-  margin-top: 0.22rem;
-}
-
-.exly-included-special-icon {
-  width: 0.9rem;
-  height: 0.9rem;
-  color: #5d6ff0;
-  margin-top: 0.18rem;
-}
-
-.exly-included-mini-pills {
-  margin-top: 0.58rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.36rem;
-}
-
-.exly-included-mini-pills span {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid #d3dbef;
-  border-radius: 999px;
-  background: #f8faff;
-  color: #58617b;
-  font-size: 0.67rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1;
-  padding: 0.3rem 0.46rem;
-}
-
 .exly-proof-stats > span {
   display: flex;
   align-items: center;
@@ -3680,12 +3432,6 @@
 .exly-investor-logo-lightspeed {
   width: 0.96rem;
   height: 1rem;
-}
-
-.exly-investor-logo-chiratae {
-  width: 2.95rem;
-  height: 1rem;
-  border-radius: 0.16rem;
 }
 
 .exly-guarantee-head {
@@ -5173,11 +4919,6 @@
     grid-template-columns: 1fr;
   }
 
-  .exly-included-support-head {
-    flex-direction: column;
-    gap: 0.36rem;
-  }
-
   .exly-savings-grid article {
     grid-template-columns: 1.75rem 1fr;
   }
@@ -5193,14 +4934,12 @@
 
   .exly-offer-cartoon,
   .exly-problem-cartoon,
-  .exly-included-cartoon,
   .exly-guarantee-cartoon,
   .exly-process-cartoon {
     margin-top: 0.68rem;
   }
 
   .exly-offer-cartoon-text,
-  .exly-included-cartoon-title,
   .exly-process-cartoon-text {
     font-size: 12px;
   }
@@ -5574,7 +5313,6 @@
 
   .exly-feature-card,
   .exly-offer-section,
-  .exly-included-grid,
   .exly-style-grid {
     grid-template-columns: 1fr;
   }
@@ -5688,34 +5426,6 @@
     padding: 0.9rem;
   }
 
-  .exly-included-support {
-    padding: 0.64rem;
-    border-radius: 1rem;
-  }
-
-  .exly-included-support-head p {
-    font-size: 0.73rem;
-  }
-
-  .exly-included-support-head span {
-    font-size: 0.76rem;
-  }
-
-  .exly-included-logo-pill {
-    font-size: 0.64rem;
-    padding: 0.2rem 0.36rem 0.2rem 0.2rem;
-  }
-
-  .exly-included-logo-icon {
-    width: 0.94rem;
-    height: 0.94rem;
-  }
-
-  .exly-included-head-mini {
-    width: 96px;
-    height: 32px;
-  }
-
   .exly-cost-motion {
     display: none;
   }
@@ -5743,7 +5453,6 @@
   }
 
   .exly-offer-cartoon-text,
-  .exly-included-cartoon-title,
   .exly-process-cartoon-text {
     font-size: 10px;
   }
@@ -5815,7 +5524,6 @@
 
   .exly-offer-cartoon,
   .exly-problem-cartoon,
-  .exly-included-cartoon,
   .exly-guarantee-cartoon,
   .exly-process-cartoon {
     margin-top: 0.58rem;
@@ -6253,7 +5961,6 @@
   .exly-problem-cartoon-red-dot,
   .exly-problem-cartoon-blue-dot,
   .exly-cost-chip-row svg path,
-  .exly-included-cartoon-flow,
   .exly-guarantee-cartoon-check,
   .exly-guarantee-cartoon-line-a,
   .exly-guarantee-cartoon-line-b,
@@ -7071,9 +6778,9 @@ html {
 
   .exly-offer-section,
   .exly-problem-section,
+.exly-cost-visual-section,
   .exly-cost-section,
   .exly-visual-panels,
-  .exly-included-section,
   .exly-proof-section,
   .exly-process-section {
     margin-top: 2.9rem;
@@ -7221,7 +6928,6 @@ html {
 
   .exly-problem-section h2,
   .exly-cost-section h2,
-  .exly-included-section h2,
   .exly-proof-section h2,
   .exly-process-section h2 {
     font-size: clamp(1.36rem, 6.8vw, 1.9rem);
@@ -7230,7 +6936,6 @@ html {
   .exly-offer-section,
   .exly-problem-grid,
   .exly-savings-grid,
-  .exly-included-grid,
   .exly-proof-stats,
   .exly-process-grid,
   .exly-visual-panels,
@@ -7501,10 +7206,6 @@ html {
   .exly-hero-top p {
     font-size: 0.95rem;
     line-height: 1.46;
-  }
-
-  .exly-included-support {
-    padding: 0.58rem;
   }
 
   .exly-hero-underline {
@@ -7789,7 +7490,6 @@ html {
 .exly-offer-section,
 .exly-problem-section,
 .exly-cost-section,
-.exly-included-section,
 .exly-proof-section,
 .exly-process-section,
 .exly-final-cta {

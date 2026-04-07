@@ -241,7 +241,7 @@ const StickyCallbar = memo(() => {
           <span className="exly-sticky-timer-label">Offer ends in {timerText}</span>
         </span>
         <a className="exly-sticky-callbar-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
-          Book a Strategy Call
+          Book my Call
           <ChevronRight size={16} />
         </a>
       </div>

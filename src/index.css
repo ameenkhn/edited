@@ -3925,88 +3925,6 @@
   color: #60667a;
 }
 
-.exly-form-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 140;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-}
-
-.exly-form-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  background: rgba(9, 12, 20, 0.72);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.exly-form-modal-card {
-  position: relative;
-  z-index: 1;
-  width: min(760px, 100%);
-  height: min(820px, calc(100vh - 2rem));
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(208, 214, 228, 0.96);
-  border-radius: 1.2rem;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 32px 80px -36px rgba(0, 0, 0, 0.62);
-}
-
-.exly-form-modal-close {
-  flex: 0 0 auto;
-  width: 2.7rem;
-  height: 2.7rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d7ddea;
-  border-radius: 999px;
-  background: #fff;
-  color: #232839;
-  box-shadow: 0 10px 22px -18px rgba(14, 18, 28, 0.46);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.exly-form-modal-close:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 26px -18px rgba(14, 18, 28, 0.52);
-}
-
-.exly-form-modal-close:focus-visible {
-  outline: 3px solid rgba(95, 131, 255, 0.42);
-  outline-offset: 2px;
-}
-
-.exly-form-modal-close-floating {
-  position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
-  z-index: 2;
-}
-
-.exly-form-modal-body {
-  position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
-  background: #f6f7fb;
-  overflow: hidden;
-}
-
-.exly-form-modal-frame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #ffffff;
-}
-
 .exly-sticky-callbar {
   position: fixed;
   left: 50%;
@@ -7769,15 +7687,6 @@ html {
     padding: 0.8rem 1.34rem;
   }
 
-  .exly-form-modal {
-    padding: 0.75rem;
-  }
-
-  .exly-form-modal-card {
-    width: min(700px, 100%);
-    height: min(780px, calc(100vh - 1.5rem));
-  }
-
   .exly-mini-footer {
     align-items: center;
     text-align: center;
@@ -7818,26 +7727,6 @@ html {
 
   .exly-cta-image-wrap {
     width: min(100%, 330px);
-  }
-
-  .exly-form-modal {
-    padding: 0.5rem;
-  }
-
-  .exly-form-modal-card {
-    width: min(100%, 520px);
-    height: calc(100vh - 1rem);
-    border-radius: 1rem;
-  }
-
-  .exly-form-modal-close {
-    width: 2.45rem;
-    height: 2.45rem;
-  }
-
-  .exly-form-modal-close-floating {
-    top: 0.65rem;
-    right: 0.65rem;
   }
 
   .exly-sticky-callbar-inner {

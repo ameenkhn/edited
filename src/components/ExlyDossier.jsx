@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from "react";
-import { BadgeCheck, BarChart3, ChevronRight, Flame, Users2 } from "lucide-react";
+import { BadgeCheck, BarChart3, ChevronRight, Flame, Users2, X } from "lucide-react";
 
 const scene = {
   handPhone:
@@ -168,19 +168,61 @@ const PhraseIcon = ({ type }) => {
 };
 
 const CTA_FORM_URL =
-  "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10";
+  "https://affiliate.exlyapp.com/?init_contact=true";
 
-const SectionCTA = ({ label, caption, className = "" }) => (
+const CTAAnchor = ({ className, onOpenForm, children }) => (
+  <a
+    className={className}
+    href={CTA_FORM_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(event) => {
+      event.preventDefault();
+      onOpenForm();
+    }}
+  >
+    {children}
+  </a>
+);
+
+const SectionCTA = ({ label, caption, className = "", onOpenForm }) => (
   <div className={`exly-section-cta ${className}`.trim()}>
     {caption ? <span className="exly-section-cta-caption">{caption}</span> : null}
-    <a className="exly-section-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+    <CTAAnchor className="exly-section-cta-btn" onOpenForm={onOpenForm}>
       {label}
       <ChevronRight size={16} />
-    </a>
+    </CTAAnchor>
   </div>
 );
 
-const StickyCallbar = memo(() => {
+const FormModal = ({ open, onClose }) => {
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <div className="exly-form-modal" role="dialog" aria-modal="true" aria-labelledby="exly-form-modal-title">
+      <button className="exly-form-modal-backdrop" type="button" aria-label="Close contact form" onClick={onClose} />
+      <div className="exly-form-modal-card">
+        <button className="exly-form-modal-close exly-form-modal-close-floating" type="button" aria-label="Close contact form" onClick={onClose}>
+          <X size={18} />
+        </button>
+        <div className="exly-form-modal-body">
+          <span id="exly-form-modal-title" className="sr-only">Book your call form</span>
+          <iframe
+            className="exly-form-modal-frame"
+            title="Exly contact form"
+            src={CTA_FORM_URL}
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const StickyCallbar = memo(({ onOpenForm }) => {
   const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());
   const [phraseIndex, setPhraseIndex] = useState(0);
 
@@ -240,16 +282,18 @@ const StickyCallbar = memo(() => {
           </svg>
           <span className="exly-sticky-timer-label">Offer ends in {timerText}</span>
         </span>
-        <a className="exly-sticky-callbar-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+        <CTAAnchor className="exly-sticky-callbar-btn" onOpenForm={onOpenForm}>
           Book my Call
           <ChevronRight size={16} />
-        </a>
+        </CTAAnchor>
       </div>
     </div>
   );
 });
 
 const ExlyDossier = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -268,8 +312,30 @@ const ExlyDossier = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isFormOpen) {
+      return undefined;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsFormOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isFormOpen]);
+
   return (
     <main className="exly-page">
+      <FormModal open={isFormOpen} onClose={() => setIsFormOpen(false)} />
       <header className="exly-shell exly-nav-wrap exly-reveal">
         <div className="exly-nav-left">
           <button className="exly-nav-chip exly-nav-chip-active" aria-label="RevX">
@@ -288,9 +354,9 @@ const ExlyDossier = () => {
           <a href="#offer">Offer</a>
           <a href="#cost">Savings</a>
           <a href="#process">Process</a>
-          <a href={CTA_FORM_URL} className="exly-signup-link" target="_blank" rel="noopener noreferrer">
+          <CTAAnchor className="exly-signup-link" onOpenForm={() => setIsFormOpen(true)}>
             Book Call
-          </a>
+          </CTAAnchor>
         </nav>
       </header>
 
@@ -308,10 +374,10 @@ const ExlyDossier = () => {
             <span key={badge}>{badge}</span>
           ))}
         </div>
-        <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+        <CTAAnchor className="exly-cta-btn" onOpenForm={() => setIsFormOpen(true)}>
           Get My Profit Growth Plan
           <ChevronRight size={18} />
-        </a>
+        </CTAAnchor>
       </section>
 
       <section className="exly-shell exly-stage exly-reveal" aria-label="Exly Meta Ads hero visual">
@@ -525,6 +591,7 @@ const ExlyDossier = () => {
           className="exly-section-cta-full"
           caption="Ready to switch from variable fees to predictable growth?"
           label="Get My Custom Profit Plan"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -563,6 +630,7 @@ const ExlyDossier = () => {
         <SectionCTA
           caption="If your funnel is leaking profit, fix it before you scale."
           label="Stop My Revenue Leaks"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -606,6 +674,7 @@ const ExlyDossier = () => {
         <SectionCTA
           caption="Compare your current setup against a fixed-cost model."
           label="Show Me My Real Savings"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -702,6 +771,7 @@ const ExlyDossier = () => {
         <SectionCTA
           caption="Know what your yearly savings could look like before you commit."
           label="Reveal My Profit Upside"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -775,6 +845,7 @@ const ExlyDossier = () => {
         <SectionCTA
           caption="Keep your accounts, data, and delivery stack fully under your control."
           label="Protect My Accounts and Data"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -827,6 +898,7 @@ const ExlyDossier = () => {
         <SectionCTA
           caption="See how RevX would launch and scale your setup in clear phases."
           label="Map My 4-Phase Launch"
+          onOpenForm={() => setIsFormOpen(true)}
         />
       </section>
 
@@ -865,10 +937,10 @@ const ExlyDossier = () => {
                 Weekly strategy cadence
               </span>
             </div>
-            <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+            <CTAAnchor className="exly-cta-btn" onOpenForm={() => setIsFormOpen(true)}>
               Book My RevX Growth Call
               <ChevronRight size={18} />
-            </a>
+            </CTAAnchor>
           </div>
           <div className="exly-cta-image-wrap">
             <span className="exly-cta-image-orb exly-cta-image-orb-l" />
@@ -889,7 +961,7 @@ const ExlyDossier = () => {
         <p>Exly Growth Partnership</p>
         <span>Meta + Google Ads | Funnels | CRM | Automation | Analytics</span>
       </footer>
-      <StickyCallbar />
+      <StickyCallbar onOpenForm={() => setIsFormOpen(true)} />
     </main>
   );
 };

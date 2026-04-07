@@ -170,6 +170,16 @@ const PhraseIcon = ({ type }) => {
 const CTA_FORM_URL =
   "https://affiliate.exlyapp.com/checkout/93c07fe6-2f9c-43ef-9c12-7c30ae147d10";
 
+const SectionCTA = ({ label, caption, className = "" }) => (
+  <div className={`exly-section-cta ${className}`.trim()}>
+    {caption ? <span className="exly-section-cta-caption">{caption}</span> : null}
+    <a className="exly-section-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
+      {label}
+      <ChevronRight size={16} />
+    </a>
+  </div>
+);
+
 const StickyCallbar = memo(() => {
   const [msUntilReset, setMsUntilReset] = useState(() => getMsUntilMidnight());
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -299,7 +309,7 @@ const ExlyDossier = () => {
           ))}
         </div>
         <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
-          Book a Strategy Call
+          Get My Profit Growth Plan
           <ChevronRight size={18} />
         </a>
       </section>
@@ -511,6 +521,11 @@ const ExlyDossier = () => {
             ))}
           </div>
         </article>
+        <SectionCTA
+          className="exly-section-cta-full"
+          caption="Ready to switch from variable fees to predictable growth?"
+          label="Get My Custom Profit Plan"
+        />
       </section>
 
       <section className="exly-shell exly-problem-section exly-reveal" id="problem">
@@ -545,6 +560,10 @@ const ExlyDossier = () => {
             </article>
           ))}
         </div>
+        <SectionCTA
+          caption="If your funnel is leaking profit, fix it before you scale."
+          label="Stop My Revenue Leaks"
+        />
       </section>
 
       <section className="exly-shell exly-cost-visual-section exly-reveal" aria-label="Traditional agency vs RevX comparison">
@@ -584,6 +603,10 @@ const ExlyDossier = () => {
             <p>Predictable operating cost with better margin control.</p>
           </article>
         </div>
+        <SectionCTA
+          caption="Compare your current setup against a fixed-cost model."
+          label="Show Me My Real Savings"
+        />
       </section>
 
       <section className="exly-shell exly-cost-section exly-reveal" id="cost">
@@ -676,6 +699,10 @@ const ExlyDossier = () => {
             <h3>One team and one dashboard for faster execution</h3>
           </article>
         </div>
+        <SectionCTA
+          caption="Know what your yearly savings could look like before you commit."
+          label="Reveal My Profit Upside"
+        />
       </section>
 
       <section className="exly-shell exly-proof-section exly-reveal" id="guarantees">
@@ -745,6 +772,10 @@ const ExlyDossier = () => {
             ))}
           </ul>
         </article>
+        <SectionCTA
+          caption="Keep your accounts, data, and delivery stack fully under your control."
+          label="Protect My Accounts and Data"
+        />
       </section>
 
       <section className="exly-shell exly-process-section exly-reveal" id="process">
@@ -793,6 +824,10 @@ const ExlyDossier = () => {
             </article>
           ))}
         </div>
+        <SectionCTA
+          caption="See how RevX would launch and scale your setup in clear phases."
+          label="Map My 4-Phase Launch"
+        />
       </section>
 
       <section className="exly-shell exly-final-cta exly-reveal" id="cta">
@@ -831,7 +866,7 @@ const ExlyDossier = () => {
               </span>
             </div>
             <a className="exly-cta-btn" href={CTA_FORM_URL} target="_blank" rel="noopener noreferrer">
-              Book a Strategy Call
+              Book My RevX Growth Call
               <ChevronRight size={18} />
             </a>
           </div>
